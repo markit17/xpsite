@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Class 8 Science Lesson Plans for the chapter on Force. Includes 5 period plans, activities, and TLM.">
+    <title>Class 8 Science - Force Lesson Plans</title>
+    <style>
+        /* Fix 1: Box sizing to prevent layout overflow */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .standards {
+            background: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .nav-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background-color: #2980b9;
+        }
+        .lesson-plan {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow-x: auto; /* Keeps tables from breaking layout on mobile */
+        }
+        .lesson-plan.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            min-width: 800px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top; /* Fix 2: Better alignment for multi-line cells */
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Fix 3: Print styles for teachers */
+        @media print {
+            .nav-buttons, .standards, footer {
+                display: none !important;
+            }
+            .lesson-plan {
+                display: none !important;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            .lesson-plan.active {
+                display: block !important;
+            }
+            body {
+                background: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Class 8 Science Lesson Plans</h1>
+            <p>Chapter: Force</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="standards">
+            <h3>Academic Standards</h3>
+            <ul>
+                <li><strong>Knowledge & Understanding:</strong> Understand the concept of force, its effects, and differentiate between contact and non-contact forces.</li>
+                <li><strong>Skills:</strong> Develop observation, experimentation, and classification skills.</li>
+                <li><strong>Application:</strong> Apply concepts of force to explain daily life phenomena.</li>
+                <li><strong>Attitude & Values:</strong> Exhibit curiosity, teamwork, and appreciation for physical laws.</li>
+            </ul>
+        </div>
+
+        <div class="nav-buttons">
+            <!-- Fix 4: Passing 'this' to the function to avoid relying on global window.event -->
+            <button class="nav-btn active" onclick="showPlan(this, 1)">Period 1: Intro to Force</button>
+            <button class="nav-btn" onclick="showPlan(this, 2)">Period 2: Motion & Direction</button>
+            <button class="nav-btn" onclick="showPlan(this, 3)">Period 3: Contact Forces</button>
+            <button class="nav-btn" onclick="showPlan(this, 4)">Period 4: Non-Contact Forces</button>
+            <button class="nav-btn" onclick="showPlan(this, 5)">Period 5: Shape & Review</button>
+        </div>
+
+        <!-- Period 1 -->
+        <div id="plan1" class="lesson-plan active">
+            <h2>Period 1: Introduction to Force and its Effects (45 Mins)</h2>
+            <table>
+                <tr><th>Teaching Steps</th><th>Teacher Activities</th><th>Learner Activities</th><th>Black Board Work</th><th>TLM</th></tr>
+                <tr><td>Introduction</td><td>Shows a ball at rest. Asks a student to push it. Asks another to stop a rolling ball.</td><td>Observes and tries to push/stop the ball.</td><td></td><td>Football, toy car</td></tr>
+                <tr><td>Mind Mapping</td><td>Draws a central circle "Force" and asks students to brainstorm words.</td><td>Shares words like push, pull, motion.</td><td>Central circle: FORCE -> Push, Pull</td><td>Chalk, Mind map chart</td></tr>
+                <tr><td>Probing Questions</td><td>What did you do to move the ball? What did you do to stop it?</td><td>Answers: Pushed it, applied force to stop it.</td><td></td><td></td></tr>
+                <tr><td>Declaration of Topic</td><td>Declares: "Today we will learn about Force and its effects."</td><td>Listens and notes the topic.</td><td>Topic: Force and its Effects</td><td></td></tr>
+                <tr><td>Reading & Keywords</td><td>Asks students to read the first section. Instructs to underline keywords.</td><td>Reads text and identifies keywords.</td><td></td><td>Textbook</td></tr>
+                <tr><td>Group Discussion</td><td>Divides students into groups to discuss keywords.</td><td>Discusses keywords like push, pull, interaction.</td><td>Keywords: Push, Pull, Interaction</td><td></td></tr>
+                <tr><td>Definition</td><td>Defines force: "A push or a pull on an object."</td><td>Notes the definition in notebooks.</td><td>Definition: Force is a push or a pull.</td><td></td></tr>
+                <tr><td>Conceptual Understanding</td><td>Explains that force is an interaction between two objects.</td><td>Listens and asks doubts.</td><td></td><td></td></tr>
+                <tr><td>Activity</td><td>Gives a rubber band and a sponge. Asks to stretch and squeeze.</td><td>Stretches and squeezes objects.</td><td></td><td>Rubber bands, sponges</td></tr>
+                <tr><td>Conclusion</td><td>Summarizes: Force is a push or pull. It can change shape. It requires interaction.</td><td>Listens and writes summary.</td><td></td><td></td></tr>
+                <tr><td>Culminatory Activity</td><td>Asks to name 3 actions at home involving push or pull.</td><td>Opens door (pull), moves chair (push).</td><td></td><td></td></tr>
+                <tr><td>Evaluation</td><td>Asks: 1. Define force. 2. Give example of force changing shape.</td><td>Answers orally.</td><td></td><td></td></tr>
+                <tr><td>Home Task</td><td>List 5 activities where force changes shape.</td><td>Notes down homework.</td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- Period 2 -->
+        <div id="plan2" class="lesson-plan">
+            <h2>Period 2: Effects of Force on State of Motion and Direction (45 Mins)</h2>
+            <table>
+                <tr><th>Teaching Steps</th><th>Teacher Activities</th><th>Learner Activities</th><th>Black Board Work</th><th>TLM</th></tr>
+                <tr><td>Introduction</td><td>Recalls previous class. Rolls a ball and asks why it stopped.</td><td>Answers friction/force stopped it.</td><td></td><td>Football</td></tr>
+                <tr><td>Mind Mapping</td><td>Adds branches: "Change in Motion", "Change in Direction".</td><td>Suggests ideas for branches.</td><td>Force -> Motion, Direction</td><td>Chalk</td></tr>
+                <tr><td>Probing Questions</td><td>Can force make a moving object stop? Make stationary move?</td><td>Thinks and answers "Yes".</td><td></td><td></td></tr>
+                <tr><td>Declaration of Topic</td><td>Declares: "Effects of Force on Motion & Direction".</td><td>Prepares to learn.</td><td>Topic: Effects on Motion & Direction</td><td></td></tr>
+                <tr><td>Reading & Keywords</td><td>Asks students to read section on effects of force.</td><td>Reads and finds keywords.</td><td></td><td>Textbook</td></tr>
+                <tr><td>Group Discussion</td><td>Facilitates discussion on how direction changes.</td><td>Discusses hitting a cricket ball.</td><td>Keywords: Motion, Direction, Speed</td><td></td></tr>
+                <tr><td>Definition</td><td>Force can change speed or alter direction.</td><td>Notes down concept.</td><td>Force changes: Speed, Direction</td><td></td></tr>
+                <tr><td>Conceptual Understanding</td><td>Explains force can speed up, slow down, or stop.</td><td>Relates to real-life examples.</td><td></td><td></td></tr>
+                <tr><td>Activity</td><td>Strikes a carrom striker to change direction.</td><td>Observes change in direction and speed.</td><td></td><td>Carrom board, coins</td></tr>
+                <tr><td>Conclusion</td><td>Force changes state of motion and speed/direction.</td><td>Writes 3-sentence summary.</td><td></td><td></td></tr>
+                <tr><td>Culminatory Activity</td><td>Shows football video, spots changes in direction.</td><td>Watches and points out passing.</td><td></td><td>Laptop/Projector</td></tr>
+                <tr><td>Evaluation</td><td>1. State two effects of force on motion. 2. Can force change speed?</td><td>Answers orally.</td><td></td><td></td></tr>
+                <tr><td>Home Task</td><td>Write 3 examples where force changes direction.</td><td>Notes task.</td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- Period 3 -->
+        <div id="plan3" class="lesson-plan">
+            <h2>Period 3: Contact Forces (Muscular and Frictional) (45 Mins)</h2>
+            <table>
+                <tr><th>Teaching Steps</th><th>Teacher Activities</th><th>Learner Activities</th><th>Black Board Work</th><th>TLM</th></tr>
+                <tr><td>Introduction</td><td>Asks student to lift bag. Asks what applies force.</td><td>Answers: Hands/muscles.</td><td></td><td>School bag</td></tr>
+                <tr><td>Mind Mapping</td><td>Branch: "Contact Forces". Sub-branches: Muscular, Frictional.</td><td>Helps categorize.</td><td>Force -> Contact -> Muscular, Friction</td><td>Chalk</td></tr>
+                <tr><td>Probing Questions</td><td>Do hands touch the bag? What stops a rolling tire?</td><td>Yes. Friction.</td><td></td><td></td></tr>
+                <tr><td>Declaration of Topic</td><td>Writes: "Contact Forces: Muscular and Frictional".</td><td>Opens notebooks.</td><td>Topic: Contact Forces</td><td></td></tr>
+                <tr><td>Reading & Keywords</td><td>Reads "Contact Forces" section.</td><td>Highlights keywords.</td><td></td><td>Textbook</td></tr>
+                <tr><td>Group Discussion</td><td>Guides groups to differentiate muscular vs frictional.</td><td>Discusses physical touch.</td><td>Keywords: Contact, Muscular, Friction</td><td></td></tr>
+                <tr><td>Definition</td><td>Defines Contact force. Muscular uses muscles. Friction opposes.</td><td>Writes definitions.</td><td>Contact Force: Requires touch.</td><td></td></tr>
+                <tr><td>Conceptual Understanding</td><td>Friction opposes motion, acts opposite to movement.</td><td>Listens, visualizes.</td><td></td><td></td></tr>
+                <tr><td>Activity</td><td>Rubs hands together vigorously.</td><td>Rubs hands, feels heat.</td><td></td><td>None</td></tr>
+                <tr><td>Conclusion</td><td>Contact needs touch. Muscular uses body. Friction stops.</td><td>Copies summary.</td><td></td><td></td></tr>
+                <tr><td>Culminatory Activity</td><td>Push heavy desk, feel muscles.</td><td>Experiences muscular force.</td><td></td><td>Classroom desk</td></tr>
+                <tr><td>Evaluation</td><td>1. Define contact force. 2. Example of muscular force.</td><td>Responds.</td><td></td><td></td></tr>
+                <tr><td>Home Task</td><td>List 3 examples of frictional force.</td><td>Writes homework.</td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- Period 4 -->
+        <div id="plan4" class="lesson-plan">
+            <h2>Period 4: Non-Contact Forces (Magnetic, Electrostatic, Gravitational) (45 Mins)</h2>
+            <table>
+                <tr><th>Teaching Steps</th><th>Teacher Activities</th><th>Learner Activities</th><th>Black Board Work</th><th>TLM</th></tr>
+                <tr><td>Introduction</td><td>Drops a pen. Why did it fall without touch?</td><td>Answers: Gravity.</td><td></td><td>Pen</td></tr>
+                <tr><td>Mind Mapping</td><td>Branch: "Non-Contact". Sub: Magnetic, Electrostatic, Gravitational.</td><td>Calls out examples.</td><td>Force -> Non-Contact -> Magnetic, Gravity</td><td>Chalk</td></tr>
+                <tr><td>Probing Questions</td><td>Magnet attract from distance? Sun touch earth?</td><td>No, acts from distance.</td><td></td><td></td></tr>
+                <tr><td>Declaration of Topic</td><td>Declares: "Non-Contact Forces".</td><td>Prepares for lesson.</td><td>Topic: Non-Contact Forces</td><td></td></tr>
+                <tr><td>Reading & Keywords</td><td>Directs reading.</td><td>Reads, identifies keywords.</td><td></td><td>Textbook</td></tr>
+                <tr><td>Group Discussion</td><td>Discussion on forces working without touch.</td><td>Discusses gravity holding us.</td><td>Keywords: Magnetic, Electrostatic, Gravity</td><td></td></tr>
+                <tr><td>Definition</td><td>Non-contact: No physical contact. Explains all 3 types.</td><td>Notes definitions.</td><td>Non-Contact: Acts from distance.</td><td></td></tr>
+                <tr><td>Conceptual Understanding</td><td>Gravity is universal, pulls to center.</td><td>Listens, asks about space.</td><td></td><td></td></tr>
+                <tr><td>Activity</td><td>Magnet near pins. Balloon rubbed on hair near paper bits.</td><td>Observes pins and paper jumping.</td><td></td><td>Magnet, pins, balloon, paper</td></tr>
+                <tr><td>Conclusion</td><td>Non-contact acts from distance. Gravity pulls down.</td><td>Writes summary.</td><td></td><td></td></tr>
+                <tr><td>Culminatory Activity</td><td>Compass needle deflecting near magnet.</td><td>Observes needle moving.</td><td></td><td>Magnetic compass</td></tr>
+                <tr><td>Evaluation</td><td>1. Name 3 non-contact forces. 2. Why leaves fall?</td><td>Answers.</td><td></td><td></td></tr>
+                <tr><td>Home Task</td><td>Draw diagram of electrostatic force.</td><td>Notes task.</td><td></td><td></td></tr>
+            </table>
+        </div>
+
+        <!-- Period 5 -->
+        <div id="plan5" class="lesson-plan">
+            <h2>Period 5: Force can Change Shape and Comprehensive Review (45 Mins)</h2>
+            <table>
+                <tr><th>Teaching Steps</th><th>Teacher Activities</th><th>Learner Activities</th><th>Black Board Work</th><th>TLM</th></tr>
+                <tr><td>Introduction</td><td>Shows spring, asks what happens when pressed.</td><td>Answers: shrinks/changes shape.</td><td></td><td>Spring</td></tr>
+                <tr><td>Mind Mapping</td><td>Adds "Change in Shape" branch.</td><td>Reviews complete map.</td><td>Force -> Change in Shape</td><td>Chalk, chart</td></tr>
+                <tr><td>Probing Questions</td><td>Can force alter solid shape? Dough?</td><td>Answers Yes.</td><td></td><td></td></tr>
+                <tr><td>Declaration of Topic</td><td>Declares: "Force Changes Shape & Review".</td><td>Opens notebooks.</td><td>Topic: Shape Change & Review</td><td></td></tr>
+                <tr><td>Reading & Keywords</td><td>Scans whole chapter for review.</td><td>Reviews keywords.</td><td></td><td>Textbook</td></tr>
+                <tr><td>Group Discussion</td><td>Assigns one force type per group to present.</td><td>Prepares 1-min summary.</td><td>All previous keywords</td><td></td></tr>
+                <tr><td>Definition</td><td>Force changes shape permanently or temporarily.</td><td>Notes final effect.</td><td>Force changes shape</td><td></td></tr>
+                <tr><td>Conceptual Understanding</td><td>Permanent (clay) vs temporary (spring).</td><td>Understands elastic vs plastic.</td><td></td><td></td></tr>
+                <tr><td>Activity</td><td>Gives clay and rubber bands to deform.</td><td>Molds clay, stretches rubber band.</td><td></td><td>Clay, rubber bands</td></tr>
+                <tr><td>Conclusion</td><td>Force changes shape. Broadly contact/non-contact. Used daily.</td><td>Copies summary.</td><td></td><td></td></tr>
+                <tr><td>Culminatory Activity</td><td>Rapid-fire quiz: Drop ball? Push car?</td><td>Answers: Gravity, Muscular.</td><td></td><td>Quiz cards</td></tr>
+                <tr><td>Evaluation</td><td>Distributes 5-question worksheet.</td><td>Solves individually.</td><td></td><td>Printed worksheet</td></tr>
+                <tr><td>Home Task</td><td>Chart classifying 10 activities into contact/non-contact.</td><td>Notes assignment.</td><td></td><td>Chart paper</td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Class 8 Science Educational Resources. Designed for Teachers.</p>
+    </footer>
+
+    <script>
+        // Fix 5: Accept 'clickedBtn' as a parameter to avoid using deprecated window.event
+        function showPlan(clickedBtn, planNumber) {
+            // Hide all lesson plans
+            const plans = document.querySelectorAll('.lesson-plan');
+            plans.forEach(plan => plan.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show the selected lesson plan
+            const selectedPlan = document.getElementById('plan' + planNumber);
+            if(selectedPlan) {
+                selectedPlan.classList.add('active');
+            }
+            
+            // Add active class to the clicked button
+            clickedBtn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
