@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class IX Math Lesson Plan - Surface Areas and Volumes</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f9fbfd;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f7f6;
+        }
+
+        tr:hover {
+            background-color: #e9f0f5;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Print Styles for saving as PDF via browser */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .download-btn {
+                display: none;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            tr {
+                page-break-inside: avoid;
+            }
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Art-Integrated Lesson Plan</h1>
+        <p><strong>Class:</strong> IX Mathematics | <strong>Chapter:</strong> Surface Areas and Volumes</p>
+        <p><strong>Duration:</strong> 5 Periods | <strong>Pedagogy:</strong> Art-Integrated, Experiential Learning</p>
+        <button class="download-btn" onclick="downloadPage()">⬇ Download This Webpage (HTML)</button>
+    </header>
+
+    <main>
+        <!-- PERIOD 1 -->
+        <section>
+            <h2>PERIOD 1: Introduction to 2D and 3D Figures & Surface Area of Cuboid</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teaching Steps</th>
+                            <th>Teacher Activity</th>
+                            <th>Learner Activity</th>
+                            <th>Black Board Work</th>
+                            <th>TLM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I. INTRODUCTION</strong> (3-5 min) <br>*Mind Mapping* (2-3 min) <br>*Probing Questions* (2-3 min) <br>*Declaration of Topic* (2 min)</td>
+                            <td>Draws a web on the board connecting 'Shapes' to '2D' and '3D'. Asks: "What is the difference between a square and a cuboid?" "How many faces does a cuboid have?" Declares the topic: "Surface Area of a Cuboid".</td>
+                            <td>Participate in mind mapping, answering that 2D has length and breadth, while 3D has length, breadth, and height. Note down the topic.</td>
+                            <td><strong>Topic: Surface Area of Cuboid</strong> <br>2D: Length, Breadth <br>3D: Length, Breadth, Height <br>Cuboid: 6 faces, 12 edges, 8 corners</td>
+                            <td>Blackboard, Chalk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II. READING THE TEXTBOOK</strong> (5 min) <br>*Identifying Keywords* (2-3 min)</td>
+                            <td>Asks students to open the textbook to page 214 and read paragraphs 10.1 and 10.2 silently. Instructs them to underline important terms.</td>
+                            <td>Read the text silently and underline keywords: Two-dimensional, Three-dimensional, Solid figures, Cuboid, Lateral Surface, Total Surface Area.</td>
+                            <td><strong>Keywords:</strong> <br>- 2D & 3D figures <br>- Faces, Edges, Corners <br>- Lateral Surface Area <br>- Total Surface Area</td>
+                            <td>Textbook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III. GROUP DISCUSSION</strong> (5 min) <br>*Concept Understanding* (5-7 min)</td>
+                            <td>Divides class into groups. Guides them to visualize cutting open a cuboid to form a net. Facilitates the derivation of TSA and LSA formulas.</td>
+                            <td>Discuss in groups how a cuboid consists of 3 pairs of identical rectangles. Derive that TSA = 2(lb + bh + lh) and LSA = 2h(l + b).</td>
+                            <td><strong>Formulas:</strong> <br>TSA = 2(lb + bh + lh) <br>LSA = 2h(l + b) <br>*(Draw net of cuboid)*</td>
+                            <td>Chart paper showing cuboid net</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV. ART INTEGRATED ACTIVITY</strong> (10 min)</td>
+                            <td>Distributes coloured chart papers. Guides students to draw and cut out 6 rectangles (3 pairs) and assemble them into a colourful cuboid net.</td>
+                            <td>Measure and cut 6 rectangles from different coloured sheets. Fold and paste them to form a 3D cuboid, identifying top, bottom, and lateral faces.</td>
+                            <td>*(Display area on BB for students to show their models briefly)*</td>
+                            <td>Coloured chart papers, Scissors, Glue, Ruler</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V. CONCLUSION & SUMMARIZING</strong> (3 min)</td>
+                            <td>Summarizes that the total surface area is the sum of the areas of all 6 rectangular faces, while lateral area excludes the top and bottom.</td>
+                            <td>Listen, note down the summary, and cross-verify with the art model created.</td>
+                            <td><strong>Summary:</strong> <br>TSA = Sum of 6 faces <br>LSA = Sum of 4 lateral faces</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VI. CULMINATORY ACTIVITIES - EVALUATION</strong> (2 min)</td>
+                            <td>Poses 4 oral questions to assess understanding.</td>
+                            <td>Answer the questions orally.</td>
+                            <td><strong>Evaluation:</strong> <br>Q1: Find TSA of cuboid (l=5, b=3, h=2). <br>Ans: 2(15+6+10) = 62 cm² <br>Q2: Find LSA of cuboid (l=5, b=3, h=2). <br>Ans: 2×2(5+3) = 32 cm² <br>Q3: How many faces does a cuboid have? <br>Ans: 6 <br>Q4: Give the formula for TSA. <br>Ans: 2(lb + bh + lh)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Task</strong> (1 min)</td>
+                            <td>Assigns specific homework from the textbook.</td>
+                            <td>Note down the homework.</td>
+                            <td><strong>Home Task:</strong> <br>1. Find the TSA and LSA of a cuboid with l=8m, b=5m, h=3m. <br>2. Draw a neat net of a cuboid in your notebook.</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PERIOD 2 -->
+        <section>
+            <h2>PERIOD 2: Surface Area and Volume of Cube & Volume of Prism</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teaching Steps</th>
+                            <th>Teacher Activity</th>
+                            <th>Learner Activity</th>
+                            <th>Black Board Work</th>
+                            <th>TLM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I. INTRODUCTION</strong> (3-5 min) <br>*Mind Mapping* (2-3 min) <br>*Probing Questions* (2-3 min) <br>*Declaration of Topic* (2 min)</td>
+                            <td>Draws a mind map linking 'Cuboid' to 'Special Case: Cube'. Asks: "What happens when length, breadth, and height of a cuboid are equal?" Declares the topic.</td>
+                            <td>Respond that it becomes a cube. Understand that a cube has all edges equal. Note down the topic.</td>
+                            <td><strong>Topic: Cube & Volume of Prism</strong> <br>Cuboid (l, b, h) <br>↓ (if l=b=h=a) <br>Cube (edge = a)</td>
+                            <td>Blackboard, Chalk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II. READING THE TEXTBOOK</strong> (5 min) <br>*Identifying Keywords* (2-3 min)</td>
+                            <td>Asks students to read page 217 (Try This, Do This). Asks them to identify keywords related to space occupied.</td>
+                            <td>Read the text and underline keywords: Edge, Volume, Capacity, Right Prism, Area of base.</td>
+                            <td><strong>Keywords:</strong> <br>- Edge <br>- Volume <br>- Capacity <br>- Right Prism</td>
+                            <td>Textbook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III. GROUP DISCUSSION</strong> (5 min) <br>*Concept Understanding* (5-7 min)</td>
+                            <td>Guides groups to substitute l=b=h=a in cuboid formulas to get cube formulas. Explains volume as space occupied and derives Volume of Right Prism.</td>
+                            <td>Substitute 'a' in TSA and LSA formulas. Discuss that volume of a prism is Area of base × Height.</td>
+                            <td><strong>Formulas:</strong> <br>TSA of Cube = 6a² <br>LSA of Cube = 4a² <br>Vol of Cube = a³ <br>Vol of Prism = Area of base × h</td>
+                            <td>3D Shape models</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV. ART INTEGRATED ACTIVITY</strong> (10 min)</td>
+                            <td>Provides thick cardboard or clay and straws. Asks students to construct a 3D cube model, labelling the edges and faces.</td>
+                            <td>Use straws and clay to build a cube skeleton, or cut and fold cardboard to make a solid 3D cube model. Label edge 'a'.</td>
+                            <td>*(Students display their 3D cube models)*</td>
+                            <td>Straws, Clay, Cardboard, Markers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V. CONCLUSION & SUMMARIZING</strong> (3 min)</td>
+                            <td>Summarizes that a cube is a special cuboid and volume is measured in cubic units.</td>
+                            <td>Write down the summary and relate the 3D model to the formulas.</td>
+                            <td><strong>Summary:</strong> <br>For Cube, l=b=h=a <br>Vol = Base Area × Height</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VI. CULMINATORY ACTIVITIES - EVALUATION</strong> (2 min)</td>
+                            <td>Asks oral evaluation questions.</td>
+                            <td>Answer the questions orally.</td>
+                            <td><strong>Evaluation:</strong> <br>Q1: Find TSA of cube with edge 4 cm. <br>Ans: 6×4² = 96 cm² <br>Q2: Find volume of cube with edge 10 cm. <br>Ans: 10³ = 1000 cm³ <br>Q3: What is the LSA of a cube? <br>Ans: 4a² <br>Q4: Formula for volume of a prism? <br>Ans: Area of base × height</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Task</strong> (1 min)</td>
+                            <td>Assigns homework.</td>
+                            <td>Note down the homework.</td>
+                            <td><strong>Home Task:</strong> <br>1. The volume of a cube is 1728 cm³. Find its total surface area. <br>2. Find the volume of a cuboid with l=12cm, b=10cm, h=8cm. <br>3. Draw a right triangular prism.</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PERIOD 3 -->
+        <section>
+            <h2>PERIOD 3: Cylinder - Curved Surface Area, Total Surface Area & Volume</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teaching Steps</th>
+                            <th>Teacher Activity</th>
+                            <th>Learner Activity</th>
+                            <th>Black Board Work</th>
+                            <th>TLM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I. INTRODUCTION</strong> (3-5 min) <br>*Mind Mapping* (2-3 min) <br>*Probing Questions* (2-3 min) <br>*Declaration of Topic* (2 min)</td>
+                            <td>Creates a mind map of 'Cylindrical objects' (pipes, drums). Asks: "What shape do you get when you rotate a rectangle?" Declares the topic.</td>
+                            <td>Brainstorm and list daily life cylindrical objects. Answer: Cylinder. Note down the topic.</td>
+                            <td><strong>Topic: Right Circular Cylinder</strong> <br>Objects: Pipes, Tins, Wells <br>Rectangle → Rotation → Cylinder</td>
+                            <td>Blackboard, Chalk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II. READING THE TEXTBOOK</strong> (5 min) <br>*Identifying Keywords* (2-3 min)</td>
+                            <td>Directs students to read page 220-222. Asks them to circle the terms related to the parts of a cylinder.</td>
+                            <td>Read the text and identify keywords: Right circular cylinder, Radius, Height, Curved Surface Area, Total Surface Area.</td>
+                            <td><strong>Keywords:</strong> <br>- Right Circular Cylinder <br>- Axis <br>- Circumference <br>- 2πr</td>
+                            <td>Textbook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III. GROUP DISCUSSION</strong> (5 min) <br>*Concept Understanding* (5-7 min)</td>
+                            <td>Facilitates discussion on unfolding a cylinder into a rectangle. Derives CSA = 2πrh, TSA = 2πr(r + h), and Volume = πr²h.</td>
+                            <td>Discuss how the length of the rectangle becomes the circumference (2πr) and breadth becomes height (h). Derive formulas.</td>
+                            <td><strong>Formulas:</strong> <br>CSA = 2πrh <br>TSA = 2πr(r + h) <br>Vol = πr²h</td>
+                            <td>Chart showing cylinder net</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV. ART INTEGRATED ACTIVITY</strong> (10 min)</td>
+                            <td>Distributes rectangular chart paper strips. Guides students to roll them into cylinders and observe the relationship between the rectangle's dimensions and the cylinder's dimensions.</td>
+                            <td>Take a rectangle of known l and b. Roll it along length and then along breadth to form two different cylinders. Measure and observe r and h.</td>
+                            <td>*(Draw diagram showing rectangle rolling into cylinder)*</td>
+                            <td>Rectangular chart paper strips, Cello tape</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V. CONCLUSION & SUMMARIZING</strong> (3 min)</td>
+                            <td>Concludes that the CSA of a cylinder is simply the area of its net (rectangle).</td>
+                            <td>Summarize the learning and correlate the art activity with the formula derivation.</td>
+                            <td><strong>Summary:</strong> <br>CSA = Area of rectangular net <br>l = 2πr, b = h</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VI. CULMINATORY ACTIVITIES - EVALUATION</strong> (2 min)</td>
+                            <td>Poses 4 oral questions.</td>
+                            <td>Answer the questions orally.</td>
+                            <td><strong>Evaluation:</strong> <br>Q1: Find CSA of cylinder (r=3.5cm, h=10cm). [π=22/7] <br>Ans: 2×(22/7)×3.5×10 = 220 cm² <br>Q2: Find TSA if r=7cm, h=10cm. <br>Ans: 2×(22/7)×7(7+10) = 748 cm² <br>Q3: What is the formula for volume? <br>Ans: πr²h <br>Q4: What shape do we get when we unfold a cylinder? <br>Ans: Rectangle</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Task</strong> (1 min)</td>
+                            <td>Assigns homework.</td>
+                            <td>Note down the homework.</td>
+                            <td><strong>Home Task:</strong> <br>1. A closed cylindrical tank has radius 7m and height 3m. Find its TSA. (Take π=22/7) <br>2. Find the volume of a cylinder whose radius is 10.5cm and height is 14cm.</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PERIOD 4 -->
+        <section>
+            <h2>PERIOD 4: Cone - Curved Surface Area, Total Surface Area & Volume</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teaching Steps</th>
+                            <th>Teacher Activity</th>
+                            <th>Learner Activity</th>
+                            <th>Black Board Work</th>
+                            <th>TLM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I. INTRODUCTION</strong> (3-5 min) <br>*Mind Mapping* (2-3 min) <br>*Probing Questions* (2-3 min) <br>*Declaration of Topic* (2 min)</td>
+                            <td>Maps 'Conical shapes' (joker caps, tents). Asks: "Is the height of a cone the same as its slant height?" Declares the topic.</td>
+                            <td>Recall objects shaped like cones. Answer: No, height is perpendicular, slant height is along the surface.</td>
+                            <td><strong>Topic: Right Circular Cone</strong> <br>Objects: Caps, Tents, Funnels <br>Height (h) ≠ Slant Height (l)</td>
+                            <td>Blackboard, Chalk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II. READING THE TEXTBOOK</strong> (5 min) <br>*Identifying Keywords* (2-3 min)</td>
+                            <td>Asks students to read page 226-230. Instructs them to highlight terms specific to cones.</td>
+                            <td>Read the text and underline keywords: Vertex, Slant height, Sector, Arc length.</td>
+                            <td><strong>Keywords:</strong> <br>- Right Circular Cone <br>- Vertex <br>- Slant height (l) <br>- Sector</td>
+                            <td>Textbook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III. GROUP DISCUSSION</strong> (5 min) <br>*Concept Understanding* (5-7 min)</td>
+                            <td>Guides groups to derive l² = h² + r² using Pythagoras theorem. Explains the sector-to-cone activity to derive CSA = πrl and Vol = 1/3 πr²h.</td>
+                            <td>Apply Pythagoras theorem in the cross-section of the cone. Discuss how 3 cones fill 1 cylinder of the same base and height.</td>
+                            <td><strong>Formulas:</strong> <br>l² = h² + r² <br>CSA = πrl <br>TSA = πr(l + r) <br>Vol = (1/3)πr²h</td>
+                            <td>Chart of cone cross-section</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV. ART INTEGRATED ACTIVITY</strong> (10 min)</td>
+                            <td>Gives students circular paper sheets. Guides them to cut a sector and fold it into a cone to visually prove the CSA concept.</td>
+                            <td>Draw a circle, cut out a sector (e.g., 120° or 90°), bring the radial edges together, and paste to form a cone. Observe the arc becomes the base.</td>
+                            <td>*(Show diagram of sector AOB folding into cone)*</td>
+                            <td>Circular paper sheets, Scissors, Protractor, Glue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V. CONCLUSION & SUMMARIZING</strong> (3 min)</td>
+                            <td>Concludes that a cone is 1/3rd of a cylinder in volume, and its CSA is half the product of base circumference and slant height.</td>
+                            <td>Write the summary and observe the relationship between the art activity and the formula.</td>
+                            <td><strong>Summary:</strong> <br>Vol of Cone = (1/3) × Vol of Cylinder <br>CSA = πrl</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VI. CULMINATORY ACTIVITIES - EVALUATION</strong> (2 min)</td>
+                            <td>Asks 4 oral questions.</td>
+                            <td>Answer the questions orally.</td>
+                            <td><strong>Evaluation:</strong> <br>Q1: Find l if r=3cm, h=4cm. <br>Ans: l = √(9+16) = 5 cm <br>Q2: Find CSA if r=7cm, l=10cm. [π=22/7] <br>Ans: (22/7)×7×10 = 220 cm² <br>Q3: What is the formula for TSA of a cone? <br>Ans: πr(l + r) <br>Q4: Volume of a cone is what fraction of a cylinder's volume? <br>Ans: 1/3</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Task</strong> (1 min)</td>
+                            <td>Assigns homework.</td>
+                            <td>Note down the homework.</td>
+                            <td><strong>Home Task:</strong> <br>1. Find the CSA and TSA of a cone with radius 5.6 cm and slant height 9 cm. (Take π=22/7) <br>2. Find the volume of a cone with radius 3.5 cm and height 12 cm.</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PERIOD 5 -->
+        <section>
+            <h2>PERIOD 5: Sphere and Hemisphere - Surface Area & Volume</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teaching Steps</th>
+                            <th>Teacher Activity</th>
+                            <th>Learner Activity</th>
+                            <th>Black Board Work</th>
+                            <th>TLM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>I. INTRODUCTION</strong> (3-5 min) <br>*Mind Mapping* (2-3 min) <br>*Probing Questions* (2-3 min) <br>*Declaration of Topic* (2 min)</td>
+                            <td>Maps 'Spherical objects' (balls, globes). Asks: "What is half of a sphere called?" and "How many faces does a sphere have?" Declares the topic.</td>
+                            <td>List spherical objects. Answer: Hemisphere. One curved face. Note down the topic.</td>
+                            <td><strong>Topic: Sphere and Hemisphere</strong> <br>Objects: Balls, Laddoos, Earth <br>Sphere ÷ 2 = Hemisphere</td>
+                            <td>Blackboard, Chalk</td>
+                        </tr>
+                        <tr>
+                            <td><strong>II. READING THE TEXTBOOK</strong> (5 min) <br>*Identifying Keywords* (2-3 min)</td>
+                            <td>Directs students to read page 234-238. Asks them to underline keywords related to the surface and volume of spheres.</td>
+                            <td>Read the text and underline keywords: Centre, Radius, Sphere, Hemisphere, Curved Surface Area.</td>
+                            <td><strong>Keywords:</strong> <br>- Sphere <br>- Hemisphere <br>- Centre <br>- Solid</td>
+                            <td>Textbook</td>
+                        </tr>
+                        <tr>
+                            <td><strong>III. GROUP DISCUSSION</strong> (5 min) <br>*Concept Understanding* (5-7 min)</td>
+                            <td>Explains the tennis ball and string activity (4 circles = 1 sphere). Discusses formulas: TSA(Sphere) = 4πr², Vol = 4/3 πr³, and derives hemisphere formulas.</td>
+                            <td>Discuss how the surface area of a sphere equals the area of 4 circles of the same radius. Derive hemisphere formulas by halving the sphere.</td>
+                            <td><strong>Formulas:</strong> <br><strong>Sphere:</strong> <br>SA = 4πr² <br>Vol = (4/3)πr³ <br><strong>Hemisphere:</strong> <br>CSA = 2πr² <br>TSA = 3πr² <br>Vol = (2/3)πr³</td>
+                            <td>Tennis ball, String, 4 paper circles</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IV. ART INTEGRATED ACTIVITY</strong> (10 min)</td>
+                            <td>Distributes chart paper and paints. Asks students to draw and paint a hemisphere poster, clearly labelling and colour-coding the flat circular base and the curved surface.</td>
+                            <td>Draw a large hemisphere on chart paper. Paint the curved surface in one colour and the flat circular base in another. Label them with their respective area formulas.</td>
+                            <td>*(Draw a labelled hemisphere showing curved area and flat base)*</td>
+                            <td>Chart paper, Paints/Colours, Markers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>V. CONCLUSION & SUMMARIZING</strong> (3 min)</td>
+                            <td>Concludes that for a hemisphere, TSA includes the flat base, whereas CSA does not.</td>
+                            <td>Summarize the difference between CSA and TSA of a hemisphere.</td>
+                            <td><strong>Summary:</strong> <br>For Hemisphere: <br>TSA = CSA + Area of base <br>3πr² = 2πr² + πr²</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VI. CULMINATORY ACTIVITIES - EVALUATION</strong> (2 min)</td>
+                            <td>Poses oral evaluation questions.</td>
+                            <td>Answer the questions orally.</td>
+                            <td><strong>Evaluation:</strong> <br>Q1: Find SA of sphere r=3.5cm. [π=22/7] <br>Ans: 4×(22/7)×3.5×3.5 = 154 cm² <br>Q2: Find TSA of hemisphere r=7cm. <br>Ans: 3×(22/7)×7×7 = 462 cm² <br>Q3: What is the volume of a sphere? <br>Ans: (4/3)πr³ <br>Q4: How many circles of radius 'r' make up the surface of a sphere? <br>Ans: 4</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Task</strong> (1 min)</td>
+                            <td>Assigns homework.</td>
+                            <td>Note down the homework.</td>
+                            <td><strong>Home Task:</strong> <br>1. Find the volume of a sphere whose radius is 6.3 cm. (Take π=22/7) <br>2. Find the CSA and TSA of a hemisphere of radius 10 cm. (Take π=3.14) <br>3. Draw a neat diagram of a sphere showing centre and radius.</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION A -->
+        <section>
+            <h2>Section A: Summary of TLM Materials Across All Periods</h2>
+            <div class="table-responsive" style="max-width: 800px; margin: 0 auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Period</th>
+                            <th>TLM Materials</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Period 1</strong></td>
+                            <td>Blackboard, Chalk, Textbook, Chart paper, Scissors, Glue, Ruler, Coloured pens</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Period 2</strong></td>
+                            <td>Blackboard, Chalk, Textbook, 3D Shape models, Straws, Clay, Cardboard, Markers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Period 3</strong></td>
+                            <td>Blackboard, Chalk, Textbook, Cylinder net chart, Rectangular chart paper strips, Cello tape</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Period 4</strong></td>
+                            <td>Blackboard, Chalk, Textbook, Cone cross-section chart, Circular paper sheets, Scissors, Protractor, Glue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Period 5</strong></td>
+                            <td>Blackboard, Chalk, Textbook, Tennis ball, String, 4 paper circles, Chart paper, Paints/Colours, Markers</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION B -->
+        <section>
+            <h2>Section B: Academic Standards</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Sub-Standard</th>
+                            <th>Indicators</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Conceptual Understanding</strong> <br>• 1.1 Identifies 2D/3D <br>• 1.2 Properties of 3D <br>• 1.3 Surface area concept <br>• 1.4 Volume concept</td>
+                            <td>
+                                • Differentiates between 2D figures (length, breadth) and 3D objects (length, breadth, height) and identifies their respective nets.<br>
+                                • Identifies and counts faces, edges, vertices, and understands properties like radius, height, and slant height in 3D solids.<br>
+                                • Understands that total surface area is the sum of areas of all faces, and lateral surface area excludes the top/base.<br>
+                                • Comprehends volume as the space occupied by a solid, measured in cubic units, and capacity as the volume of a hollow object.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Application of Concepts</strong> <br>• 2.1 Applies formulas <br>• 2.2 Volume in daily life <br>• 2.3 Effect of scaling</td>
+                            <td>
+                                • Substitutes accurate values (taking π = 22/7 or 3.14 as required) into derived formulas for TSA, LSA, and Volume of cuboids, cubes, cylinders, cones, and spheres.<br>
+                                • Solves real-world problems such as calculating the capacity of a tank, the cost of painting a cylindrical pillar, or the canvas required for a tent.<br>
+                                • Analyzes and computes the change in surface area and volume when the dimensions of a solid are doubled, tripled, or scaled by a factor of 'n'.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Problem Solving</strong> <br>• 3.1 Mathematical problems <br>• 3.2 Real-life problems <br>• 3.3 Diagrams</td>
+                            <td>
+                                • Solves textbook exercises and numerical problems involving unknown dimensions (e.g., finding radius when volume and height are given).<br>
+                                • Deconstructs complex, multi-step word problems (e.g., melting a cuboid to cast a cylinder) to find appropriate solutions.<br>
+                                • Draws accurate 2D representations (nets) and cross-sectional diagrams (right triangles in cones) to visually aid problem-solving.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Reasoning and Proof</strong> <br>• 4.1 Derives formulas <br>• 4.2 Establishes relationships</td>
+                            <td>
+                                • Logically derives the formula for the curved surface area of a cylinder and cone by visualizing their corresponding rectangular and sector nets.<br>
+                                • Establishes the mathematical relationship between the volume of a cone and a cylinder (Vol of Cone = 1/3 Vol of Cylinder) and a pyramid and prism through conceptual reasoning.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Communication</strong> <br>• 5.1 Mathematical terminology <br>• 5.2 Multiple ways of expression</td>
+                            <td>
+                                • Uses precise mathematical terms like 'lateral surface', 'slant height', 'right circular', 'hemisphere', and 'circumference' appropriately in written and oral responses.<br>
+                                • Expresses understanding through multiple mediums: writing formulas, drawing geometric nets, creating 3D art-integrated models, and explaining derivations during group discussions.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mathematics Department | Art-Integrated Lesson Plan for Class IX</p>
+    </footer>
+</div>
+
+<script>
+    function downloadPage() {
+        // Get the entire HTML content of the current page
+        const htmlContent = document.documentElement.outerHTML;
+        
+        // Create a Blob (Binary Large Object) with the HTML content
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        
+        // Create a temporary URL for the Blob
+        const url = URL.createObjectURL(blob);
+        
+        // Create a temporary anchor tag
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Class_IX_Math_Lesson_Plan.html'; // Set the filename
+        
+        // Programmatically click the anchor to trigger the download
+        document.body.appendChild(a);
+        a.click();
+        
+        // Clean up by removing the anchor and revoking the URL
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+</script>
+
+</body>
+</html>
