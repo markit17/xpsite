@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Data · Store & Export All</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- SheetJS for Excel export -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    body {
+      background: #eef4fa;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .main-container {
+      max-width: 1100px;
+      width: 100%;
+    }
+    /* ----- CARD (form) ----- */
+    .card {
+      background: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px -12px rgba(0,20,40,0.25);
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0b2b4a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 0.2rem;
+    }
+    .subhead {
+      color: #2c4b6b;
+      border-left: 4px solid #3b7bc9;
+      padding-left: 16px;
+      margin-bottom: 1.8rem;
+      background: #f0f6fe;
+      border-radius: 0 20px 20px 0;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #1e3a5f;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    label i {
+      color: #3b7bc9;
+      width: 18px;
+    }
+    input, select {
+      padding: 12px 16px;
+      border: 1.5px solid #d8e2f0;
+      border-radius: 18px;
+      font-size: 1rem;
+      background: #f9fcff;
+      transition: 0.2s;
+      outline: none;
+      color: #0a1e30;
+    }
+    input:focus, select:focus {
+      border-color: #2b6bb0;
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(43,107,176,0.12);
+    }
+    .max-badge {
+      background: #e3edfb;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #164073;
+      border: 1px solid #b9cef0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-bar {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn {
+      background: #1d4b7c;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px -4px rgba(26,67,113,0.3);
+      border: 1px solid #3670b0;
+    }
+    .btn i { font-size: 1.1rem; }
+    .btn:hover { background: #0f3a62; transform: scale(1.02); }
+    .btn-outline {
+      background: transparent;
+      color: #1d4b7c;
+      border: 1.5px solid #1d4b7c;
+      box-shadow: none;
+    }
+    .btn-outline:hover { background: #e7eff9; }
+    .btn-success {
+      background: #1f7b4a;
+      border-color: #2a8f57;
+    }
+    .btn-success:hover { background: #15633a; }
+
+    /* ----- STORAGE TABLE ----- */
+    .table-wrapper {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 1.8rem 1.8rem 1.2rem;
+      box-shadow: 0 12px 30px -8px rgba(0,20,40,0.18);
+      border: 1px solid #e6edf6;
+      overflow-x: auto;
+    }
+    .table-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .table-header h3 {
+      font-weight: 600;
+      color: #0b2b4a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-count {
+      background: #d4e2f7;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #1d4b7c;
+      font-weight: 500;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 700px;
+    }
+    th {
+      text-align: left;
+      padding: 0.9rem 0.6rem 0.6rem 0.6rem;
+      color: #1d3f62;
+      font-weight: 600;
+      border-bottom: 2px solid #d8e4f2;
+      background: #f8fbfe;
+    }
+    td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid #e4ecf5;
+      color: #1a3450;
+      vertical-align: middle;
+    }
+    .empty-row td {
+      color: #7a95b3;
+      text-align: center;
+      padding: 2rem 0;
+      font-style: italic;
+    }
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #b13e4b;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px 8px;
+      border-radius: 30px;
+      transition: 0.15s;
+    }
+    .delete-btn:hover {
+      background: #fce9eb;
+      color: #a12734;
+    }
+    .export-all-area {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1.4rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      .card { padding: 1.5rem; }
+      .field-row { grid-template-columns: 1fr; gap: 0.8rem; }
+      .action-bar { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+
+  <!-- ========== FORM CARD ========== -->
+  <div class="card">
+    <h2><i class="fas fa-user-graduate" style="color: #1d4b7c;"></i> Student Entry</h2>
+    <div class="subhead"><i class="fas fa-pen-fancy" style="margin-right: 8px;"></i> Fill & store — all records appear below</div>
+
+    <form id="studentForm" class="form-grid">
+      <div class="field">
+        <label for="studentName"><i class="fas fa-user"></i> Name of the student</label>
+        <input type="text" id="studentName" placeholder="e.g. Ananya Sharma" required>
+      </div>
+      <div class="field">
+        <label for="collegeName"><i class="fas fa-university"></i> College name</label>
+        <select id="collegeName" required>
+          <option value="GIASE">GIASE</option>
+          <option value="Rama Devi CoE">Rama Devi CoE</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="age"><i class="fas fa-calendar-alt"></i> Age</label>
+          <input type="number" id="age" placeholder="e.g. 21" min="17" max="70" required>
+        </div>
+        <div class="field">
+          <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+          <select id="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="year"><i class="fas fa-layer-group"></i> Year</label>
+          <select id="year" required>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="eduQual"><i class="fas fa-graduation-cap"></i> Edn Qualification</label>
+          <select id="eduQual" required>
+            <option value="Graduation with B.Ed.">Graduation with B.Ed.</option>
+            <option value="P.G. with B.Ed.">P.G. with B.Ed.</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label><i class="fas fa-star"></i> Marks</label>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <div style="flex:1; min-width:140px;">
+            <input type="number" id="marksObtained" placeholder="Marks obtained" min="0" max="168" required>
+          </div>
+          <div class="max-badge"><i class="fas fa-bullseye"></i> Max 168</div>
+        </div>
+        <div style="font-size:0.75rem; color:#4d6a8a; margin-top:4px;"><i class="fas fa-info-circle"></i> 0 – 168</div>
+      </div>
+
+      <div class="action-bar">
+        <button type="submit" class="btn btn-success" id="storeBtn"><i class="fas fa-save"></i> Store Record</button>
+        <button type="reset" class="btn btn-outline" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ========== TABLE + EXPORT ========== -->
+  <div class="table-wrapper" id="tableWrapper">
+    <div class="table-header">
+      <h3><i class="fas fa-database" style="color: #1d4b7c;"></i> Stored Records</h3>
+      <span class="badge-count" id="recordCount">0 entries</span>
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>College</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Year</th>
+            <th>Edn Qualification</th>
+            <th>Max Marks</th>
+            <th>Marks</th>
+            <th style="text-align:center;">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr class="empty-row"><td colspan="10">No records stored yet. Fill the form and click “Store Record”.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- EXPORT ALL BUTTON (single place) -->
+    <div class="export-all-area">
+      <button class="btn" id="exportAllBtn"><i class="fas fa-file-excel"></i> Download All as Excel</button>
+      <button class="btn btn-outline" id="clearAllBtn"><i class="fas fa-trash-alt"></i> Clear All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- DOM refs -----
+    const form = document.getElementById('studentForm');
+    const nameInput = document.getElementById('studentName');
+    const collegeSelect = document.getElementById('collegeName');
+    const ageInput = document.getElementById('age');
+    const genderSelect = document.getElementById('gender');
+    const yearSelect = document.getElementById('year');
+    const eduSelect = document.getElementById('eduQual');
+    const marksInput = document.getElementById('marksObtained');
+    const tableBody = document.getElementById('tableBody');
+    const recordCountSpan = document.getElementById('recordCount');
+    const exportAllBtn = document.getElementById('exportAllBtn');
+    const clearAllBtn = document.getElementById('clearAllBtn');
+
+    // ----- STORE (array of objects) -----
+    let records = [];
+
+    // load from localStorage if available
+    function loadFromStorage() {
+      const stored = localStorage.getItem('studentRecords');
+      if (stored) {
+        try {
+          records = JSON.parse(stored);
+          if (!Array.isArray(records)) records = [];
+        } catch (e) { records = []; }
+      } else {
+        records = [];
+      }
+      renderTable();
+    }
+    function saveToStorage() {
+      localStorage.setItem('studentRecords', JSON.stringify(records));
+    }
+
+    // ----- render table -----
+    function renderTable() {
+      if (records.length === 0) {
+        tableBody.innerHTML = `<tr class="empty-row"><td colspan="10">No records stored yet. Fill the form and click “Store Record”.</td></tr>`;
+        recordCountSpan.textContent = '0 entries';
+        return;
+      }
+      let html = '';
+      records.forEach((rec, index) => {
+        html += `<tr>
+          <td>${index + 1}</td>
+          <td>${escapeHtml(rec.Name)}</td>
+          <td>${escapeHtml(rec.College)}</td>
+          <td>${rec.Age}</td>
+          <td>${escapeHtml(rec.Gender)}</td>
+          <td>${escapeHtml(rec.Year)}</td>
+          <td>${escapeHtml(rec['Edn Qualification'])}</td>
+          <td>${rec['Maximum Marks']}</td>
+          <td>${rec['Marks Obtained']}</td>
+          <td style="text-align:center;">
+            <button class="delete-btn" data-index="${index}" title="Delete record"><i class="fas fa-times-circle"></i></button>
+          </td>
+        </tr>`;
+      });
+      tableBody.innerHTML = html;
+      recordCountSpan.textContent = `${records.length} entries`;
+
+      // attach delete events
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const idx = parseInt(this.getAttribute('data-index'), 10);
+          if (!isNaN(idx) && confirm('Delete this record?')) {
+            records.splice(idx, 1);
+            saveToStorage();
+            renderTable();
+          }
+        });
+      });
+    }
+
+    // simple escape
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        if (m === '"') return '&quot;';
+        return m;
+      });
+    }
+
+    // ----- gather & validate form -----
+    function gatherFormData() {
+      const name = nameInput.value.trim();
+      const college = collegeSelect.value;
+      const age = ageInput.value.trim();
+      const gender = genderSelect.value;
+      const year = yearSelect.value;
+      const edu = eduSelect.value;
+      const marks = marksInput.value.trim();
+
+      if (!name) { alert('Please enter student name.'); nameInput.focus(); return null; }
+      if (!age) { alert('Please enter age.'); ageInput.focus(); return null; }
+      const ageNum = Number(age);
+      if (isNaN(ageNum) || ageNum < 17 || ageNum > 70) {
+        alert('Age must be between 17 and 70.'); ageInput.focus(); return null;
+      }
+      if (!marks) { alert('Please enter marks obtained.'); marksInput.focus(); return null; }
+      const marksNum = Number(marks);
+      if (isNaN(marksNum) || marksNum < 0 || marksNum > 168) {
+        alert('Marks must be between 0 and 168.'); marksInput.focus(); return null;
+      }
+
+      return {
+        Name: name,
+        College: college,
+        Age: ageNum,
+        Gender: gender,
+        Year: year,
+        'Edn Qualification': edu,
+        'Maximum Marks': 168,
+        'Marks Obtained': marksNum
+      };
+    }
+
+    // ----- store record (form submit) -----
+    function storeRecord(e) {
+      e.preventDefault();
+      const data = gatherFormData();
+      if (!data) return;
+
+      records.push(data);
+      saveToStorage();
+      renderTable();
+
+      // clear form (but keep selects default, reset)
+      form.reset();
+      // Reset also clears input fields, but we need to set marks max attr and placeholders.
+      // Already fine. Also clear any validation style.
+      nameInput.focus();
+    }
+
+    // ----- EXPORT ALL as Excel (single place) -----
+    function exportAllToExcel() {
+      if (records.length === 0) {
+        alert('No records to export. Add some student data first.');
+        return;
+      }
+
+      // Build array of arrays: header + rows
+      const headers = ['Name', 'College', 'Age', 'Gender', 'Year', 'Edn Qualification', 'Maximum Marks', 'Marks Obtained'];
+      const rows = records.map(rec => [
+        rec.Name, rec.College, rec.Age, rec.Gender, rec.Year,
+        rec['Edn Qualification'], rec['Maximum Marks'], rec['Marks Obtained']
+      ]);
+
+      const wsData = [headers, ...rows];
+      const wb = XLSX.utils.book_new();
+      const ws = XLSX.utils.aoa_to_sheet(wsData);
+      ws['!cols'] = headers.map(h => ({ wch: Math.max(h.length, 16) }));
+      XLSX.utils.book_append_sheet(wb, ws, 'Students');
+
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+      const filename = `all_students_${dateStr}.xlsx`;
+      XLSX.writeFile(wb, filename);
+    }
+
+    // ----- clear all records -----
+    function clearAllRecords() {
+      if (records.length === 0) return;
+      if (confirm('Delete all stored records permanently?')) {
+        records = [];
+        saveToStorage();
+        renderTable();
+      }
+    }
+
+    // ----- event binding -----
+    form.addEventListener('submit', storeRecord);
+
+    // reset button: just reset form fields
+    document.getElementById('resetBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      form.reset();
+    });
+
+    exportAllBtn.addEventListener('click', exportAllToExcel);
+    clearAllBtn.addEventListener('click', clearAllRecords);
+
+    // load from storage on page load
+    loadFromStorage();
+
+    // Additional: set max attribute on marks
+    marksInput.setAttribute('max', '168');
+    marksInput.setAttribute('min', '0');
+
+    console.log('Student store ready. Records loaded:', records.length);
+  })();
+</script>
+</body>
+</html>
