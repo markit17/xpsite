@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India's Educational Commissions &amp; Committees</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3c5e;
+            --primary-light: #2a5a7a;
+            --primary-dark: #0f283d;
+            --accent: #c9a961;
+            --accent-light: #e8d5a8;
+            --bg: #f4f7fb;
+            --card-bg: #ffffff;
+            --text: #1e2a3a;
+            --text-light: #4a5a6e;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.14);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0 20px 60px;
+        }
+
+        /* ---------- CONTAINER ---------- */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+            color: #fff;
+            padding: 50px 40px 40px;
+            border-radius: var(--radius);
+            margin: 30px 0 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(26, 60, 94, 0.25);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(201, 169, 97, 0.08);
+            pointer-events: none;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(201, 169, 97, 0.05);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(201, 169, 97, 0.25);
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .header h1 span {
+            color: var(--accent-light);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 680px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .header-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px 50px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .header-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .header-stats .stat i {
+            color: var(--accent-light);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .header-stats .stat strong {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+
+        /* ---------- SEARCH & FILTER ---------- */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 20px;
+            margin-bottom: 36px;
+            background: var(--card-bg);
+            padding: 18px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1 1 280px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg);
+            padding: 0 16px;
+            border-radius: var(--radius-sm);
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .search-box:focus-within {
+            border-color: var(--accent);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.15);
+        }
+
+        .search-box i {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 12px 0;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            outline: none;
+            color: var(--text);
+        }
+
+        .search-box input::placeholder {
+            color: #a0aec0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid #e2e8f0;
+            background: transparent;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .filter-btn.active:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-left: auto;
+            font-weight: 500;
+        }
+
+        .results-count strong {
+            color: var(--text);
+        }
+
+        /* ---------- SECTION TITLES ---------- */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid var(--accent-light);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 1.6rem;
+        }
+
+        .section-title .count-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: var(--primary);
+            color: #fff;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+
+        /* ---------- CARD GRID ---------- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* ---------- CARD ---------- */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px 26px 26px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+            border-color: rgba(201, 169, 97, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card.hidden {
+            display: none;
+        }
+
+        .card-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(201, 169, 97, 0.12);
+            padding: 2px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            width: fit-content;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .card .subhead {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--primary-light);
+            margin-bottom: 12px;
+        }
+
+        .card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .card .meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card .meta i {
+            color: var(--accent);
+            width: 16px;
+            font-size: 0.85rem;
+        }
+
+        .card .purpose {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .card .purpose strong {
+            color: var(--primary);
+        }
+
+        .card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .card .tags .tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 3px 12px;
+            border-radius: 20px;
+            background: #edf2f7;
+            color: var(--text-light);
+        }
+
+        .card .tags .tag.pre {
+            background: #e8d5a8;
+            color: #5a4a2a;
+        }
+
+        .card .tags .tag.post {
+            background: #b8d4e3;
+            color: #1a3c5e;
+        }
+
+        /* ---------- NO RESULTS ---------- */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #cbd5e0;
+            margin-bottom: 16px;
+        }
+
+        .no-results h3 {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 20px 10px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 12px 40px;
+            }
+
+            .header {
+                padding: 32px 20px 28px;
+                margin: 16px 0 28px;
+                border-radius: var(--radius-sm);
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .header-stats {
+                gap: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .controls {
+                flex-direction: column;
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .filter-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .results-count {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-top: 32px;
+            }
+
+            .section-title .count-badge {
+                font-size: 0.75rem;
+                padding: 0 12px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .filter-btn {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+            }
+        }
+
+        /* ---------- SCROLLBAR ---------- */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ========== HEADER ========== -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-badge">
+                    <i class="fas fa-graduation-cap" style="margin-right: 6px;"></i> Comprehensive Archive
+                </div>
+                <h1>India's Educational <br /><span>Commissions &amp; Committees</span></h1>
+                <p>
+                    A complete, research-backed record of every major commission, committee,
+                    and policy that shaped the Indian education system — from 1835 to 2020.
+                </p>
+                <div class="header-stats">
+                    <span class="stat">
+                        <i class="fas fa-book-open"></i>
+                        <strong>32</strong> Reports &amp; Policies
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-calendar-alt"></i>
+                        <strong>1835 – 2020</strong> Span
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-flag"></i>
+                        <strong>11</strong> Pre‑Independence
+                    </span>
+                    <span class="stat">
+                        <i class="fas fa-flag-checkered"></i>
+                        <strong>21</strong> Post‑Independence
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== CONTROLS ========== -->
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by name, chairperson, or keyword…" />
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pre">Pre‑Independence</button>
+                <button class="filter-btn" data-filter="post">Post‑Independence</button>
+            </div>
+            <div class="results-count">
+                Showing <strong id="visibleCount">0</strong> of <strong id="totalCount">0</strong>
+            </div>
+        </div>
+
+        <!-- ========== PRE-INDEPENDENCE ========== -->
+        <h2 class="section-title" id="pre-section">
+            <i class="fas fa-flag"></i> Pre‑Independence
+            <span class="count-badge" id="preCount">0</span>
+        </h2>
+        <div class="card-grid" id="preGrid"></div>
+
+        <!-- ========== POST-INDEPENDENCE ========== -->
+        <h2 class="section-title" id="post-section">
+            <i class="fas fa-flag-checkered"></i> Post‑Independence
+            <span class="count-badge" id="postCount">0</span>
+        </h2>
+        <div class="card-grid" id="postGrid"></div>
+
+        <!-- ========== NO RESULTS ========== -->
+        <div class="no-results" id="noResults">
+            <i class="fas fa-search-minus"></i>
+            <h3>No matching commissions found</h3>
+            <p>Try adjusting your search or filter.</p>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <p>
+                <i class="fas fa-landmark" style="color: var(--accent);"></i>
+                A comprehensive reference for researchers, educators, and students.
+                <br />
+                Data compiled from academic records &bull;
+                <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+                    <i class="fas fa-arrow-up"></i> Back to top
+                </a>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ========== DATA ============================================== -->
+    <!-- ============================================================ -->
+    <script>
+        // --------------------------------------------------------------
+        // 1. DATA — exactly as provided, with era & id
+        // --------------------------------------------------------------
+        const commissions = [{
+            id: 1,
+            era: 'pre',
+            name: "Macaulay's Minute on Education",
+            year: "1835 (February 2)",
+            headedBy: "Thomas Babington Macaulay",
+            location: "Calcutta",
+            purpose: "This pivotal document settled the Orientalist-Anglicist debate in favor of English education. Its goal was to create a class of Indians who were 'Indian in blood and colour, but English in taste'. It laid the foundation for Western-style education in India."
+        }, {
+            id: 2,
+            era: 'pre',
+            name: "Wood's Despatch / Magna Carta of Indian Education",
+            year: "1854 (July 19)",
+            headedBy: "Sir Charles Wood",
+            location: "London (British Parliament)",
+            purpose: "The first comprehensive and systematic policy on education by the British Crown. It recommended establishing Education Departments in every province, a graded system of schools and affiliating universities, the grant-in-aid system, and advocated for female education."
+        }, {
+            id: 3,
+            era: 'pre',
+            name: "Hunter Commission / Indian Education Commission",
+            year: "1882–83",
+            headedBy: "Sir William Wilson Hunter",
+            location: "All over India",
+            purpose: "Appointed by Lord Ripon, this was the first education commission in modern India. It focused on primary education and recommended transferring its control to local bodies, leaving secondary education to private enterprise via grants-in-aid, and advocating for trained teachers."
+        }, {
+            id: 4,
+            era: 'pre',
+            name: "Indian Universities Commission / Raleigh Commission",
+            year: "1902",
+            headedBy: "Sir Thomas Raleigh",
+            location: "Shimla (and visited major cities)",
+            purpose: "Appointed by Lord Curzon, it was tasked with investigating the conditions of Indian universities. It recommended restricting university jurisdiction to advanced courses, reforming the constitution of university Senates and Syndicates, and tightening control over affiliated colleges."
+        }, {
+            id: 5,
+            era: 'pre',
+            name: "Government Resolution on Educational Policy",
+            year: "1913",
+            headedBy: "Government of India",
+            location: "New Delhi",
+            purpose: "A policy resolution that further shaped the educational direction of the country in the pre-independence era."
+        }, {
+            id: 6,
+            era: 'pre',
+            name: "Calcutta University Commission / Sadler Commission",
+            year: "1917–19",
+            headedBy: "Dr. Michael E. Sadler",
+            location: "Calcutta",
+            purpose: "Appointed to investigate problems of Calcutta University. It recommended establishing Intermediate Colleges, introducing a 3-year degree course, establishing a Board of Secondary and Intermediate Education, and restructuring Calcutta University as a teaching university."
+        }, {
+            id: 7,
+            era: 'pre',
+            name: "Hartog Committee / Auxiliary Committee on Education",
+            year: "1928–29",
+            headedBy: "Sir Philip Joseph Hartog",
+            location: "All over India",
+            purpose: "Appointed as an auxiliary committee to the Simon Commission. It found the state of mass education unsatisfactory and observed that rapid expansion had led to a deterioration in quality. It emphasized 'consolidation and improvement' over mere quantitative expansion."
+        }, {
+            id: 8,
+            era: 'pre',
+            name: "Sapru Committee",
+            year: "1934",
+            headedBy: "Sir Tej Bahadur Sapru",
+            location: "India",
+            purpose: "A committee that contributed to the educational discourse of the time."
+        }, {
+            id: 9,
+            era: 'pre',
+            name: "Abbot-Wood Report",
+            year: "1936–37",
+            headedBy: "Abbot and Wood",
+            location: "India",
+            purpose: "A significant report on education during the pre-independence period."
+        }, {
+            id: 10,
+            era: 'pre',
+            name: "Wardha Education Scheme / Zakir Hussain Committee",
+            year: "1937",
+            headedBy: "Dr. Zakir Hussain",
+            location: "Wardha, Maharashtra",
+            purpose: "This scheme was a major initiative for basic education, rooted in Gandhian philosophy. It emphasized free and compulsory education, education through a craft, and the development of the whole personality."
+        }, {
+            id: 11,
+            era: 'pre',
+            name: "Wardha Education Committee of the CABE / B. G. Kher Committee",
+            year: "1939",
+            headedBy: "B. G. Kher",
+            location: "India",
+            purpose: "A committee of the Central Advisory Board of Education (CABE) that further discussed and refined the Wardha Scheme."
+        }, {
+            id: 12,
+            era: 'pre',
+            name: "Sargent Scheme / Sargent Commission Report",
+            year: "1944",
+            headedBy: "John Sargent",
+            location: "New Delhi (submitted to CABE)",
+            purpose: "A comprehensive plan for post-war educational development. It recommended free and compulsory education for children aged 6–11, aimed to achieve universal literacy in 40 years, and proposed a system of primary and secondary schools."
+        }, {
+            id: 13,
+            era: 'post',
+            name: "CABE – 14th Meeting",
+            year: "1948",
+            headedBy: "Maulana Abul Kalam Azad (as Education Minister)",
+            location: "New Delhi",
+            purpose: "In its 14th meeting, the CABE reflected upon secondary education and put forth the suggestion for appointing a commission to evaluate it and suggest solutions. This led to the appointment of the Secondary Education Commission."
+        }, {
+            id: 14,
+            era: 'post',
+            name: "University Education Commission / Radhakrishnan Commission",
+            year: "1948–49",
+            headedBy: "Dr. Sarvepalli Radhakrishnan",
+            location: "New Delhi",
+            purpose: "The first education commission appointed after independence. It was tasked with reporting on Indian university education and suggesting improvements. It emphasized teacher education, recommended establishing the University Grants Commission (UGC), proposed the Three-Language Formula, and stressed character formation."
+        }, {
+            id: 15,
+            era: 'post',
+            name: "Secondary Education Commission / Mudaliar Commission",
+            year: "1952–53",
+            headedBy: "Dr. A. Lakshmanaswami Mudaliar",
+            location: "New Delhi",
+            purpose: "Appointed to evaluate secondary education and suggest improvements. It recommended diversification of the curriculum, all-round development of the child, and stressed equality of opportunity, with special schemes for girls, Scheduled Castes, and Scheduled Tribes."
+        }, {
+            id: 16,
+            era: 'post',
+            name: "Committee on Higher Education for Rural Areas / Shrimali Committee",
+            year: "1954",
+            headedBy: "Shri K. L. Shrimali",
+            location: "India",
+            purpose: "Focused on improving higher education in rural areas."
+        }, {
+            id: 17,
+            era: 'post',
+            name: "National Committee on Women's Education / Shrimali-Durgabai Deshmukh Committee",
+            year: "1958",
+            headedBy: "Shrimali and Durgabai Deshmukh",
+            location: "India",
+            purpose: "A committee dedicated to promoting and enhancing women's education in India."
+        }, {
+            id: 18,
+            era: 'post',
+            name: "UGC's Review Committee on Education / Prof. K.G. Saiyidian Committee",
+            year: "1960",
+            headedBy: "Prof. K.G. Saiyidian",
+            location: "India",
+            purpose: "A review committee on education under the aegis of the UGC."
+        }, {
+            id: 19,
+            era: 'post',
+            name: "U. N. Dhebar Commission",
+            year: "1960",
+            headedBy: "U. N. Dhebar",
+            location: "India",
+            purpose: "A commission that contributed to educational policy."
+        }, {
+            id: 20,
+            era: 'post',
+            name: "Committee on Emotional Integration / Dr. Sampurnanand Committee",
+            year: "1961",
+            headedBy: "Dr. Sampurnanand",
+            location: "India",
+            purpose: "Focused on promoting emotional and national integration through education."
+        }, {
+            id: 21,
+            era: 'post',
+            name: "Committee on Plan Projects: Study Team for Selected Educational Schemes / Shri B. N. Jha Committee",
+            year: "1961",
+            headedBy: "Shri B. N. Jha",
+            location: "India",
+            purpose: "A study team to review selected educational schemes."
+        }, {
+            id: 22,
+            era: 'post',
+            name: "Study Group on the Training of Elementary Teachers in India",
+            year: "1961",
+            headedBy: "Various experts",
+            location: "India",
+            purpose: "Focused on the training of elementary school teachers."
+        }, {
+            id: 23,
+            era: 'post',
+            name: "Kothari Committee on Model Act for Universities",
+            year: "1961",
+            headedBy: "D.S. Kothari (Chairman of UGC)",
+            location: "India",
+            purpose: "A committee to create a model act for the governance of universities."
+        }, {
+            id: 24,
+            era: 'post',
+            name: "UGC's Committee on Education as an Elective Subject / Mr. A. R. Wadia Committee",
+            year: "1963",
+            headedBy: "Mr. A. R. Wadia",
+            location: "India",
+            purpose: "Focused on including education as an elective subject at the undergraduate stage."
+        }, {
+            id: 25,
+            era: 'post',
+            name: "Study Group on the Study of English in India / Prof. Gokak Committee",
+            year: "1964",
+            headedBy: "Prof. Gokak",
+            location: "India",
+            purpose: "A study group dedicated to examining the role and study of English in India."
+        }, {
+            id: 26,
+            era: 'post',
+            name: "Education Commission / Kothari Commission / National Education Commission",
+            year: "1964–66",
+            headedBy: "Daulat Singh Kothari (then Chairman of the UGC)",
+            location: "New Delhi",
+            purpose: "The most comprehensive education commission in India's history. It recommended the 10+2+3 educational structure nationwide, vocational and technical education, the Three-Language Formula, free and compulsory education up to age 14, and the creation of Indian Educational Services."
+        }, {
+            id: 27,
+            era: 'post',
+            name: "Committee of Members of Parliament on Education",
+            year: "1967",
+            headedBy: "Members of Parliament",
+            location: "New Delhi",
+            purpose: "A parliamentary committee to review educational matters."
+        }, {
+            id: 28,
+            era: 'post',
+            name: "National Policy on Education (NPE) – 1968",
+            year: "1968",
+            headedBy: "Government of Prime Minister Indira Gandhi",
+            location: "New Delhi",
+            purpose: "India's first National Policy on Education, based largely on the Kothari Commission's recommendations. It called for a 'radical restructuring' of education and endorsed the Three-Language Formula."
+        }, {
+            id: 29,
+            era: 'post',
+            name: "Review Committee on the Working of NCERT / Dr. Nag Chaudhuri Committee",
+            year: "1968",
+            headedBy: "Dr. Nag Chaudhuri",
+            location: "India",
+            purpose: "A review committee on the working of the National Council of Educational Research and Training (NCERT)."
+        }, {
+            id: 30,
+            era: 'post',
+            name: "Study Group on the Development of Pre-school Child / Shrimati Mina Swaminathan Committee",
+            year: "1970",
+            headedBy: "Shrimati Mina Swaminathan",
+            location: "India",
+            purpose: "Focused on the development and education of pre-school children."
+        }, {
+            id: 31,
+            era: 'post',
+            name: "Gajendragadkar Committee on Governance of Universities and Colleges",
+            year: "1971",
+            headedBy: "P. B. Gajendragadkar",
+            location: "India",
+            purpose: "A committee to study and suggest improvements in the governance of universities and colleges."
+        }, {
+            id: 32,
+            era: 'post',
+            name: "National Committee on 10+2+3 Educational Structure / Dr. Shukla Committee",
+            year: "1972",
+            headedBy: "Dr. Shukla",
+            location: "India",
+            purpose: "A committee to implement the 10+2+3 educational structure recommended by the Kothari Commission."
+        }, {
+            id: 33,
+            era: 'post',
+            name: "Committee on Secondary Teacher Education of NCTE / Dr. Jha Committee",
+            year: "1973–77",
+            headedBy: "Dr. Jha",
+            location: "India",
+            purpose: "A committee focused on secondary teacher education under the National Council for Teacher Education (NCTE)."
+        }, {
+            id: 34,
+            era: 'post',
+            name: "Committee on Elementary Teacher Education of NCTE / Dr. Malcolm S. Adiseshaiah Committee",
+            year: "1975",
+            headedBy: "Dr. Malcolm S. Adiseshaiah",
+            location: "India",
+            purpose: "Focused on elementary teacher education under the NCTE."
+        }, {
+            id: 35,
+            era: 'post',
+            name: "The Curriculum for Ten-Year School: A Framework",
+            year: "1975",
+            headedBy: "Various experts",
+            location: "India",
+            purpose: "A framework for the curriculum of the ten-year school."
+        }, {
+            id: 36,
+            era: 'post',
+            name: "Review Committee on the Curriculum for Ten-Year School / Shri Ishwarbhai Patel Committee",
+            year: "1977",
+            headedBy: "Shri Ishwarbhai Patel",
+            location: "India",
+            purpose: "A review committee on the curriculum for the ten-year school."
+        }, {
+            id: 37,
+            era: 'post',
+            name: "National Policy on Education (NPE) – 1986",
+            year: "1986",
+            headedBy: "Government of Prime Minister Rajiv Gandhi",
+            location: "New Delhi",
+            purpose: "India's second National Policy on Education. It emphasized Human Resource Development, aimed to remove social disparities by prioritizing education for women and marginalized communities, and stressed universalisation of elementary education."
+        }, {
+            id: 38,
+            era: 'post',
+            name: "Ramamurti Review Committee (to review NPE 1986)",
+            year: "1990",
+            headedBy: "Acharya Ramamurti",
+            location: "New Delhi",
+            purpose: "Appointed to review the implementation of the 1986 NPE and suggest modifications. Its recommendations were later incorporated into the revised NPE in 1992."
+        }, {
+            id: 39,
+            era: 'post',
+            name: "Janardhan Reddy Committee Report",
+            year: "1992",
+            headedBy: "Janardhan Reddy",
+            location: "New Delhi",
+            purpose: "A committee that contributed to educational policy and reform."
+        }, {
+            id: 40,
+            era: 'post',
+            name: "National Policy on Education (NPE) – Revised 1992",
+            year: "1992",
+            headedBy: "Government of Prime Minister P.V. Narasimha Rao",
+            location: "New Delhi",
+            purpose: "The revised version of the 1986 NPE, incorporating recommendations from the Ramamurti Review Committee. It also revised the Programme of Action (PoA)."
+        }, {
+            id: 41,
+            era: 'post',
+            name: "Yashpal Committee / National Advisory Committee",
+            year: "1993",
+            headedBy: "Prof. Yash Pal",
+            location: "New Delhi",
+            purpose: "Formed to advise on improving the quality of learning while reducing the burden on school students. Its report, 'Learning Without Burden', criticized the rigid educational system that stifles children's creativity."
+        }, {
+            id: 42,
+            era: 'post',
+            name: "National Knowledge Commission (NKC)",
+            year: "2005",
+            headedBy: "Sam Pitroda (Chairman)",
+            location: "New Delhi",
+            purpose: "Established as a think-tank and advisory body to the Prime Minister on knowledge infrastructure. It made far-reaching recommendations on school education, higher education, vocational training, libraries, and e-governance."
+        }, {
+            id: 43,
+            era: 'post',
+            name: "Recommendations of Justice J.S. Verma Commission (JVC) on Teacher Education",
+            year: "2012",
+            headedBy: "Justice J.S. Verma",
+            location: "New Delhi",
+            purpose: "A commission that made comprehensive recommendations on the reform of teacher education in India."
+        }, {
+            id: 44,
+            era: 'post',
+            name: "National Education Policy (NEP) 2020",
+            year: "2020",
+            headedBy: "Government of Prime Minister Narendra Modi",
+            location: "New Delhi",
+            purpose: "The latest and most comprehensive education policy, replacing the NPE 1986. It introduces a 5+3+3+4 structure, emphasizes foundational literacy and numeracy, promotes multidisciplinary education, and aims to increase the Gross Enrolment Ratio in higher education to 50% by 2035."
+        }];
+
+        // --------------------------------------------------------------
+        // 2. RENDER
+        // --------------------------------------------------------------
+        const preGrid = document.getElementById('preGrid');
+        const postGrid = document.getElementById('postGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const visibleCount = document.getElementById('visibleCount');
+        const totalCount = document.getElementById('totalCount');
+        const noResults = document.getElementById('noResults');
+        const preCountEl = document.getElementById('preCount');
+        const postCountEl = document.getElementById('postCount');
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+
+        function buildCard(item, index) {
+            const eraLabel = item.era === 'pre' ? 'Pre‑Independence' : 'Post‑Independence';
+            const eraClass = item.era === 'pre' ? 'pre' : 'post';
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.dataset.era = item.era;
+            card.dataset.id = item.id;
+
+            // Build purpose with bold keywords
+            let purposeHtml = item.purpose;
+
+            card.innerHTML = `
+                <span class="card-number">#${item.id} · ${eraLabel}</span>
+                <h3>${item.name}</h3>
+                <div class="subhead">${item.headedBy}</div>
+                <div class="meta">
+                    <span><i class="fas fa-calendar-alt"></i> ${item.year}</span>
+                    <span><i class="fas fa-map-marker-alt"></i> ${item.location}</span>
+                </div>
+                <div class="purpose">${purposeHtml}</div>
+                <div class="tags">
+                    <span class="tag ${eraClass}">${eraLabel}</span>
+                    ${item.year ? `<span class="tag">${item.year}</span>` : ''}
+                </div>
+            `;
+            return card;
+        }
+
+        function render() {
+            // Filter
+            let filtered = commissions.filter(c => {
+                const eraMatch = currentFilter === 'all' || c.era === currentFilter;
+                const term = searchTerm.toLowerCase().trim();
+                let searchMatch = true;
+                if (term) {
+                    const haystack = `${c.name} ${c.headedBy} ${c.location} ${c.purpose} ${c.year}`.toLowerCase();
+                    searchMatch = haystack.includes(term);
+                }
+                return eraMatch && searchMatch;
+            });
+
+            // Split by era
+            const pre = filtered.filter(c => c.era === 'pre');
+            const post = filtered.filter(c => c.era === 'post');
+
+            // Update counts
+            preCountEl.textContent = pre.length;
+            postCountEl.textContent = post.length;
+            totalCount.textContent = commissions.length;
+            visibleCount.textContent = filtered.length;
+
+            // Show/hide no results
+            if (filtered.length === 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+
+            // Render pre
+            preGrid.innerHTML = '';
+            pre.forEach((item, idx) => {
+                preGrid.appendChild(buildCard(item, idx));
+            });
+
+            // Render post
+            postGrid.innerHTML = '';
+            post.forEach((item, idx) => {
+                postGrid.appendChild(buildCard(item, idx));
+            });
+
+            // Show/hide section titles based on counts
+            document.getElementById('pre-section').style.display = pre.length === 0 ? 'none' : 'flex';
+            document.getElementById('post-section').style.display = post.length === 0 ? 'none' : 'flex';
+        }
+
+        // --------------------------------------------------------------
+        // 3. EVENT LISTENERS
+        // --------------------------------------------------------------
+        searchInput.addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            render();
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                render();
+            });
+        });
+
+        // --------------------------------------------------------------
+        // 4. INITIAL RENDER
+        // --------------------------------------------------------------
+        render();
+
+        // Also re-render on window resize (for safety, but not needed)
+        console.log('✅ India’s Educational Commissions & Committees — loaded successfully.');
+        console.log(`📚 Total: ${commissions.length} entries.`);
+    </script>
+
+</body>
+</html>
