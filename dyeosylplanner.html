@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TGPSC DyEO 2026 — Syllabus & Study Planner</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<style>
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .marquee {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  select.planner-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    appearance: none;
+    padding-right: 2rem;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    transform: translateX(120%);
+    transition: transform 0.4s ease;
+    z-index: 100;
+  }
+  .toast.show { transform: translateX(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-gray-50 text-black">
+
+<!-- STICKY NAV -->
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-md flex items-center justify-center font-bold text-white bg-blue-600">
+        T
+      </div>
+      <div>
+        <div class="font-bold text-lg leading-tight text-black">TGPSC · DyEO 2026</div>
+        <div class="text-xs text-black">Syllabus & Study Planner</div>
+      </div>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-black">
+      <a href="#scheme" class="hover:text-blue-600 transition">Scheme</a>
+      <a href="#paper1" class="hover:text-blue-600 transition">Paper I</a>
+      <a href="#paper2a" class="hover:text-blue-600 transition">Paper II-A</a>
+      <a href="#paper2b" class="hover:text-blue-600 transition">Paper II-B</a>
+      <a href="#planner" class="hover:text-blue-600 transition">Planner</a>
+    </div>
+    <a href="#planner" class="px-4 py-2 rounded-md text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition">
+      Start Planning
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="bg-blue-700 text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 py-20 md:py-24 relative">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="h-px w-12 bg-blue-300"></div>
+      <span class="text-xs uppercase tracking-[0.3em] font-semibold text-blue-200">Annexure-II · Notification 03/G/SE/2026</span>
+    </div>
+
+    <h1 class="font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-6">
+      Deputy Educational<br/>
+      Officers & Gazetted<br/>
+      Head Master Grade-I
+    </h1>
+
+    <p class="max-w-2xl text-lg md:text-xl mb-12 leading-relaxed text-blue-100">
+      A complete walkthrough of the Scheme & Syllabus (Pages 15–17) and a personal study planner to pace your preparation toward the October 2026 examination.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="bg-white/10 border border-white/20 p-5 rounded-lg">
+        <div class="text-xs uppercase tracking-wider mb-1 text-blue-200">Total Marks</div>
+        <div class="font-black text-4xl">450</div>
+      </div>
+      <div class="bg-white/10 border border-white/20 p-5 rounded-lg">
+        <div class="text-xs uppercase tracking-wider mb-1 text-blue-200">Questions</div>
+        <div class="font-black text-4xl">300</div>
+      </div>
+      <div class="bg-white/10 border border-white/20 p-5 rounded-lg">
+        <div class="text-xs uppercase tracking-wider mb-1 text-blue-200">Duration</div>
+        <div class="font-black text-4xl">300<span class="text-lg ml-1 opacity-60">min</span></div>
+      </div>
+      <div class="bg-white/10 border border-white/20 p-5 rounded-lg">
+        <div class="text-xs uppercase tracking-wider mb-1 text-blue-200">Papers</div>
+        <div class="font-black text-4xl">3<span class="text-lg ml-1 opacity-60">parts</span></div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-8 pt-8 border-t border-blue-500/30">
+      <div>
+        <div class="text-xs uppercase tracking-wider mb-2 text-blue-200">Tentative Examination</div>
+        <div class="text-2xl font-bold">October 2026</div>
+      </div>
+      <div class="h-12 w-px bg-blue-500/30"></div>
+      <div class="flex gap-6" id="countdown">
+        <div>
+          <div class="font-black text-4xl md:text-5xl tabular-nums" id="cd-days">—</div>
+          <div class="text-xs uppercase tracking-wider mt-1 text-blue-200">Days</div>
+        </div>
+        <div>
+          <div class="font-black text-4xl md:text-5xl tabular-nums" id="cd-hours">—</div>
+          <div class="text-xs uppercase tracking-wider mt-1 text-blue-200">Hours</div>
+        </div>
+        <div>
+          <div class="font-black text-4xl md:text-5xl tabular-nums" id="cd-mins">—</div>
+          <div class="text-xs uppercase tracking-wider mt-1 text-blue-200">Minutes</div>
+        </div>
+        <div>
+          <div class="font-black text-4xl md:text-5xl tabular-nums" id="cd-secs">—</div>
+          <div class="text-xs uppercase tracking-wider mt-1 text-blue-200">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="py-4 overflow-hidden border-y bg-gray-100 text-black border-gray-200">
+  <div class="marquee font-medium text-base">
+    <span>General Studies</span><span>•</span>
+    <span>General Abilities</span><span>•</span>
+    <span>Basic Foundations of Education</span><span>•</span>
+    <span>Educational Leadership</span><span>•</span>
+    <span>Administration & Management</span><span>•</span>
+    <span>General Studies</span><span>•</span>
+    <span>General Abilities</span><span>•</span>
+    <span>Basic Foundations of Education</span><span>•</span>
+    <span>Educational Leadership</span><span>•</span>
+    <span>Administration & Management</span><span>•</span>
+  </div>
+</div>
+
+<!-- SCHEME OF EXAM -->
+<section id="scheme" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+  <div class="mb-10">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="h-1 w-12 bg-blue-600"></div>
+      <span class="text-xs uppercase tracking-[0.3em] font-semibold text-blue-600">Annexure-II</span>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-black mb-4 text-black">
+      Scheme of Examination
+    </h2>
+    <p class="text-lg max-w-2xl text-black">Written Examination (Objective Type) · Bilingual: English and Telugu</p>
+  </div>
+
+  <div class="grid lg:grid-cols-3 gap-6">
+    <!-- Paper I -->
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-red-600">Paper I</div>
+          <h3 class="font-bold text-xl leading-tight text-black">General Studies & General Abilities</h3>
+        </div>
+        <div class="w-10 h-10 rounded-md flex items-center justify-center flex-shrink-0 text-white bg-red-600">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+      </div>
+      <div class="space-y-3 mb-6">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Questions</span>
+          <span class="font-bold text-xl text-black">150</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Maximum Marks</span>
+          <span class="font-bold text-xl text-black">150</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-black">Duration</span>
+          <span class="font-bold text-xl text-black">150<span class="text-sm font-normal ml-1 text-black">min</span></span>
+        </div>
+      </div>
+      <div class="text-xs px-3 py-2 rounded font-medium bg-red-50 text-red-700">
+        Bilingual · English & Telugu
+      </div>
+    </div>
+
+    <!-- Paper II Part A -->
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-green-600">Paper II · Part A</div>
+          <h3 class="font-bold text-xl leading-tight text-black">Basic Foundations of Education</h3>
+        </div>
+        <div class="w-10 h-10 rounded-md flex items-center justify-center flex-shrink-0 text-white bg-green-600">
+          <i data-lucide="layers" class="w-5 h-5"></i>
+        </div>
+      </div>
+      <div class="space-y-3 mb-6">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Questions</span>
+          <span class="font-bold text-xl text-black">75</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Maximum Marks</span>
+          <span class="font-bold text-xl text-black">150</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-black">Duration</span>
+          <span class="font-bold text-xl text-black">75<span class="text-sm font-normal ml-1 text-black">min</span></span>
+        </div>
+      </div>
+      <div class="text-xs px-3 py-2 rounded font-medium bg-green-50 text-green-700">
+        7 Major Themes · Foundational
+      </div>
+    </div>
+
+    <!-- Paper II Part B -->
+    <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <div class="text-xs uppercase tracking-wider font-semibold mb-2 text-blue-600">Paper II · Part B</div>
+          <h3 class="font-bold text-xl leading-tight text-black">Educational Leadership, Administration & Management</h3>
+        </div>
+        <div class="w-10 h-10 rounded-md flex items-center justify-center flex-shrink-0 text-white bg-blue-600">
+          <i data-lucide="compass" class="w-5 h-5"></i>
+        </div>
+      </div>
+      <div class="space-y-3 mb-6">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Questions</span>
+          <span class="font-bold text-xl text-black">75</span>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+          <span class="text-sm text-black">Maximum Marks</span>
+          <span class="font-bold text-xl text-black">150</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm text-black">Duration</span>
+          <span class="font-bold text-xl text-black">75<span class="text-sm font-normal ml-1 text-black">min</span></span>
+        </div>
+      </div>
+      <div class="text-xs px-3 py-2 rounded font-medium bg-blue-50 text-blue-700">
+        7 Major Themes · Administrative
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8 p-6 rounded-lg flex flex-wrap items-center justify-between gap-4 text-white bg-gray-900">
+    <div class="flex items-center gap-4">
+      <i data-lucide="award" class="w-8 h-8 text-white"></i>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-gray-400">Grand Total</div>
+        <div class="font-bold text-xl">300 Questions · 450 Marks · 300 Minutes</div>
+      </div>
+    </div>
+    <div class="text-sm text-gray-400">Qualifying: OC/EWS/Sports 40% · BCs 35% · SC/ST/PH 30%</div>
+  </div>
+</section>
+
+<!-- PAPER I SYLLABUS -->
+<section id="paper1" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="h-1 w-12 bg-red-600"></div>
+      <span class="text-xs uppercase tracking-[0.3em] font-semibold text-red-600">Paper I · 150 Marks</span>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-black mb-4 text-black">
+      General Studies & General Abilities
+    </h2>
+    <p class="text-lg max-w-2xl text-black">Fifteen topical domains spanning current affairs, history, geography, polity, reasoning, and basic English — the foundation of every DyEO aspirant's preparation. Click any topic to add it to your planner.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-3" id="paper1-topics"></div>
+</section>
+
+<!-- PAPER II PART A -->
+<section id="paper2a" class="py-16 md:py-24 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="h-1 w-12 bg-green-600"></div>
+        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-green-600">Paper II · Part A · 150 Marks</span>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black mb-4 text-black">
+        Basic Foundations of Education
+      </h2>
+      <p class="text-lg max-w-2xl text-black">Seven foundational themes covering philosophy, sociology, psychology, pedagogy, and the historical evolution of educational thought in India.</p>
+    </div>
+
+    <div class="space-y-4" id="paper2a-sections"></div>
+  </div>
+</section>
+
+<!-- PAPER II PART B -->
+<section id="paper2b" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+  <div class="mb-12">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="h-1 w-12 bg-blue-600"></div>
+      <span class="text-xs uppercase tracking-[0.3em] font-semibold text-blue-600">Paper II · Part B · 150 Marks</span>
+    </div>
+    <h2 class="text-4xl md:text-5xl font-black mb-4 text-black">
+      Educational Leadership, Administration & Management
+    </h2>
+    <p class="text-lg max-w-2xl text-black">Seven administrative themes spanning school management, leadership theory, decentralised governance, finance, human resources, and policy frameworks.</p>
+  </div>
+
+  <div class="space-y-4" id="paper2b-sections"></div>
+</section>
+
+<!-- STUDY PLANNER -->
+<section id="planner" class="py-20 md:py-24 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-12 text-center">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="h-1 w-12 bg-blue-600"></div>
+        <span class="text-xs uppercase tracking-[0.3em] font-semibold text-blue-600">Your Personal Companion</span>
+        <div class="h-1 w-12 bg-blue-600"></div>
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black mb-4 text-black">
+        Study Planner
+      </h2>
+      <p class="text-lg max-w-2xl mx-auto text-black">Plan tasks across all three papers, schedule them on a weekly calendar, and track your progress toward October 2026.</p>
+    </div>
+
+    <!-- Dashboard stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="text-xs uppercase tracking-wider mb-2 font-medium text-black">Total Tasks</div>
+        <div class="font-black text-3xl text-black" id="stat-total">0</div>
+      </div>
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="text-xs uppercase tracking-wider mb-2 font-medium text-black">Completed</div>
+        <div class="font-black text-3xl text-green-600" id="stat-done">0</div>
+      </div>
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="text-xs uppercase tracking-wider mb-2 font-medium text-black">Hours Planned</div>
+        <div class="font-black text-3xl text-black" id="stat-hours">0</div>
+      </div>
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="text-xs uppercase tracking-wider mb-2 font-medium text-black">Overall Progress</div>
+        <div class="font-black text-3xl text-blue-600" id="stat-progress">0%</div>
+      </div>
+    </div>
+
+    <!-- Progress per paper -->
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-semibold text-red-600">Paper I · GS & Abilities</span>
+          <span class="text-xs font-medium text-black" id="prog-1-text">0/0</span>
+        </div>
+        <div class="bg-gray-100 rounded-full overflow-hidden h-2">
+          <div class="h-full bg-red-600 transition-all duration-500 rounded-full" id="prog-1" style="width: 0%;"></div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-semibold text-green-600">Paper II-A · Foundations</span>
+          <span class="text-xs font-medium text-black" id="prog-2a-text">0/0</span>
+        </div>
+        <div class="bg-gray-100 rounded-full overflow-hidden h-2">
+          <div class="h-full bg-green-600 transition-all duration-500 rounded-full" id="prog-2a" style="width: 0%;"></div>
+        </div>
+      </div>
+      <div class="bg-white p-5 rounded-lg border border-gray-200">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-semibold text-blue-600">Paper II-B · Leadership</span>
+          <span class="text-xs font-medium text-black" id="prog-2b-text">0/0</span>
+        </div>
+        <div class="bg-gray-100 rounded-full overflow-hidden h-2">
+          <div class="h-full bg-blue-600 transition-all duration-500 rounded-full" id="prog-2b" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add task form -->
+    <div class="bg-white p-6 rounded-lg border border-gray-200 mb-6">
+      <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-black">
+        <i data-lucide="plus-circle" class="w-5 h-5 text-blue-600"></i>
+        Add a Study Task
+      </h3>
+      <div class="grid md:grid-cols-12 gap-3">
+        <input type="text" id="task-title" placeholder="e.g. Revise Telangana Statehood Movement" class="md:col-span-4 px-4 py-2.5 text-sm bg-white text-black border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition" />
+        <select id="task-paper" class="md:col-span-3 px-4 py-2.5 text-sm bg-white text-black border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition planner-input">
+          <option value="1">Paper I — GS & Abilities</option>
+          <option value="2a">Paper II-A — Foundations</option>
+          <option value="2b">Paper II-B — Leadership</option>
+        </select>
+        <input type="date" id="task-date" class="md:col-span-2 px-4 py-2.5 text-sm bg-white text-black border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition" />
+        <select id="task-priority" class="md:col-span-1 px-4 py-2.5 text-sm bg-white text-black border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition planner-input">
+          <option value="high">High</option>
+          <option value="med" selected>Med</option>
+          <option value="low">Low</option>
+        </select>
+        <input type="number" id="task-hours" placeholder="Hrs" min="0.5" step="0.5" value="2" class="md:col-span-1 px-3 py-2.5 text-sm bg-white text-black border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition" />
+        <button id="task-add" class="md:col-span-1 px-4 py-2.5 rounded-md font-semibold text-sm text-white bg-blue-600 hover:bg-blue-700 transition">
+          Add
+        </button>
+      </div>
+      <div class="flex gap-2 mt-3 text-xs text-black">
+        <i data-lucide="info" class="w-3 h-3 mt-0.5"></i>
+        <span>Tasks are saved locally in your browser. Add topic-wise tasks to pace your preparation.</span>
+      </div>
+    </div>
+
+    <!-- Filter & view toggle -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <div class="flex flex-wrap gap-2">
+        <button class="filter-btn active px-4 py-2 rounded-md text-xs font-semibold border border-blue-600 bg-blue-600 text-white" data-filter="all">All</button>
+        <button class="filter-btn px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100" data-filter="1">Paper I</button>
+        <button class="filter-btn px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100" data-filter="2a">Paper II-A</button>
+        <button class="filter-btn px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100" data-filter="2b">Paper II-B</button>
+        <button class="filter-btn px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100" data-filter="pending">Pending</button>
+        <button class="filter-btn px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100" data-filter="done">Done</button>
+      </div>
+      <div class="flex gap-2">
+        <button id="view-list" class="px-4 py-2 rounded-md text-xs font-semibold border text-white bg-blue-600 border-blue-600">
+          <i data-lucide="list" class="w-3 h-3 inline mr-1"></i> List
+        </button>
+        <button id="view-cal" class="px-4 py-2 rounded-md text-xs font-semibold border border-gray-300 text-black bg-white hover:bg-gray-100">
+          <i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i> Week
+        </button>
+      </div>
+    </div>
+
+    <div id="list-view" class="space-y-3"></div>
+
+    <div id="cal-view" class="hidden">
+      <div class="flex items-center justify-between mb-4">
+        <button id="prev-week" class="px-3 py-2 rounded-md text-sm border border-gray-300 text-black bg-white hover:bg-gray-100">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        </button>
+        <h4 class="font-bold text-lg text-black" id="week-label"></h4>
+        <button id="next-week" class="px-3 py-2 rounded-md text-sm border border-gray-300 text-black bg-white hover:bg-gray-100">
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div class="grid grid-cols-7 gap-2" id="calendar-grid"></div>
+    </div>
+
+    <div id="empty-state" class="hidden text-center py-16">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center bg-gray-200">
+        <i data-lucide="clipboard-list" class="w-10 h-10 text-black"></i>
+      </div>
+      <h4 class="font-bold text-xl mb-2 text-black">No tasks yet</h4>
+      <p class="text-black">Add your first study task above to begin planning your journey.</p>
+    </div>
+
+    <div class="mt-12">
+      <h4 class="font-bold text-base mb-4 flex items-center gap-2 text-black">
+        <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i> Quick-Add Topic Templates
+      </h4>
+      <div class="flex flex-wrap gap-2" id="quick-templates"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-12 px-6 bg-gray-900 text-gray-400">
+  <div class="max-w-7xl mx-auto">
+    <div class="border-t border-gray-800 pt-8"></div>
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="font-bold text-xl mb-2 text-white">TGPSC · DyEO 2026</div>
+        <p class="text-sm">Notification No. 03/G/SE/2026 dated 05/06/2026. Syllabus reference: Annexure-II, Pages 15–17.</p>
+      </div>
+      <div>
+        <div class="font-bold text-sm mb-3 uppercase tracking-wider text-white">Important Dates</div>
+        <ul class="text-sm space-y-1">
+          <li>Application opens · 12 June 2026</li>
+          <li>Last date · 19 July 2026, 5:00 PM</li>
+          <li>Hall tickets · 7 days before exam</li>
+          <li>Tentative exam · October 2026</li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-sm mb-3 uppercase tracking-wider text-white">Official Reference</div>
+        <p class="text-sm">Commission's website: https://www.tgpsc.gov.in</p>
+        <p class="text-sm mt-2">This page is a study aid summarising the official notification. Always verify with the original notification.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast bg-gray-900 text-white p-4 rounded-lg shadow-lg flex items-center gap-3">
+  <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+  <span id="toast-msg" class="text-sm">Task added successfully</span>
+</div>
+
+<script>
+  const paper1Topics = [
+    "Current affairs – Regional, National and International.",
+    "International Relations and Events.",
+    "General Science; India's Achievements in Science and Technology.",
+    "Environmental issues; Disaster Management — Prevention and Mitigation Strategies.",
+    "Economic and Social Development of India and Telangana.",
+    "Physical, Social and Economic Geography of India.",
+    "Physical, Social and Economic Geography and Demography of Telangana.",
+    "Socio-economic, Political and Cultural History of Modern India with special emphasis on Indian National Movement.",
+    "Socio-economic, Political and Cultural History of Telangana with special emphasis on Telangana Statehood Movement and formation of Telangana state.",
+    "Indian Constitution; Indian Political System; Governance and Public Policy.",
+    "Social Exclusion; Rights issues such as Gender, Caste, Tribe, Disability etc. and inclusive policies.",
+    "Society, Culture, Heritage, Arts and Literature of Telangana.",
+    "Policies of Telangana State.",
+    "Logical Reasoning; Analytical Ability and Data Interpretation.",
+    "Basic English (10th Class Standard)."
+  ];
+
+  const paper2aSections = [
+    {
+      roman: "I",
+      title: "Education and Indian Constitution",
+      points: [
+        "Preamble and its Educational Philosophy; Freedom, Democracy and Right to Education; RTE Act.",
+        "National and State Educational Policies in Independent India.",
+        "Recommendations of various Education Commissions and Committees and National Curriculum Frameworks."
+      ]
+    },
+    {
+      roman: "II",
+      title: "Education in Historical Perspective",
+      points: [
+        "Education in Ancient Indian Knowledge Systems.",
+        "Education in Colonial and Postcolonial India.",
+        "Educational Implications of Vedanta, Buddhism, Jainism, Islam and Christianity."
+      ]
+    },
+    {
+      roman: "III",
+      title: "Epistemological Foundations & Educational Philosophy",
+      points: [
+        "Mind, Reason, Logic, and thinking in Children; Scientific and Religious Knowledge and Experience.",
+        "Intellectual Developments during Renaissance and Enlightenment in Europe and Critique on Eurocentric Colonial models of thinking in education.",
+        "Educational Philosophies of Swami Vivekananda, MK Gandhi, Rabindranath Tagore, Sri Aurobindo, Jiddu Krishnamurthy, Jyothi Rao Phule, Dr. B.R. Ambedkar, John Dewey and Paulo Freire.",
+        "Education and Values: Ethical, Moral and Spiritual Foundations of Education; Art, Music and Aesthetics in Education; Liberal Education."
+      ]
+    },
+    {
+      roman: "IV",
+      title: "Culture, Socialisation & Public Education",
+      points: [
+        "Culture, Socialisation, Modernity and Education; Equality, Equity, Diversity, Plurality & Inclusion; Civic Education.",
+        "Liberalisation, Social Change and Education; Educational Opportunities, Social Justice and Education; Education for the disadvantaged and Weaker sections of Society.",
+        "Public Education: Learning Crises in Contemporary India; Privatization in Education; Public Policy in Education.",
+        "Teacher Autonomy, Accountability and Responsibility.",
+        "Sustainable Development and Environmental Education.",
+        "Basics in Economics of Education and Educational Finance."
+      ]
+    },
+    {
+      roman: "V",
+      title: "Understanding Children & Human Development",
+      points: [
+        "Understanding Children and their cultural and Individual Differences; Growth and Development: Infancy to Old Age.",
+        "Psychology of Human Development: Child Development — Social, Cognitive, Language/Linguistic, Emotional, Moral and Aesthetic Areas; Motivation, Learning and Development.",
+        "Personality and Understanding Self, Memory, Cognition, Creativity and Intelligence.",
+        "Educating and addressing the needs of Exceptional Children and Children with Disabilities including Sensory, Physical Social and Emotional and Mental Challenges.",
+        "Principles and Styles of Guidance, Counselling and Mentoring.",
+        "Early Childhood Care and Education."
+      ]
+    },
+    {
+      roman: "VI",
+      title: "Pedagogy, Curriculum & ICT in Education",
+      points: [
+        "Pedagogical Process, Teaching-Learning Methods and Innovative Practices in Education.",
+        "Disciplines of Knowledge; Curriculum Processes and Organization of Knowledge.",
+        "Skill Development and Vocational Education.",
+        "Measurement, Assessment and Evaluation in Education: Evaluation and Assessment of Children and Teachers' Performance and Evaluation of Quality in Education.",
+        "Logical and Statistical Reasoning in Educational Research.",
+        "Critical Thinking and Creative Imagination in Children.",
+        "Principles and Styles of Guidance, Counselling and Mentoring.",
+        "Application of ICT, AI and Digital Technologies in Education."
+      ]
+    },
+    {
+      roman: "VII",
+      title: "Language, Media & Holistic Education",
+      points: [
+        "Mother Tongue, Multilingualism and Language Policy.",
+        "Adult, Non-Formal and Life-Long Education.",
+        "Media and Communication in Education.",
+        "Health, Yoga and Physical Education.",
+        "Education for National Integration and International Understanding."
+      ]
+    }
+  ];
+
+  const paper2bSections = [
+    {
+      roman: "I",
+      title: "School Education Scenario & Administration",
+      points: [
+        "School Education: Present Scenario; Programmes and Policies in School Education and Recent Initiatives at State and National Level; Educational Management at the State and National Level.",
+        "School Administration: Macro Perspectives; School Administration at the National and State Level; School Administration at the District and Sub-district Level.",
+        "School Management and Administration: Micro Perspectives; Building Mission and Vision of the School/institutions; Institutional Development Planning and Implementation of Institutional Plan."
+      ]
+    },
+    {
+      roman: "II",
+      title: "School Performance & Quality Management",
+      points: [
+        "School Performance and Evaluation: Student and Teacher Learning, Teacher Professional Development and Community Involvement in School Management and Performance; Evaluation of School Performance.",
+        "School Quality Management: School Quality — Concept and Dimensions/indicators; Total Quality Management; Institutional Appraisal and SWOT Analysis; Professional Development of Staff, Appraisal and Accountability."
+      ]
+    },
+    {
+      roman: "III",
+      title: "Leadership & Educational Management",
+      points: [
+        "Leadership in Educational Management: Leadership Behaviour and Leadership Styles; Transformational Leadership in educational management.",
+        "Educational Management: Theories, Models and Practices in Educational Management; Principles and Techniques in Educational Management; Management of Innovations; Dimensions of Educational Management and Various Emerging Approaches in Educational Management.",
+        "Nature of Organisational Behaviour: Group Dynamics and Team Building; Theories of Motivation: Implications for Management; Self-management vis-a-vis Educational Management."
+      ]
+    },
+    {
+      roman: "IV",
+      title: "Decentralised Management & Decision Making",
+      points: [
+        "Decentralised Management in Education: Decentralized Planning; District and Sub-district Management; Role of local self-bodies, VEC and Gram Panchayat; Community Participation.",
+        "Decision Making in Educational Management: Concept, importance and types of Decision-Making; Decision making process.",
+        "Management of Interpersonal Relations and Conflict Management — Communication in Educational Management: Meaning and Relevance; Organizational Communication; Effective Communication Approaches."
+      ]
+    },
+    {
+      roman: "V",
+      title: "Institutional & Curriculum Management",
+      points: [
+        "Institutional Management and Management of Curriculum: Classroom Management (Instructional Management).",
+        "Curriculum Transaction; Management of Evaluation; Management of Academic Resources and Management of Curricular & Co-curricular Programmes & Activities.",
+        "Action Research Approach in Educational Management."
+      ]
+    },
+    {
+      roman: "VI",
+      title: "Financial, Human & Infrastructure Resources",
+      points: [
+        "Management of Financial Resources: Educational Finance — meaning, Importance and Scope; Cost and Budgeting; Accounting and Auditing and Resource Mobilization.",
+        "Management of Human and Administrative Resources: Management of Student Support System; Management of Administrative Resources.",
+        "Management of Human Resources — Management of Infrastructure: Management of Physical Resources; Utilization of Infrastructural Resources.",
+        "Total Quality Management: Quality Control, Quality Assurance and Indicators; Tools of Management; Strategies for Quality Improvement; Role of different Agencies and Quality concerns and issues for research."
+      ]
+    },
+    {
+      roman: "VII",
+      title: "Policy, Centre-State Relations & ICT",
+      points: [
+        "Policy Formulation and Policy Planning: Organizational Structure; Role of National Bodies.",
+        "Centre-State Relations: Coordination, Networking, Partnership and Linkages — Management of Special Schools and Children: Recent Developments and Policies of Inclusion.",
+        "Designing School Health Policies in aligning with National and State Level Health Policies; Designing and Managing Innovative Practices in School Education.",
+        "Building Regional, State, National and International Relationships for School Development.",
+        "Roles & Applications of Information and Communication Technologies (ICTs) in Educational Administration and Management."
+      ]
+    }
+  ];
+
+  // Render Paper I Topics
+  const p1Container = document.getElementById('paper1-topics');
+  paper1Topics.forEach((topic, i) => {
+    const el = document.createElement('div');
+    el.className = 'bg-white border border-gray-200 rounded-md p-4 flex items-start gap-3 cursor-pointer hover:bg-red-50 hover:border-red-300 transition';
+    el.innerHTML = `
+      <span class="font-bold text-xl flex-shrink-0 text-red-600 min-w-[2.5rem]">${String(i+1).padStart(2,'0')}</span>
+      <span class="text-sm leading-relaxed pt-1 text-black">${topic}</span>
+    `;
+    el.addEventListener('click', () => {
+      addTaskFromTopic(topic, '1');
+    });
+    p1Container.appendChild(el);
+  });
+
+  // Render Paper II-A Sections
+  const p2aContainer = document.getElementById('paper2a-sections');
+  paper2aSections.forEach((sec, i) => {
+    const el = document.createElement('div');
+    el.className = 'bg-white border border-gray-200 rounded-lg p-6 hover:shadow-sm transition';
+    el.innerHTML = `
+      <div class="flex items-start gap-5">
+        <div class="font-black text-4xl flex-shrink-0 leading-none text-green-600">${sec.roman}</div>
+        <div class="flex-1">
+          <h3 class="font-bold text-lg md:text-xl mb-3 text-black">${sec.title}</h3>
+          <ul class="space-y-2">
+            ${sec.points.map(p => `
+              <li class="flex gap-2 text-sm leading-relaxed text-black">
+                <span class="text-green-600 mt-[2px]">▸</span>
+                <span>${p}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+    p2aContainer.appendChild(el);
+  });
+
+  // Render Paper II-B Sections
+  const p2bContainer = document.getElementById('paper2b-sections');
+  paper2bSections.forEach((sec, i) => {
+    const el = document.createElement('div');
+    el.className = 'bg-white border border-gray-200 rounded-lg p-6 hover:shadow-sm transition';
+    el.innerHTML = `
+      <div class="flex items-start gap-5">
+        <div class="font-black text-4xl flex-shrink-0 leading-none text-blue-600">${sec.roman}</div>
+        <div class="flex-1">
+          <h3 class="font-bold text-lg md:text-xl mb-3 text-black">${sec.title}</h3>
+          <ul class="space-y-2">
+            ${sec.points.map(p => `
+              <li class="flex gap-2 text-sm leading-relaxed text-black">
+                <span class="text-blue-600 mt-[2px]">▸</span>
+                <span>${p}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    `;
+    p2bContainer.appendChild(el);
+  });
+
+  // Countdown
+  const examDate = new Date('2026-10-01T10:00:00');
+  function updateCountdown() {
+    const now = new Date();
+    let diff = examDate - now;
+    if (diff < 0) diff = 0;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Study Planner
+  const STORAGE_KEY = 'tgpsc-dyeo-planner-v5';
+  let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  let currentFilter = 'all';
+  let currentView = 'list';
+  let weekOffset = 0;
+
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toast-msg').textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  function addTask(title, paper, date, priority, hours) {
+    const task = {
+      id: Date.now() + Math.random(),
+      title, paper, date, priority,
+      hours: parseFloat(hours) || 1,
+      done: false,
+      created: new Date().toISOString()
+    };
+    tasks.unshift(task);
+    save();
+    render();
+    showToast('Task added successfully');
+  }
+
+  function addTaskFromTopic(topic, paper) {
+    const today = new Date();
+    const date = today.toISOString().split('T')[0];
+    addTask(topic, paper, date, 'med', 2);
+    document.getElementById('planner').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleTask(id) {
+    const t = tasks.find(x => x.id === id);
+    if (t) {
+      t.done = !t.done;
+      save();
+      render();
+      showToast(t.done ? 'Task completed' : 'Task reopened');
+    }
+  }
+
+  function deleteTask(id) {
+    tasks = tasks.filter(x => x.id !== id);
+    save();
+    render();
+    showToast('Task removed');
+  }
+
+  function paperLabel(p) {
+    if (p === '1') return 'Paper I';
+    if (p === '2a') return 'Paper II-A';
+    return 'Paper II-B';
+  }
+
+  function paperClasses(p) {
+    if (p === '1') return { bg: 'bg-red-600', text: 'text-red-600', light: 'bg-red-50', border: 'border-red-500' };
+    if (p === '2a') return { bg: 'bg-green-600', text: 'text-green-600', light: 'bg-green-50', border: 'border-green-500' };
+    return { bg: 'bg-blue-600', text: 'text-blue-600', light: 'bg-blue-50', border: 'border-blue-500' };
+  }
+
+  function render() {
+    const total = tasks.length;
+    const done = tasks.filter(t => t.done).length;
+    const hours = tasks.reduce((s, t) => s + (t.hours || 0), 0);
+    const progress = total ? Math.round((done / total) * 100) : 0;
+
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-done').textContent = done;
+    document.getElementById('stat-hours').textContent = hours;
+    document.getElementById('stat-progress').textContent = progress + '%';
+
+    ['1','2a','2b'].forEach(p => {
+      const pTasks = tasks.filter(t => t.paper === p);
+      const pDone = pTasks.filter(t => t.done).length;
+      const pct = pTasks.length ? (pDone / pTasks.length) * 100 : 0;
+      document.getElementById(`prog-${p}`).style.width = pct + '%';
+      document.getElementById(`prog-${p}-text`).textContent = `${pDone}/${pTasks.length}`;
+    });
+
+    let filtered = tasks;
+    if (currentFilter === '1' || currentFilter === '2a' || currentFilter === '2b') {
+      filtered = tasks.filter(t => t.paper === currentFilter);
+    } else if (currentFilter === 'pending') {
+      filtered = tasks.filter(t => !t.done);
+    } else if (currentFilter === 'done') {
+      filtered = tasks.filter(t => t.done);
+    }
+
+    const emptyState = document.getElementById('empty-state');
+    const listView = document.getElementById('list-view');
+    const calView = document.getElementById('cal-view');
+
+    if (filtered.length === 0) {
+      emptyState.classList.remove('hidden');
+      listView.classList.add('hidden');
+      calView.classList.add('hidden');
+    } else {
+      emptyState.classList.add('hidden');
+      if (currentView === 'list') {
+        listView.classList.remove('hidden');
+        calView.classList.add('hidden');
+        renderList(filtered);
+      } else {
+        listView.classList.add('hidden');
+        calView.classList.remove('hidden');
+        renderCalendar();
+      }
+    }
+  }
+
+  function renderList(filtered) {
+    const container = document.getElementById('list-view');
+    container.innerHTML = filtered.map(t => {
+      const d = t.date ? new Date(t.date + 'T00:00:00') : null;
+      const dateStr = d ? d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : 'No date';
+      const today = new Date(); today.setHours(0,0,0,0);
+      const isOverdue = d && d < today && !t.done;
+      const colors = paperClasses(t.paper);
+      
+      let priorityColor = 'text-black';
+      let borderClass = 'border-l-gray-400';
+      if (t.priority === 'high') {
+        priorityColor = 'text-red-600';
+        borderClass = 'border-l-red-500';
+      } else if (t.priority === 'med') {
+        priorityColor = 'text-yellow-600';
+        borderClass = 'border-l-yellow-500';
+      } else if (t.priority === 'low') {
+        priorityColor = 'text-green-600';
+        borderClass = 'border-l-green-500';
+      }
+
+      return `
+        <div class="bg-white border border-gray-200 border-l-4 ${borderClass} ${t.done ? 'opacity-60' : ''} p-4 flex items-center gap-4 rounded-md transition shadow-sm hover:shadow">
+          <button onclick="toggleTask(${t.id})" class="w-6 h-6 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition ${t.done ? 'bg-green-600 border-green-600' : 'border-gray-300'}">
+            ${t.done ? '<i data-lucide="check" class="w-4 h-4 text-white"></i>' : ''}
+          </button>
+          <div class="flex-1 min-w-0">
+            <div class="task-title font-semibold text-sm mb-1 text-black ${t.done ? 'line-through' : ''}">${t.title}</div>
+            <div class="flex flex-wrap items-center gap-3 text-xs text-black">
+              <span class="px-2 py-0.5 rounded text-white ${colors.bg}">${paperLabel(t.paper)}</span>
+              <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> ${dateStr} ${isOverdue ? '<span class="text-red-600 font-semibold">· overdue</span>' : ''}</span>
+              <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> ${t.hours}h</span>
+              <span class="flex items-center gap-1 uppercase tracking-wider font-semibold ${priorityColor}">${t.priority}</span>
+            </div>
+          </div>
+          <button onclick="deleteTask(${t.id})" class="opacity-50 hover:opacity-100 transition flex-shrink-0 text-red-600">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+      `;
+    }).join('');
+    lucide.createIcons();
+  }
+
+  function renderCalendar() {
+    const grid = document.getElementById('calendar-grid');
+    const start = new Date();
+    start.setDate(start.getDate() - start.getDay() + weekOffset * 7);
+    start.setHours(0,0,0,0);
+
+    const end = new Date(start);
+    end.setDate(end.getDate() + 6);
+
+    const fmt = d => d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short' });
+    document.getElementById('week-label').textContent = `${fmt(start)} — ${fmt(end)}`;
+
+    const today = new Date(); today.setHours(0,0,0,0);
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+    let html = '';
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(start);
+      d.setDate(d.getDate() + i);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      const dateStr = `${year}-${month}-${day}`;
+      
+      const dayTasks = tasks.filter(t => t.date === dateStr);
+      const isToday = d.getTime() === today.getTime();
+      
+      html += `
+        <div class="bg-white border ${isToday ? 'border-blue-500 bg-blue-50' : 'border-gray-200'} p-2 rounded-md min-h-[100px]">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-bold uppercase text-black">${dayNames[i]}</span>
+            <span class="font-bold text-sm ${isToday ? 'text-blue-600' : 'text-black'}">${d.getDate()}</span>
+          </div>
+          <div class="space-y-1">
+            ${dayTasks.map(t => {
+              const colors = paperClasses(t.paper);
+              return `
+                <div class="text-xs p-1 rounded text-white ${colors.bg} ${t.done ? 'opacity-50 line-through' : ''} truncate" title="${t.title}">
+                  ${t.done ? '✓ ' : ''}${t.title}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+    grid.innerHTML = html;
+    lucide.createIcons();
+  }
+
+  document.getElementById('task-add').addEventListener('click', () => {
+    const title = document.getElementById('task-title').value.trim();
+    const paper = document.getElementById('task-paper').value;
+    const date = document.getElementById('task-date').value || new Date().toISOString().split('T')[0];
+    const priority = document.getElementById('task-priority').value;
+    const hours = document.getElementById('task-hours').value || 2;
+    if (!title) {
+      showToast('Please enter a task title');
+      return;
+    }
+    addTask(title, paper, date, priority, hours);
+    document.getElementById('task-title').value = '';
+    document.getElementById('task-title').focus();
+  });
+
+  document.getElementById('task-title').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('task-add').click();
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+        b.classList.add('border-gray-300', 'text-black', 'bg-white');
+      });
+      btn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+      btn.classList.remove('border-gray-300', 'text-black', 'bg-white');
+      currentFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  document.getElementById('view-list').addEventListener('click', () => {
+    currentView = 'list';
+    document.getElementById('view-list').classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+    document.getElementById('view-list').classList.remove('border-gray-300', 'text-black', 'bg-white');
+    document.getElementById('view-cal').classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+    document.getElementById('view-cal').classList.add('border-gray-300', 'text-black', 'bg-white');
+    render();
+  });
+
+  document.getElementById('view-cal').addEventListener('click', () => {
+    currentView = 'cal';
+    document.getElementById('view-cal').classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+    document.getElementById('view-cal').classList.remove('border-gray-300', 'text-black', 'bg-white');
+    document.getElementById('view-list').classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+    document.getElementById('view-list').classList.add('border-gray-300', 'text-black', 'bg-white');
+    render();
+  });
+
+  document.getElementById('prev-week').addEventListener('click', () => { weekOffset--; renderCalendar(); });
+  document.getElementById('next-week').addEventListener('click', () => { weekOffset++; renderCalendar(); });
+
+  const templates = [
+    { title: "Revise Telangana Statehood Movement", paper: "1", hours: 3 },
+    { title: "Practice Logical Reasoning — 50 questions", paper: "1", hours: 2 },
+    { title: "Read Indian Constitution chapters", paper: "1", hours: 2 },
+    { title: "Current Affairs — this month's recap", paper: "1", hours: 1.5 },
+    { title: "Study RTE Act & NEP 2020", paper: "2a", hours: 2 },
+    { title: "Notes on Educational Philosophers", paper: "2a", hours: 2.5 },
+    { title: "Child Development theories revision", paper: "2a", hours: 2 },
+    { title: "ICT & AI in Education — case studies", paper: "2a", hours: 1.5 },
+    { title: "School Administration — District level", paper: "2b", hours: 2 },
+    { title: "Leadership styles & theories", paper: "2b", hours: 2 },
+    { title: "Educational Finance & Budgeting", paper: "2b", hours: 2 },
+    { title: "SWOT Analysis of a school — practice", paper: "2b", hours: 1.5 }
+  ];
+
+  const tContainer = document.getElementById('quick-templates');
+  templates.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'text-xs px-3 py-2 rounded-md border border-gray-300 text-black bg-white hover:bg-gray-100 transition flex items-center';
+    btn.innerHTML = `<i data-lucide="plus" class="w-3 h-3 mr-1"></i> ${t.title}`;
+    btn.addEventListener('click', () => {
+      const today = new Date().toISOString().split('T')[0];
+      addTask(t.title, t.paper, today, 'med', t.hours);
+    });
+    tContainer.appendChild(btn);
+  });
+
+  document.getElementById('task-date').value = new Date().toISOString().split('T')[0];
+  lucide.createIcons();
+  render();
+</script>
+
+</body>
+</html>
