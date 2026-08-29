@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sustainability in Higher Education — Compact Revision Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+@page { size: 720px 1020px; margin: 0; }
+:root {
+  --g900:#173A28; --g800:#1F4A33; --g700:#2D6B4A; --g500:#4A9A6A; --g300:#9CC4AB;
+  --g100:#D5EAD8; --g50:#F2F8F4; --mint:#F0FDF4; --mint-b:#BBE5C8;
+  --paper:#FDFDFB; --ink:#263230; --muted:#5C6B62; --border:#DCE5DE;
+  --amber-bg:#FFF9ED; --amber-b:#F0DCB0; --amber-ink:#8A5A1C;
+  --blue-bg:#F2F7FF; --blue-b:#C9DCF7; --blue-ink:#1E4FA8;
+  --lav-bg:#F8F6FF; --lav-b:#DDD4F5; --lav-ink:#5B3FA8;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; width: 720px;
+  background: var(--paper); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+  font-size: 13.5px; line-height: 1.55;
+}
+body { line-break: strict; word-break: normal; overflow-wrap: break-word; }
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E6E9E4; }
+  body { margin: 24px auto; box-shadow: 0 6px 32px rgba(23,58,40,0.18); }
+}
+
+/* Cover */
+.cover {
+  width: 720px; height: 1020px; break-after: page; overflow: hidden; position: relative;
+  background: linear-gradient(165deg, #12291C 0%, #1F4A33 55%, #2D6B4A 100%); color: #F4FAF5;
+}
+.cover-inner {
+  position: relative; z-index: 3; height: 100%;
+  display: flex; flex-direction: column; justify-content: center; padding: 60px 64px;
+}
+.cover-chip {
+  align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  border: 1.5px solid rgba(233,246,236,0.45); border-radius: 999px; padding: 6px 14px; color: #DFEFE3; margin-bottom: 24px;
+}
+.cover-kicker { font-size: 12.5px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #BCE0C6; margin-bottom: 12px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif;
+  font-size: 47px; line-height: 1.12; font-weight: 800; margin: 0 0 10px 0; color: #FFFFFF;
+}
+.cover-title .thin { display: block; font-size: 25px; font-weight: 600; font-style: italic; color: #CFE6D4; margin-top: 10px; }
+.cover-sub { font-size: 15px; font-weight: 500; color: #D9EBDD; margin: 14px 0 22px 0; line-height: 1.55; }
+.cover-summary {
+  font-size: 13px; line-height: 1.65; color: #C6DCCB;
+  border-left: 3px solid rgba(188,224,198,0.6); padding-left: 13px; margin-bottom: 24px; max-width: 540px;
+}
+.cover-img-frame {
+  border-radius: 14px; overflow: hidden; border: 1px solid rgba(233,246,236,0.3);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35); margin-bottom: 24px;
+}
+.cover-img-frame img { display: block; width: 100%; height: 230px; object-fit: cover; }
+.cover-footer { display: flex; justify-content: space-between; font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: #A9CBB3; }
+
+/* Flow */
+.main-content { padding: 48px 58px 40px 58px; }
+p { margin: 0 0 9px 0; text-align: left; }
+.kicker { font-size: 10.5px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--g700); margin-bottom: 5px; }
+.sec-title { font-size: 22px; font-weight: 800; color: var(--g900); line-height: 1.25; margin: 0 0 7px 0; }
+.divider { height: 3.5px; width: 80px; background: linear-gradient(90deg, var(--g700), var(--g300)); border-radius: 3px; margin: 0 0 13px 0; }
+.chapter-header { break-after: avoid; break-inside: avoid; margin-top: 24px; }
+strong { color: var(--g900); }
+
+/* Unit banner strip */
+.unit-strip {
+  display: flex; align-items: center; gap: 14px; break-inside: avoid; break-after: avoid;
+  background: linear-gradient(135deg, var(--g900), var(--g700)); border-radius: 12px;
+  padding: 13px 18px; color: #fff; margin: 18px 0 10px 0;
+}
+.unit-strip .us-num {
+  font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif;
+  font-size: 30px; font-weight: 800; color: #BCE0C6; flex-shrink: 0;
+}
+.unit-strip .us-t { font-size: 15.5px; font-weight: 800; line-height: 1.3; }
+.unit-strip .us-s { font-size: 11px; color: #CDE4D3; margin-top: 2px; }
+
+/* Key terms compact */
+.keyterms { background: var(--mint); border: 1.2px solid var(--mint-b); border-radius: 12px; padding: 12px 15px; margin: 10px 0; break-inside: avoid; }
+.kt-title { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--g800); margin-bottom: 8px; }
+.kt-line { font-size: 12px; line-height: 1.5; margin-bottom: 5px; padding-left: 14px; position: relative; }
+.kt-line::before { content: ""; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; border-radius: 2px; background: var(--g500); }
+.kt-line b { color: var(--g900); }
+
+/* Rapid-fire numbered notes */
+.rapid { margin: 10px 0; }
+.r-item { display: flex; gap: 10px; margin-bottom: 8px; break-inside: avoid; }
+.r-num {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; margin-top: 1px;
+  background: var(--g800); color: #fff; font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.r-body { font-size: 12.6px; line-height: 1.5; }
+.r-body b { color: var(--g900); }
+.exam-tip {
+  background: var(--amber-bg); border: 1.2px solid var(--amber-b); border-radius: 10px;
+  padding: 10px 14px; font-size: 12px; line-height: 1.55; margin: 10px 0; break-inside: avoid;
+}
+.exam-tip b { color: var(--amber-ink); letter-spacing: 1.5px; font-size: 10.5px; text-transform: uppercase; display: block; margin-bottom: 3px; }
+
+/* Mindmap page */
+.mindmap-fig { break-inside: avoid; margin: 8px 0 2px 0; }
+.mindmap-fig img { display: block; width: 100%; max-height: 846px; object-fit: contain; margin: 0 auto; }
+.mindmap-note { font-size: 10.5px; color: var(--muted); text-align: center; font-style: italic; margin-top: 4px; }
+
+/* Framework cards */
+.fw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+.fw-card { border: 1.2px solid var(--border); border-radius: 12px; padding: 12px 14px; break-inside: avoid; background: #FFFFFF; }
+.fw-card .fw-t { font-size: 13px; font-weight: 800; color: var(--g900); margin-bottom: 7px; }
+.fw-chips { display: flex; flex-wrap: wrap; gap: 5px; max-width: 100%; }
+.fw-chip {
+  font-size: 10.8px; font-weight: 600; color: #2F4A3C; background: var(--g50);
+  border: 1px solid var(--g300); border-radius: 999px; padding: 3px 9px;
+}
+.fw-desc { font-size: 11.3px; color: var(--muted); line-height: 1.5; margin-top: 7px; }
+
+/* Checklist */
+.check-list { margin: 10px 0; }
+.chk { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; break-inside: avoid; }
+.chk .box {
+  flex-shrink: 0; width: 16px; height: 16px; border: 2px solid var(--g500); border-radius: 5px; margin-top: 2px;
+}
+.chk .chk-t { font-size: 12.6px; line-height: 1.5; }
+.chk .chk-t b { color: var(--g900); }
+
+/* Self-test */
+.quiz { background: var(--lav-bg); border: 1.2px solid var(--lav-b); border-radius: 12px; padding: 12px 15px; margin: 10px 0; break-inside: avoid; }
+.q-title { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--lav-ink); margin-bottom: 8px; }
+.q-line { font-size: 12.2px; margin-bottom: 6px; }
+.ans { margin-top: 9px; background: #FFFFFF; border: 1.2px dashed #B7A8E8; border-radius: 9px; padding: 7px 12px; font-size: 11.4px; color: #3E3564; line-height: 1.55; }
+
+/* Outcome chips */
+.lo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.lo { background: var(--g50); border: 1px solid var(--g100); border-radius: 10px; padding: 9px 12px; font-size: 11.8px; line-height: 1.5; break-inside: avoid; }
+.lo b { color: var(--g800); }
+
+/* Ending */
+.ending {
+  width: 720px; height: 1020px; break-before: page; overflow: hidden; position: relative;
+  background: linear-gradient(200deg, #12291C 0%, #1F4A33 60%, #2D6B4A 100%); color: #F4FAF5;
+}
+.ending-inner { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 70px 80px; }
+.end-big { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; font-style: italic; line-height: 1.4; max-width: 520px; }
+.end-line { width: 70px; height: 3px; background: #6FA886; border-radius: 3px; margin: 30px auto; }
+.end-meta { font-size: 12px; color: #C4DCCA; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-chip">Paper XXI &middot; EDN-21 &middot; Compact Notes</div>
+    <div class="cover-kicker">Quick Revision Companion</div>
+    <h1 class="cover-title">Sustainability in Higher Education<span class="thin">Compact Revision Notes</span></h1>
+    <div class="cover-sub">All three units in rapid-fire cards, mind maps, key terms and a 12-question self-test.</div>
+    <div class="cover-summary">
+      Distilled from the full learning material: every definition you must know, every framework
+      you must recognise, and checklists for the six engagement tasks &mdash; sized for one evening
+      of revision before the examination.
+    </div>
+    <div class="cover-img-frame"><img src="assets/cover_hero.png" alt="Sustainable campus"></div>
+    <div class="cover-footer"><span>Use with the full course pack</span><span>2026 Edition</span></div>
+  </div>
+</div>
+
+<div class="main-content">
+
+<!-- SNAPSHOT -->
+<div class="chapter-header">
+  <div class="kicker">One-page orientation</div>
+  <h2 class="sec-title">Course Snapshot</h2>
+  <div class="divider"></div>
+</div>
+<p style="font-size:13px;">Five outcomes drive the whole paper. If you can do these five things from memory, you are ready:</p>
+<div class="lo-grid">
+  <div class="lo"><b>LO1</b> Understand sustainability in higher education and explain it in plain language.</div>
+  <div class="lo"><b>LO2</b> Describe the SDG goals and the five sustainability competencies.</div>
+  <div class="lo"><b>LO3</b> Understand responsible research &amp; innovation (RADAR) in sustainability.</div>
+  <div class="lo"><b>LO4</b> Explore institutional approaches to the SDGs (disciplinary, structural, dimensions).</div>
+  <div class="lo" style="grid-column: 1 / -1;"><b>LO5</b> Understand the challenges of ESD and evaluate progress with indicators.</div>
+</div>
+<p style="font-size:13px;">Three units, five topics each &mdash; and one mind map per unit waiting at the end of these notes. Revision order: key terms &rarr; rapid-fire cards &rarr; mind map redraw &rarr; self-test.</p>
+<!-- ═══ UNIT 1 ═══ -->
+<div class="unit-strip">
+  <div class="us-num">1</div>
+  <div><div class="us-t">Introduction to Sustainable Development</div>
+  <div class="us-s">Definitions &middot; SDGs in HE &middot; Functions &middot; Strategies &middot; Competencies</div></div>
+</div>
+
+<div class="keyterms">
+  <div class="kt-title">Key terms in one breath</div>
+  <div class="kt-line"><b>Sustainable development</b> — meeting present needs without compromising future generations (Brundtland, 1987).</div>
+  <div class="kt-line"><b>SDGs / Agenda 2030</b> — 17 goals, 169 targets, adopted 2015 by all 193 UN member states; "leave no one behind".</div>
+  <div class="kt-line"><b>Target 4.7</b> — all learners acquire ESD + global citizenship knowledge, skills, values.</div>
+  <div class="kt-line"><b>Triple bottom line</b> — people, planet, prosperity pursued together.</div>
+  <div class="kt-line"><b>Intergenerational equity</b> — fairness between today's and tomorrow's generations.</div>
+  <div class="kt-line"><b>Education about / for / through</b> — knowledge of SDGs / agency for SDGs / institution as lived curriculum.</div>
+  <div class="kt-line"><b>Five competencies (Wiek)</b> — systems thinking, anticipatory, normative, strategic, interpersonal.</div>
+  <div class="kt-line"><b>Whole-institution approach</b> — curriculum + campus + community + governance changed together.</div>
+</div>
+
+<div class="rapid">
+  <div class="r-item"><div class="r-num">1</div><div class="r-body"><b>Brundtland's two ideas:</b> needs (priority to the world's poor) and limits (environmental constraints on growth).</div></div>
+  <div class="r-item"><div class="r-num">2</div><div class="r-body"><b>Four probing questions:</b> For who (equity)? How (three pillars together)? When (2030 goals, 2050 climate)? To what effect (measured change in what learners do)?</div></div>
+  <div class="r-item"><div class="r-num">3</div><div class="r-body"><b>Milestones:</b> Stockholm 1972 &rarr; Rio Agenda 21, ch.36 education 1992 &rarr; UN ESD Decade 2005&ndash;14 &rarr; Rio+20 2012 &rarr; Agenda 2030 + Paris 2015 &rarr; ESD for 2030 roadmap 2020.</div></div>
+  <div class="r-item"><div class="r-num">4</div><div class="r-body"><b>HE's double duty:</b> SDG 4 as a goal (access, skills, Target 4.7) and all 17 goals as means via graduates, research, campus, partnerships.</div></div>
+  <div class="r-item"><div class="r-num">5</div><div class="r-body"><b>Five HE functions:</b> teaching &amp; curriculum, research, campus operations, community engagement, governance — each answers "what does sustainable look like here?"</div></div>
+  <div class="r-item"><div class="r-num">6</div><div class="r-body"><b>Espoused vs enacted:</b> Lee et al. (2013) found mission statements promise more sustainability than universities practise — audit both.</div></div>
+  <div class="r-item"><div class="r-num">7</div><div class="r-body"><b>Lozano's three phases:</b> initiation (champions) &rarr; incorporation (curricula, research, operations) &rarr; institutionalisation (policy, QA, culture). Change survives leadership only after phase 3.</div></div>
+  <div class="r-item"><div class="r-num">8</div><div class="r-body"><b>Strategy craft:</b> visible low-cost early wins + pairing top-down policy with bottom-up energy; declarations (Talloires 1990, SDG Accord) anchor commitment externally.</div></div>
+  <div class="r-item"><div class="r-num">9</div><div class="r-body"><b>Competency cues:</b> issue maps (systems), 2050 arguments (anticipatory), naming whose interests count (normative), barrier-aware plans (strategic), role rotation (interpersonal).</div></div>
+</div>
+
+<div class="exam-tip"><b>Exam tip</b>
+Compare education <i>about</em></i>, <i>for</i> and <i>through</i> the SDGs with one example each from a teacher-education programme — a guaranteed high-scoring answer when tied to Target 4.7.</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit1_rot.png" alt="Unit 1 mind map">
+  <div class="mindmap-note">Unit 1 mind map — rotate the page clockwise. Redraw from memory, then check.</div>
+</div>
+
+<!-- ═══ UNIT 2 ═══ -->
+<div class="unit-strip">
+  <div class="us-num">2</div>
+  <div><div class="us-t">Perspectives of Developing Sustainability in HE</div>
+  <div class="us-s">HESD approach &middot; University in society &middot; SDG engagement &middot; Environments &middot; Pedagogy</div></div>
+</div>
+
+<div class="keyterms">
+  <div class="kt-title">Key terms in one breath</div>
+  <div class="kt-line"><b>HESD</b> — Higher Education and Research for Sustainable Development (IAU portal: iau-hesd.net).</div>
+  <div class="kt-line"><b>Apprising &amp; supporting</b> — informing and equipping the community with guidance and examples.</div>
+  <div class="kt-line"><b>Solidarity &amp; networking</b> — cross-institution communities of practice; SDG 17 inside the sector.</div>
+  <div class="kt-line"><b>Conversing &amp; convening</b> — conferences and forums where norms and commitments are negotiated.</div>
+  <div class="kt-line"><b>Third mission</b> — service to society, beside teaching and research.</div>
+  <div class="kt-line"><b>Co-creation / living lab</b> — designing learning and research jointly with students and communities; campus as test site.</div>
+  <div class="kt-line"><b>Service learning</b> — community service interwoven with structured reflection.</div>
+</div>
+
+<div class="rapid">
+  <div class="r-item"><div class="r-num">1</div><div class="r-body"><b>University's four roles:</b> educator (competencies), knowledge engine (research), social actor (third mission, public conscience), economic &amp; civic anchor (employment, procurement).</div></div>
+  <div class="r-item"><div class="r-num">2</div><div class="r-body"><b>Potential and perils (Chankseliani &amp; McCowan 2021):</b> unmatched leverage for the SDGs, yet risks of inequality reproduction, ranking-chasing, disconnected research.</div></div>
+  <div class="r-item"><div class="r-num">3</div><div class="r-body"><b>Cortese (2003):</b> no institution has a greater lever for a sustainable future — universities educate the decision-makers and model behaviour for society.</div></div>
+  <div class="r-item"><div class="r-num">4</div><div class="r-body"><b>Engagement cycle:</b> Commit &rarr; Map (SDG footprint) &rarr; Integrate (teaching, research, operations) &rarr; Partner (govt, industry, NGOs) &rarr; Evaluate (indicators, reporting) — and the loop repeats.</div></div>
+  <div class="r-item"><div class="r-num">5</div><div class="r-body"><b>IAU 2016 survey pattern:</b> teaching and research lead; partnerships and evaluation lag; staff support is the missing middle.</div></div>
+  <div class="r-item"><div class="r-num">6</div><div class="r-body"><b>THE Impact Rankings (2019&ndash;)</b>: first global table scoring universities on SDG performance, not prestige.</div></div>
+  <div class="r-item"><div class="r-num">7</div><div class="r-body"><b>Enabling environment = five traits:</b> physical &amp; psychological safety, participation, resources and time, institutional support (workload, promotion), assessment aligned to action.</div></div>
+  <div class="r-item"><div class="r-num">8</div><div class="r-body"><b>Pedagogical toolbox:</b> POPBL (Yasin &amp; Rahman 2011), case dilemmas, service learning, living labs, blended/flipped — method is not a guarantee; structure + debrief matter.</div></div>
+  <div class="r-item"><div class="r-num">9</div><div class="r-body"><b>Assessment is the hidden curriculum:</b> if exams reward recall, projects die — align assessment with action competence.</div></div>
+</div>
+
+<div class="exam-tip"><b>Exam tip</b>
+Walk a fictional college through the five-step SDG engagement cycle, one concrete action per step — then name the step most often skipped (Evaluate) and its cost.</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit2_rot.png" alt="Unit 2 mind map">
+  <div class="mindmap-note">Unit 2 mind map — rotate the page clockwise. Redraw from memory, then check.</div>
+</div>
+
+<!-- ═══ UNIT 3 ═══ -->
+<div class="unit-strip">
+  <div class="us-num">3</div>
+  <div><div class="us-t">Barriers, Problems and Future Challenges</div>
+  <div class="us-s">Three Horizons &middot; RADAR &middot; HEI approaches &middot; Sustainable teaching &middot; Indicators</div></div>
+</div>
+
+<div class="keyterms">
+  <div class="kt-title">Key terms in one breath</div>
+  <div class="kt-line"><b>Three Horizons</b> — H1 dominant-declining; H2 innovation zone; H3 sustainable vision (Curry &amp; Hodgson).</div>
+  <div class="kt-line"><b>Curriculum mainstreaming</b> — sustainability across all programmes, not one course.</div>
+  <div class="kt-line"><b>RADAR</b> — Responsible, Attentive, Disruptive, Authentic, Regenerative research qualities.</div>
+  <div class="kt-line"><b>Institutionalisation trap</b> — structures preserve old innovations while blocking new ones (Trechsel et al., 2018).</div>
+  <div class="kt-line"><b>Disciplinary / structural / dimensions</b> — three institutional approaches to the SDGs.</div>
+  <div class="kt-line"><b>Sustainable teaching</b> — teaching that endures: realistic workload + learning that lasts.</div>
+  <div class="kt-line"><b>ESD indicators</b> — policy / practice / outcome signals of real progress (Veidemane, 2022).</div>
+  <div class="kt-line"><b>Greenwashing</b> — image without practice; the test every indicator must pass.</div>
+</div>
+
+<div class="rapid">
+  <div class="r-item"><div class="r-num">1</div><div class="r-body"><b>Curriculum barriers:</b> overload, silos, untrained staff, exam-driven assessment (Fernandez-Sanchez et al., 2014) — each implies its counter-move.</div></div>
+  <div class="r-item"><div class="r-num">2</div><div class="r-body"><b>Horizons logic:</b> H1 is not the enemy but the incubator; change agents work the H1&ndash;H2 boundary to grow H3.</div></div>
+  <div class="r-item"><div class="r-num">3</div><div class="r-body"><b>RADAR practice:</b> anticipate with stakeholders (R), watch real impacts incl. marginal voices (A), question inherited assumptions (D), honest values-aligned methods (A), give back more than you take (R).</div></div>
+  <div class="r-item"><div class="r-num">4</div><div class="r-body"><b>Approach trade-offs:</b> disciplinary = depth but silos; structural = collaboration but hollow shells without culture; dimensions = audit lens that catches blind spots.</div></div>
+  <div class="r-item"><div class="r-num">5</div><div class="r-body"><b>Teaching shifts:</b> coverage&rarr;mastery; performer&rarr;designer; grades&rarr;purpose; private territory&rarr;collaborative practice; content volume&rarr;competency depth.</div></div>
+  <div class="r-item"><div class="r-num">6</div><div class="r-body"><b>Indicator types:</b> policy (existence, budget), practice (% SDG-mapped courses, energy data, community hours), outcomes (competency portfolios, graduate action).</div></div>
+  <div class="r-item"><div class="r-num">7</div><div class="r-body"><b>Measurement challenges:</b> self-report inflation, definitional variance, values that resist counting — read trends, ask who prepared the data, pair numbers with site visits.</div></div>
+  <div class="r-item"><div class="r-num">8</div><div class="r-body"><b>Swiss lesson (Trechsel):</b> formalising ESD protects it and freezes it — design structures that can keep changing.</div></div>
+</div>
+
+<div class="exam-tip"><b>Exam tip</b>
+Place three real innovations (an elective, a green audit, a revised curriculum) on the H1&ndash;H2&ndash;H3 map and defend each placement — the framework question examiners love.</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit3_rot.png" alt="Unit 3 mind map">
+  <div class="mindmap-note">Unit 3 mind map — rotate the page clockwise. Redraw from memory, then check.</div>
+</div>
+<!-- ═══ FRAMEWORKS GALLERY ═══ -->
+<div class="chapter-header">
+  <div class="kicker">Recognise them on sight</div>
+  <h2 class="sec-title">The Four Frameworks Gallery</h2>
+  <div class="divider"></div>
+</div>
+<p style="font-size:12.8px;">Examinations rarely ask you to define these four in isolation — they hide them inside scenarios. Practise naming the framework from one clue.</p>
+
+<div class="fw-grid">
+  <div class="fw-card">
+    <div class="fw-t">Lozano&rsquo;s Integration Pathway</div>
+    <div class="fw-chips"><span class="fw-chip">1 Initiate</span><span class="fw-chip">2 Incorporate</span><span class="fw-chip">3 Institutionalise</span></div>
+    <div class="fw-desc">Clue: &ldquo;change survived a change of vice-chancellor.&rdquo; Whole-institution embedding is the threshold.</div>
+  </div>
+  <div class="fw-card">
+    <div class="fw-t">SDG Engagement Cycle</div>
+    <div class="fw-chips"><span class="fw-chip">Commit</span><span class="fw-chip">Map</span><span class="fw-chip">Integrate</span><span class="fw-chip">Partner</span><span class="fw-chip">Evaluate</span></div>
+    <div class="fw-desc">Clue: &ldquo;where should a university start with the SDGs?&rdquo; It is a loop, not a checklist.</div>
+  </div>
+  <div class="fw-card">
+    <div class="fw-t">Three Horizons</div>
+    <div class="fw-chips"><span class="fw-chip">H1 declining</span><span class="fw-chip">H2 innovation</span><span class="fw-chip">H3 vision</span></div>
+    <div class="fw-desc">Clue: &ldquo;pilots struggle inside old structures while building the future.&rdquo; Futures thinking for curricula.</div>
+  </div>
+  <div class="fw-card">
+    <div class="fw-t">RADAR</div>
+    <div class="fw-chips"><span class="fw-chip">Responsible</span><span class="fw-chip">Attentive</span><span class="fw-chip">Disruptive</span><span class="fw-chip">Authentic</span><span class="fw-chip">Regenerative</span></div>
+    <div class="fw-desc">Clue: &ldquo;qualities of responsible research and innovation.&rdquo; Five checkable research habits.</div>
+  </div>
+</div>
+
+<!-- ═══ ENGAGEMENT CHECKLIST ═══ -->
+<div class="chapter-header">
+  <div class="kicker">Syllabus fieldwork</div>
+  <h2 class="sec-title">Engagement Tasks Checklist</h2>
+  <div class="divider"></div>
+</div>
+<p style="font-size:12.8px;">Six guided tasks link the course to your institution. Tick when the output is in your field notebook.</p>
+
+<div class="check-list">
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 1 &mdash; Campus sustainability snapshot:</b> one paragraph per HE function with evidence (policy, interviews, photos).</div></div>
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 2 &mdash; HESD research areas:</b> six areas listed, localised, with one research question per weak area.</div></div>
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 3 &mdash; Pedagogical innovations:</b> inventory of local innovations classified by type and competencies engaged.</div></div>
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 4 &mdash; Curriculum critique:</b> about/for/through mapping + RADAR lens, ending in three costed recommendations.</div></div>
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 5 &mdash; Classroom environment audit:</b> five traits rated before/after one low-cost intervention.</div></div>
+  <div class="chk"><div class="box"></div><div class="chk-t"><b>Task 6 &mdash; ESD indicator set:</b> policy + practice + outcome indicators, each passing the greenwashing test.</div></div>
+</div>
+
+<!-- ═══ SELF TEST ═══ -->
+<div class="chapter-header">
+  <div class="kicker">Final gate</div>
+  <h2 class="sec-title">Twelve-Question Self-Test</h2>
+  <div class="divider"></div>
+</div>
+
+<div class="quiz">
+  <div class="q-title">Rapid recall</div>
+  <div class="q-line">1. Who authored the 1987 definition of sustainable development, and what are its two central ideas?</div>
+  <div class="q-line">2. How many goals, targets and countries are behind Agenda 2030?</div>
+  <div class="q-line">3. State SDG Target 4.7 in one sentence.</div>
+  <div class="q-line">4. Name the three orientations of sustainability education and one example of each.</div>
+  <div class="q-line">5. List the five key HE functions and one sustainability practice for each.</div>
+  <div class="q-line">6. Name Wiek et al.&rsquo;s five competencies and the classroom signal of any one.</div>
+  <div class="q-line">7. What are Lozano&rsquo;s three phases, and which phase makes change survive leadership change?</div>
+  <div class="q-line">8. Expand the IAU&rsquo;s four HESD actions and name three HESD research areas.</div>
+  <div class="q-line">9. Give the university&rsquo;s four societal roles and one &ldquo;peril&rdquo; named by Chankseliani &amp; McCowan.</div>
+  <div class="q-line">10. Draw the five-step SDG engagement cycle from memory.</div>
+  <div class="q-line">11. Expand RADAR and match each quality to one research habit.</div>
+  <div class="q-line">12. Distinguish policy, practice and outcome ESD indicators with one example each, and explain the institutionalisation trap.</div>
+  <div class="ans"><b>Check:</b> 1&ndash;WCED/Brundtland; needs + limits. 2&ndash;17 / 169 / 193. 3&ndash;ESD + global citizenship for all learners. 4&ndash;about (lecture on goals), for (change project), through (green campus as curriculum). 5&ndash;teaching, research, operations, engagement, governance. 6&ndash;systems, anticipatory, normative, strategic, interpersonal. 7&ndash;initiation, incorporation, institutionalisation; the third. 8&ndash;apprise &amp; support, solidarity &amp; network, converse &amp; convene, research; e.g. curriculum, indicators, governance. 9&ndash;educator, knowledge engine, social actor, anchor; e.g. reproducing inequality. 10&ndash;Commit&rarr;Map&rarr;Integrate&rarr;Partner&rarr;Evaluate. 11&ndash;Responsible, Attentive, Disruptive, Authentic, Regenerative. 12&ndash;policy existence / % SDG courses / competency portfolios; structures freeze yesterday&rsquo;s innovations (Trechsel).</div>
+</div>
+
+<p style="font-size:12.6px; margin-top:12px;">Score yourself honestly: <strong>10&ndash;12</strong> &mdash; examination ready; <strong>7&ndash;9</strong> &mdash; revisit the mind map of the weakest unit; <strong>&le;6</strong> &mdash; return to the full course pack for one focused evening, then retake. Pair every revision session with one engagement task: the ideas only become yours when they touch your own campus.</p>
+
+</div><!-- /main-content -->
+
+<!-- ENDING -->
+<div class="ending">
+  <div class="ending-inner">
+    <div class="end-big">Revise fast. Teach slow. Let sustainability outlast the exam.</div>
+    <div class="end-line"></div>
+    <div class="end-meta">
+      Sustainability in Higher Education &middot; Paper XXI (EDN-21) &middot; Compact Notes<br>
+      Companion to the full Learning Material &middot; 2026 Edition
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

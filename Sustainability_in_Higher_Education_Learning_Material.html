@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sustainability in Higher Education — Learning Material</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+@page { size: 720px 1020px; margin: 0; }
+:root {
+  --g900:#173A28; --g800:#1F4A33; --g700:#2D6B4A; --g500:#4A9A6A; --g300:#9CC4AB;
+  --g100:#D5EAD8; --g50:#F2F8F4; --mint:#F0FDF4; --mint-b:#BBE5C8;
+  --paper:#FDFDFB; --ink:#263230; --muted:#5C6B62; --border:#DCE5DE;
+  --amber-bg:#FFF9ED; --amber-b:#F0DCB0; --amber-ink:#8A5A1C;
+  --blue-bg:#F2F7FF; --blue-b:#C9DCF7; --blue-ink:#1E4FA8;
+  --lav-bg:#F8F6FF; --lav-b:#DDD4F5; --lav-ink:#5B3FA8;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; width: 720px;
+  background: var(--paper); color: var(--ink);
+  font-family: 'Inter', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+  font-size: 14px; line-height: 1.6;
+}
+body { line-break: strict; word-break: normal; overflow-wrap: break-word; }
+@media screen {
+  html { height: auto; display: flex; justify-content: center; background: #E6E9E4; }
+  body { margin: 24px auto; box-shadow: 0 6px 32px rgba(23,58,40,0.18); }
+}
+
+/* ─────────── COVER ─────────── */
+.cover {
+  width: 720px; height: 1020px; break-after: page; overflow: hidden;
+  position: relative; background: linear-gradient(160deg, #12291C 0%, #1F4A33 58%, #2D6B4A 100%);
+  color: #F4FAF5;
+}
+.cover-bg { position: absolute; inset: 0; overflow: hidden; z-index: 1; }
+.cover-bg .ring { position: absolute; border-radius: 50%; border: 1.5px solid rgba(233,246,236,0.14); }
+.cover-bg .r1 { width: 420px; height: 420px; top: -160px; right: -120px; }
+.cover-bg .r2 { width: 280px; height: 280px; top: -60px; right: 40px; border-color: rgba(233,246,236,0.10); }
+.cover-bg .r3 { width: 240px; height: 240px; bottom: 130px; left: -110px; border-color: rgba(233,246,236,0.10); }
+.cover-bg .dotgrid {
+  position: absolute; right: 56px; bottom: 300px; width: 150px; height: 90px;
+  background-image: radial-gradient(rgba(233,246,236,0.22) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+.cover-inner {
+  position: relative; z-index: 3; height: 100%;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 56px 62px;
+}
+.cover-chiprow { display: flex; gap: 10px; margin-bottom: 26px; flex-wrap: wrap; }
+.cover-chip {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  border: 1.5px solid rgba(233,246,236,0.45); border-radius: 999px; padding: 6px 14px;
+  color: #DFEFE3;
+}
+.cover-kicker { font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #BCE0C6; margin-bottom: 14px; }
+.cover-title {
+  font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif;
+  font-size: 55px; line-height: 1.12; font-weight: 800; margin: 0 0 16px 0; color: #FFFFFF;
+}
+.cover-sub { font-size: 17.5px; font-weight: 500; color: #D9EBDD; margin-bottom: 22px; line-height: 1.5; }
+.cover-summary {
+  font-size: 13.5px; line-height: 1.7; color: #C6DCCB;
+  border-left: 3px solid rgba(188,224,198,0.6); padding-left: 14px; margin-bottom: 26px; max-width: 560px;
+}
+.cover-stats { display: flex; gap: 12px; margin-bottom: 30px; flex-wrap: wrap; }
+.cstat {
+  background: rgba(244,250,245,0.10); border: 1px solid rgba(233,246,236,0.28);
+  border-radius: 12px; padding: 10px 16px; min-width: 108px;
+}
+.cstat b { display: block; font-size: 22px; font-weight: 800; color: #FFFFFF; }
+.cstat span { font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: #B9D6C1; }
+.cover-img-frame {
+  border-radius: 16px; overflow: hidden; border: 1px solid rgba(233,246,236,0.3);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.35); margin-bottom: 26px;
+}
+.cover-img-frame img { display: block; width: 100%; height: 258px; object-fit: cover; }
+.cover-footer { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #A9CBB3; }
+
+/* ─────────── FLOW CONTENT ─────────── */
+.main-content { padding: 54px 62px 46px 62px; }
+p { margin: 0 0 11px 0; text-align: justify; hyphens: auto; }
+p.lead { font-size: 15.5px; color: #33473C; }
+strong { color: var(--g900); }
+.kicker {
+  font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--g700); margin-bottom: 6px;
+}
+.sec-title {
+  font-size: 24px; font-weight: 800; color: var(--g900); line-height: 1.25;
+  margin: 0 0 8px 0;
+}
+.divider { height: 3.5px; width: 88px; background: linear-gradient(90deg, var(--g700), var(--g300)); border-radius: 3px; margin: 0 0 16px 0; }
+.chapter-header { break-after: avoid; break-inside: avoid; margin-top: 26px; }
+.topic-head { break-after: avoid; break-inside: avoid; display: flex; align-items: center; gap: 10px; margin: 20px 0 9px 0; }
+.topic-num {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
+  background: var(--g800); color: #fff; font-size: 14.5px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.topic-title { font-size: 17.5px; font-weight: 800; color: var(--g900); line-height: 1.3; }
+.subhead { font-size: 14.5px; font-weight: 700; color: var(--g800); margin: 14px 0 6px 0; break-after: avoid; }
+
+/* Unit opener */
+.unit-opener { break-inside: avoid; margin-top: 24px; }
+.uo-band {
+  border-radius: 14px 14px 0 0; background: linear-gradient(135deg, var(--g900), var(--g700));
+  color: #fff; padding: 18px 22px 16px 22px;
+}
+.uo-band .uo-unit { font-size: 11px; font-weight: 800; letter-spacing: 3.5px; text-transform: uppercase; color: #BCE0C6; margin-bottom: 5px; }
+.uo-band .uo-title { font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif; font-size: 26px; font-weight: 800; line-height: 1.2; }
+.uo-band .uo-meta { font-size: 12px; color: #CDE4D3; margin-top: 6px; }
+.uo-img { border-radius: 0; overflow: hidden; line-height: 0; }
+.uo-img img { width: 100%; height: 218px; object-fit: cover; display: block; }
+.uo-body { border: 1.5px solid var(--g100); border-top: none; border-radius: 0 0 14px 14px; padding: 14px 18px 12px 18px; background: #FFFFFF; }
+.uo-body .uo-intro { font-size: 13.2px; margin-bottom: 10px; }
+.uo-topics { list-style: none; margin: 0; padding: 0; }
+.uo-topics li {
+  font-size: 12.8px; font-weight: 600; color: #33473C; padding: 5px 0 5px 24px;
+  position: relative; border-bottom: 1px dashed #E4EDE6;
+}
+.uo-topics li:last-child { border-bottom: none; }
+.uo-topics li::before {
+  content: attr(data-n); position: absolute; left: 0; top: 6px;
+  width: 17px; height: 17px; border-radius: 50%; background: var(--g50);
+  border: 1.5px solid var(--g500); color: var(--g800); font-size: 10px; font-weight: 800;
+  text-align: center; line-height: 15px;
+}
+
+/* Figures */
+figure { break-inside: avoid; margin: 16px 0; }
+figure img { display: block; width: 100%; max-height: 470px; object-fit: contain; }
+figcaption { font-size: 11.3px; color: var(--muted); text-align: center; margin-top: 7px; line-height: 1.5; font-style: italic; }
+.mindmap-fig { break-inside: avoid; margin: 10px 0 4px 0; }
+.mindmap-fig img { max-height: 852px; object-fit: contain; margin: 0 auto; }
+.mindmap-note { font-size: 11px; color: var(--muted); text-align: center; font-style: italic; margin-bottom: 6px; }
+
+/* Info boxes */
+.box { border-radius: 12px; padding: 14px 17px; margin: 13px 0; break-inside: avoid; }
+.box-title {
+  font-size: 11.5px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+  margin-bottom: 9px; display: flex; align-items: center; gap: 8px;
+}
+.box-title::before { content: ""; width: 9px; height: 9px; border-radius: 3px; flex-shrink: 0; }
+.keyterms { background: var(--mint); border: 1.2px solid var(--mint-b); }
+.keyterms .box-title { color: var(--g800); } .keyterms .box-title::before { background: var(--g700); }
+.kt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 16px; }
+.kt { font-size: 12.2px; line-height: 1.5; }
+.kt b { color: var(--g900); }
+.funfact { background: var(--amber-bg); border: 1.2px solid var(--amber-b); }
+.funfact .box-title { color: var(--amber-ink); } .funfact .box-title::before { background: #D98324; }
+.funfact p { font-size: 12.8px; margin-bottom: 7px; }
+.funfact p:last-child { margin-bottom: 0; }
+.activity-box { background: var(--blue-bg); border: 1.2px solid var(--blue-b); }
+.activity-box .box-title { color: var(--blue-ink); } .activity-box .box-title::before { background: #3B82F6; }
+.activity-box p, .activity-box li { font-size: 12.8px; }
+.activity-box ol, .activity-box ul { margin: 0 0 0 18px; padding: 0; }
+.activity-box li { margin-bottom: 5px; }
+.quiz-box { background: var(--lav-bg); border: 1.2px solid var(--lav-b); }
+.quiz-box .box-title { color: var(--lav-ink); } .quiz-box .box-title::before { background: #8B5CF6; }
+.qq { font-size: 12.8px; margin-bottom: 10px; break-inside: avoid; }
+.qq .qline { font-weight: 600; color: #33275A; margin-bottom: 4px; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; padding-left: 4px; }
+.opts span { font-size: 12.2px; color: #4A4560; }
+.answer-key {
+  background: #FFFFFF; border: 1.2px dashed #B7A8E8; border-radius: 9px;
+  padding: 8px 13px; font-size: 12px; color: #3E3564; line-height: 1.55;
+}
+.answer-key b { color: var(--lav-ink); letter-spacing: 1.5px; font-size: 10.5px; }
+.reflect { background: #F7FAF8; border: 1.2px solid #DCE8DF; border-left: 5px solid var(--g700); border-radius: 10px; padding: 13px 16px; break-inside: avoid; }
+.reflect .box-title { color: var(--g800); } .reflect .box-title::before { background: var(--g700); }
+.reflect ol { margin: 0; padding-left: 20px; }
+.reflect li { font-size: 12.8px; margin-bottom: 6px; }
+.reflect li:last-child { margin-bottom: 0; }
+
+/* Tables */
+table.cmp { width: 100%; border-collapse: collapse; margin: 13px 0; font-size: 12.2px; break-inside: avoid; }
+table.cmp thead { display: table-header-group; }
+table.cmp th {
+  background: #47695A; color: #FFFFFF; text-align: left; font-weight: 700;
+  padding: 8px 11px; font-size: 12px; line-height: 1.4;
+}
+table.cmp td { padding: 7px 11px; border-bottom: 1px solid #E3EBE5; vertical-align: top; line-height: 1.5; }
+table.cmp tr:nth-child(even) td { background: #F4F9F5; }
+table.cmp tr { break-inside: avoid; }
+.tbl-caption { font-size: 11.3px; color: var(--muted); text-align: center; font-style: italic; margin: -7px 0 12px 0; }
+
+/* SDG chips */
+.sdg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0; break-inside: avoid; }
+.sdg {
+  background: var(--mint); border: 1px solid #CBE8D2; border-radius: 8px;
+  padding: 6px 9px; font-size: 11.2px; line-height: 1.35;
+  display: flex; gap: 7px; align-items: center; color: #33473C;
+}
+.sdg b { color: var(--g800); font-size: 12.5px; flex-shrink: 0; }
+
+/* Task cards (engagement) */
+.task-card {
+  border: 1px solid #D8E4DC; border-left: 5px solid var(--g700); border-radius: 10px;
+  padding: 13px 16px; margin: 12px 0; break-inside: avoid; background: #FFFFFF;
+}
+.task-card .tc-head { display: flex; align-items: baseline; gap: 9px; margin-bottom: 6px; }
+.task-card .tc-num {
+  font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif;
+  font-size: 21px; font-weight: 800; color: var(--g500);
+}
+.task-card .tc-title { font-size: 14.5px; font-weight: 800; color: var(--g900); }
+.task-card p { font-size: 12.6px; margin-bottom: 7px; }
+.task-card .tc-row { font-size: 12.2px; margin-bottom: 4px; }
+.task-card .tc-row b { color: var(--g800); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; }
+
+/* TOC */
+.toc-list { list-style: none; margin: 10px 0 0 0; padding: 0; }
+.toc-list li { display: flex; align-items: baseline; gap: 8px; margin: 8px 0; font-size: 13.2px; }
+.toc-list .t-no { flex-shrink: 0; width: 30px; height: 20px; border-radius: 6px; background: var(--g50); border: 1px solid var(--g100); color: var(--g800); font-size: 11px; font-weight: 800; text-align: center; line-height: 18px; }
+.toc-list .t-t { font-weight: 600; color: #2E4036; }
+.toc-list .t-sub { font-weight: 400; color: var(--muted); font-size: 12px; }
+.toc-dots { flex: 1; border-bottom: 2px dotted #B9CCC0; transform: translateY(-3px); }
+.toc-pg { color: var(--muted); font-size: 12px; }
+.toc-part { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--g700); margin: 16px 0 4px 0; }
+
+/* Legend (how to use) */
+.legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.legend-card { border-radius: 10px; padding: 11px 13px; font-size: 12px; line-height: 1.5; break-inside: avoid; }
+.legend-card b { display: block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+
+/* Glossary */
+.gloss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 12px 0; }
+.g-item { background: #F8FBF9; border: 1px solid #E1EAE4; border-radius: 9px; padding: 10px 12px; font-size: 12.1px; line-height: 1.5; break-inside: avoid; }
+.g-item b { color: var(--g900); display: block; margin-bottom: 2px; }
+
+/* References */
+.ref-list { margin-top: 8px; }
+.ref { font-size: 11.6px; line-height: 1.55; margin-bottom: 7.5px; padding-left: 24px; text-indent: -24px; break-inside: avoid; text-align: left; }
+.ref i { color: #3D5247; }
+
+/* Ending page */
+.ending {
+  width: 720px; height: 1020px; break-before: page; overflow: hidden; position: relative;
+  background: linear-gradient(200deg, #12291C 0%, #1F4A33 60%, #2D6B4A 100%); color: #F4FAF5;
+}
+.ending .ending-inner {
+  position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center; padding: 70px 80px;
+}
+.ending .qmark { font-family: 'Playfair Display', serif; font-size: 90px; line-height: 0.6; color: #8FC29E; margin-bottom: 26px; }
+.ending .quote { font-family: 'Playfair Display', 'Liberation Serif', 'DejaVu Serif', serif; font-size: 27px; line-height: 1.5; font-weight: 600; font-style: italic; max-width: 540px; }
+.ending .qauthor { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #B9D6C1; margin-top: 22px; }
+.ending .end-line { width: 70px; height: 3px; background: #6FA886; border-radius: 3px; margin: 34px auto; }
+.ending .end-meta { font-size: 12px; color: #C4DCCA; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ COVER ═══════════ -->
+<div class="cover">
+  <div class="cover-bg">
+    <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+    <div class="dotgrid"></div>
+  </div>
+  <div class="cover-inner">
+    <div class="cover-chiprow">
+      <span class="cover-chip">Paper XXI &middot; EDN-21</span>
+      <span class="cover-chip">Credits: 2</span>
+      <span class="cover-chip">Marks: 50</span>
+    </div>
+    <div class="cover-kicker">Teacher Education &middot; Learning Material</div>
+    <h1 class="cover-title">Sustainability in Higher Education</h1>
+    <div class="cover-sub">A visual learning companion of mind maps, flowcharts, activities and self-check quizzes for the three-unit course.</div>
+    <div class="cover-summary">
+      This course pack brings the full syllabus to life: sustainable development and the SDGs,
+      the university&rsquo;s role in society, and the barriers and future challenges of education for
+      sustainable development &mdash; organised unit by unit with key terms, figures, reflection prompts
+      and guided field tasks.
+    </div>
+    <div class="cover-stats">
+      <div class="cstat"><b>3</b><span>Units</span></div>
+      <div class="cstat"><b>15</b><span>Topics</span></div>
+      <div class="cstat"><b>14</b><span>Visual Aids</span></div>
+      <div class="cstat"><b>6</b><span>Field Tasks</span></div>
+    </div>
+    <div class="cover-img-frame"><img src="assets/cover_hero.png" alt="Sustainable university campus"></div>
+    <div class="cover-footer">
+      <span>Learning Material &middot; B.Ed. / M.Ed.</span>
+      <span>2026 Edition</span>
+    </div>
+  </div>
+</div>
+<div class="main-content">
+
+<!-- ═══════════ ABOUT THIS COURSE ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Welcome to the course</div>
+  <h2 class="sec-title">About This Learning Material</h2>
+  <div class="divider"></div>
+</div>
+
+<p class="lead">Higher education sits at a crossroads of every sustainability question our societies face. Universities prepare the teachers, engineers, doctors, administrators and entrepreneurs who will run tomorrow&rsquo;s world; they also produce much of the knowledge those decisions will rest upon. That is why <strong>Sustainability in Higher Education</strong> is not simply a topic you study &mdash; it is a lens through which you will re-examine what teaching, research and institutional life are for.</p>
+
+<p>This learning material covers the complete syllabus of <strong>Paper XXI (EDN-21): Sustainability in Higher Education</strong> in three units. Unit 1 builds the conceptual foundations: what sustainable development means, for whom, and how the Sustainable Development Goals (SDGs) travel into higher education through teaching, research, campus operations and governance. Unit 2 shifts to perspective and practice: the role of the university in society, how institutions engage with the SDGs, and the pedagogical innovations that make learning transformative. Unit 3 confronts the hard edges: barriers and problems, the Three Horizons and RADAR frameworks, and the indicators that tell us whether education for sustainable development (ESD) is genuinely happening or merely being announced.</p>
+
+<p>Every unit follows the same rhythm so that studying becomes a habit rather than a hunt. You begin with <strong>key terms</strong>, move through five fully-developed topics, meet <strong>visual organisers</strong> (mind maps, flowcharts, tables and charts), and close with a <strong>self-check quiz</strong>, <strong>reflection questions</strong> and links to the <strong>engagement activities</strong> required by the syllabus. Boxes marked &ldquo;Did You Know?&rdquo; appear throughout to keep the journey recreational as well as rigorous. By the end, you should be able not only to reproduce the ideas in an examination, but to audit your own institution and classroom with them.</p>
+
+<div class="subhead">Learning Outcomes</div>
+<p>On successful completion of this course, students will be able to:</p>
+<ul style="margin:4px 0 10px 0; padding-left:22px;">
+  <li style="margin-bottom:6px;"><strong>LO1 &mdash; Understand</strong> sustainability in higher education and explain its origins, definitions and rationale in plain language.</li>
+  <li style="margin-bottom:6px;"><strong>LO2 &mdash; Describe</strong> the SDG goals and the key competencies (systems, anticipatory, normative, strategic, interpersonal) that sustainability learning develops.</li>
+  <li style="margin-bottom:6px;"><strong>LO3 &mdash; Understand</strong> responsible research and innovation in sustainability, including the RADAR qualities of research practice.</li>
+  <li style="margin-bottom:6px;"><strong>LO4 &mdash; Explore</strong> the approaches available to higher education institutions for engaging with the SDGs, from disciplinary redesign to whole-institution strategies.</li>
+  <li><strong>LO5 &mdash; Understand</strong> the challenges of ESD &mdash; curricular, structural and cultural &mdash; and evaluate institutional progress using ESD indicators.</li>
+</ul>
+
+<!-- ═══════════ TOC ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Contents</div>
+  <h2 class="sec-title">Table of Contents</h2>
+  <div class="divider"></div>
+</div>
+
+<div class="toc-part">Prelims</div>
+<ul class="toc-list">
+  <li><span class="t-no">&sect;</span><span class="t-t">About This Learning Material &amp; Learning Outcomes</span><span class="toc-dots"></span><span class="toc-pg">i</span></li>
+  <li><span class="t-no">&sect;</span><span class="t-t">How to Use This Material</span><span class="toc-dots"></span><span class="toc-pg">iii</span></li>
+</ul>
+
+<div class="toc-part">Unit 1 &middot; Introduction to Sustainable Development</div>
+<ul class="toc-list">
+  <li><span class="t-no">1.1</span><span class="t-t">Sustainable Development for Who, How, When and to What Effect?</span><span class="toc-dots"></span><span class="toc-pg">2</span></li>
+  <li><span class="t-no">1.2</span><span class="t-t">SDGs in Higher Education; Education About, For and Through the SDGs</span><span class="toc-dots"></span><span class="toc-pg">3</span></li>
+  <li><span class="t-no">1.3</span><span class="t-t">Conceptualising Sustainability in Key HE Functions</span><span class="toc-dots"></span><span class="toc-pg">5</span></li>
+  <li><span class="t-no">1.4</span><span class="t-t">Strategies for Integrating Sustainability in Higher Education</span><span class="toc-dots"></span><span class="toc-pg">6</span></li>
+  <li><span class="t-no">1.5</span><span class="t-t">SDG Skills and Competencies</span><span class="toc-dots"></span><span class="toc-pg">8</span></li>
+  <li><span class="t-no">&#9670;</span><span class="t-t">Unit 1 Mind Map &middot; Self-Check Quiz &middot; Reflections</span><span class="toc-dots"></span><span class="toc-pg">10</span></li>
+</ul>
+
+<div class="toc-part">Unit 2 &middot; Perspectives of Developing Sustainability in HE</div>
+<ul class="toc-list">
+  <li><span class="t-no">2.1</span><span class="t-t">HESD Approaches: Apprising, Solidarity, Convening &amp; Research Areas</span><span class="toc-dots"></span><span class="toc-pg">14</span></li>
+  <li><span class="t-no">2.2</span><span class="t-t">The Role of University in Society</span><span class="toc-dots"></span><span class="toc-pg">15</span></li>
+  <li><span class="t-no">2.3</span><span class="t-t">University Engagement with the SDGs</span><span class="toc-dots"></span><span class="toc-pg">16</span></li>
+  <li><span class="t-no">2.4</span><span class="t-t">Creating an Enabling SDGs Learning &amp; Teaching Environment</span><span class="toc-dots"></span><span class="toc-pg">18</span></li>
+  <li><span class="t-no">2.5</span><span class="t-t">Pedagogical Innovation and the SDGs</span><span class="toc-dots"></span><span class="toc-pg">19</span></li>
+  <li><span class="t-no">&#9670;</span><span class="t-t">Unit 2 Mind Map &middot; Self-Check Quiz &middot; Reflections</span><span class="toc-dots"></span><span class="toc-pg">20</span></li>
+</ul>
+
+<div class="toc-part">Unit 3 &middot; Barriers, Problems and Future Challenges</div>
+<ul class="toc-list">
+  <li><span class="t-no">3.1</span><span class="t-t">Sustainable Development in Curricula &amp; the Three Horizons Framework</span><span class="toc-dots"></span><span class="toc-pg">24</span></li>
+  <li><span class="t-no">3.2</span><span class="t-t">Responsible Research and Innovation &mdash; the RADAR Framework</span><span class="toc-dots"></span><span class="toc-pg">25</span></li>
+  <li><span class="t-no">3.3</span><span class="t-t">Approaches of HEIs to the SDGs: Disciplinary, Structural, Dimensions</span><span class="toc-dots"></span><span class="toc-pg">27</span></li>
+  <li><span class="t-no">3.4</span><span class="t-t">Make Teaching Sustainable &mdash; Shifts Teachers Want, Students Need</span><span class="toc-dots"></span><span class="toc-pg">28</span></li>
+  <li><span class="t-no">3.5</span><span class="t-t">ESD Indicators and Underlying Challenges</span><span class="toc-dots"></span><span class="toc-pg">29</span></li>
+  <li><span class="t-no">&#9670;</span><span class="t-t">Unit 3 Mind Map &middot; Self-Check Quiz &middot; Reflections</span><span class="toc-dots"></span><span class="toc-pg">30</span></li>
+</ul>
+
+<div class="toc-part">Back Matter</div>
+<ul class="toc-list">
+  <li><span class="t-no">&#9671;</span><span class="t-t">Engagement Activities &mdash; Six Guided Tasks</span><span class="toc-dots"></span><span class="toc-pg">33</span></li>
+  <li><span class="t-no">&#9671;</span><span class="t-t">Glossary of Key Terms</span><span class="toc-dots"></span><span class="toc-pg">35</span></li>
+  <li><span class="t-no">&#9671;</span><span class="t-t">References</span><span class="toc-dots"></span><span class="toc-pg">36</span></li>
+</ul>
+
+<!-- ═══════════ HOW TO USE ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Start here</div>
+  <h2 class="sec-title">How to Use This Material</h2>
+  <div class="divider"></div>
+</div>
+
+<p>Every coloured box in this pack does a specific job. Learn the colour language once and you will navigate the material at speed &mdash; and, in the process, experience how visual coding itself supports learning, something you can reuse in your own classroom. The five box families below appear in every unit, always in the same order of importance: definitions first, delights second, actions third.</p>
+
+<div class="legend-grid">
+  <div class="legend-card" style="background:#F0FDF4; border:1.2px solid #BBE5C8;">
+    <b style="color:#1F4A33;">Key Terms &middot; green</b>
+    Vocabulary checkpoints at the start of each unit. Read them before the topics, then return after &mdash; if you can define each term in one sentence, you are ready for the examination.
+  </div>
+  <div class="legend-card" style="background:#FFF9ED; border:1.2px solid #F0DCB0;">
+    <b style="color:#8A5A1C;">Did You Know? &middot; amber</b>
+    Recreational fact callouts that connect the syllabus to surprising stories &mdash; from the origin of the SDGs to the campuses running on 100% renewable energy.
+  </div>
+  <div class="legend-card" style="background:#F2F7FF; border:1.2px solid #C9DCF7;">
+    <b style="color:#1E4FA8;">Try This &middot; blue</b>
+    Micro-activities you can do in ten minutes with pen and paper. They prepare you for the six formal engagement tasks collected at the back of the pack.
+  </div>
+  <div class="legend-card" style="background:#F8F6FF; border:1.2px solid #DDD4F5;">
+    <b style="color:#5B3FA8;">Self-Check Quiz &middot; lavender</b>
+    Six multiple-choice questions close each unit. Attempt them before peeking at the answer key &mdash; retrieval practice is proven to beat re-reading.
+  </div>
+  <div class="legend-card" style="background:#F7FAF8; border:1.2px solid #DCE8DF; border-left:5px solid #2D6B4A;">
+    <b style="color:#2D6B4A;">Test Your Understanding &middot; framed</b>
+    Open reflection questions after each topic cluster. Write two or three sentences per question; these become ready-made answer outlines for descriptive exam items.
+  </div>
+  <div class="legend-card" style="background:#FFFFFF; border:1.2px solid #DCE5DE;">
+    <b style="color:#173A28;">Figures &middot; throughout</b>
+    Mind maps (one per unit), flowcharts, comparison tables and data charts. Cover the caption, explain the figure aloud, then check &mdash; the Feynman technique in action.
+  </div>
+</div>
+
+<p>A final study tip: pair this pack with a field notebook. Several topics end by pointing your attention at your own institution &mdash; its curricula, its campus, its classrooms. Sustainability in higher education is learned twice: once on these pages, and once in the corridor outside your staff room.</p>
+<!-- ═══════════ UNIT 1 ═══════════ -->
+<div class="unit-opener">
+  <div class="uo-band">
+    <div class="uo-unit">Unit 1 &middot; Introduction to Sustainable Development</div>
+    <div class="uo-title">Thinking in Systems, Acting for Generations</div>
+    <div class="uo-meta">5 topics &middot; mind map &middot; quiz &middot; reflections</div>
+  </div>
+  <div class="uo-img"><img src="assets/unit1_opener.png" alt="Graduates holding the globe surrounded by the Sustainable Development Goals"></div>
+  <div class="uo-body">
+    <p class="uo-intro"><strong>IN THIS UNIT</strong> you will meet the idea that reshaped development thinking since 1987: progress that endures must be economically viable, socially just and environmentally sound at the same time. You will learn how the 17 Sustainable Development Goals give that idea a shared global language, and how higher education translates it into curricula, campus life and competencies.</p>
+    <ul class="uo-topics">
+      <li data-n="1">Sustainable Development for Who, How, When and to What Effect?</li>
+      <li data-n="2">SDGs in Higher Education; Education About, For and Through the SDGs</li>
+      <li data-n="3">Conceptualising Sustainability in Key HE Functions</li>
+      <li data-n="4">Strategies for Integrating Sustainability in Higher Education</li>
+      <li data-n="5">SDG Skills and Competencies</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box keyterms">
+  <div class="box-title">Key Terms &middot; Unit 1</div>
+  <div class="kt-grid">
+    <div class="kt"><b>Sustainable Development</b> &mdash; development meeting present needs without compromising future generations&rsquo; ability to meet theirs (Brundtland, 1987).</div>
+    <div class="kt"><b>SDGs</b> &mdash; 17 universal goals adopted by all UN member states in 2015 to end poverty, protect the planet and ensure prosperity by 2030.</div>
+    <div class="kt"><b>Agenda 2030</b> &mdash; the UN resolution &ldquo;Transforming Our World&rdquo; that carries the 17 goals, 169 targets and the global pledge to leave no one behind.</div>
+    <div class="kt"><b>ESD (Education for Sustainable Development)</b> &mdash; learning that empowers people with knowledge, skills, values and agency to shape a sustainable society.</div>
+    <div class="kt"><b>Triple Bottom Line</b> &mdash; the three interlocking dimensions of sustainability: people (social), planet (environmental), prosperity (economic).</div>
+    <div class="kt"><b>Brundtland Report</b> &mdash; &ldquo;Our Common Future&rdquo; (WCED, 1987), the report that popularised sustainable development worldwide.</div>
+    <div class="kt"><b>Intergenerational Equity</b> &mdash; fairness between present and future generations; the ethical core of sustainability.</div>
+    <div class="kt"><b>SDG Target 4.7</b> &mdash; the education target that commits states to ESD and global citizenship education within quality education for all.</div>
+  </div>
+</div>
+
+<div class="topic-head"><div class="topic-num">1.1</div><div class="topic-title">Sustainable Development for Who, How, When and to What Effect?</div></div>
+
+<p>The most quoted sentence in sustainability literature appeared in 1987, when the World Commission on Environment and Development &mdash; chaired by Gro Harlem Brundtland &mdash; defined sustainable development as <strong>&ldquo;development that meets the needs of the present without compromising the ability of future generations to meet their own needs.&rdquo;</strong> The sentence looks simple, yet it contains two explosive ideas: the idea of <strong>needs</strong>, particularly the essential needs of the world&rsquo;s poor, which deserve overriding priority; and the idea of <strong>limits</strong>, the recognition that the environment cannot indefinitely absorb current levels of extraction and pollution. Sustainable development, in this reading, is simultaneously a critique of business-as-usual growth and a proposal for a fairer kind of progress.</p>
+
+<p>Because the idea is broad, this course organises it through four probing questions that the syllabus names directly. <strong>For who?</strong> Sustainability is first a question of equity &mdash; between countries, between rich and poor, between genders and communities today (intragenerational equity), and between us and those not yet born (intergenerational equity). Whoever designs a sustainability policy must ask whose needs count and who currently lacks a voice. <strong>How?</strong> This is the question of means: the &ldquo;three pillars&rdquo; or <strong>triple bottom line</strong> of people, planet and prosperity must be pursued together, because poverty driven by environmental collapse is no development at all, and conservation that starves communities is neither just nor durable. Education itself is one of the most powerful &ldquo;hows&rdquo; available, which is why it appears in the goals not once but everywhere.</p>
+
+<p><strong>When?</strong> gives the agenda its tempo. The UN Decade of Education for Sustainable Development (2005&ndash;2014) normalised ESD in classrooms; the Rio+20 conference of 2012 launched the negotiation that produced <strong>Agenda 2030</strong> in 2015; and the Paris Agreement of the same year set climate targets for mid-century. Timeframes discipline action: a 2030 horizon for the goals, 2050 for climate neutrality, and an open-ended obligation to generations ahead. <strong>To what effect?</strong> finally, is the evaluator&rsquo;s question. Awareness-raising alone does not change systems; the effect sought is a measurable shift in what learners know, value and &mdash; crucially &mdash; <em>do</em>. That is why modern ESD talks of <strong>action competence</strong> and why universities increasingly report their sustainability performance rather than merely declaring intentions.</p>
+
+<div class="box funfact">
+  <div class="box-title">Did You Know?</div>
+  <p>The SDGs were adopted on 25 September 2015 by all 193 UN member states &mdash; the largest number of countries ever to agree a shared development agenda. Behind the 17 goals sit <strong>169 targets</strong> and a global indicator framework of over 230 measures used to track progress.</p>
+  <p>The three pillars predate the goals: the 1972 Stockholm Conference first placed environment on the world development agenda, and the 1992 Rio Earth Summit adopted Agenda 21, whose chapter 36 was devoted entirely to education.</p>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 1.1</div>
+  <ol>
+    <li>Restate the Brundtland definition in your own words and identify its two central ideas (needs and limits).</li>
+    <li>Give one example each of intragenerational and intergenerational inequity in your own region.</li>
+    <li>Why does &ldquo;to what effect?&rdquo; matter more for universities than for most other institutions?</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">1.2</div><div class="topic-title">SDGs in Higher Education; Education About, For and Through the SDGs</div></div>
+
+<p>Agenda 2030 is unusual among global compacts: it treats education both as <strong>a goal in itself (SDG 4: Quality Education)</strong> and as <strong>a means for every other goal</strong>. Higher education carries a double responsibility here. First, it delivers SDG 4 directly through inclusive access, relevant skills and Target 4.7, which asks all learners to acquire knowledge and skills needed to promote sustainable development, human rights, gender equality, a culture of peace and global citizenship. Second, universities advance the other sixteen goals through graduate expertise, applied research, campus practice and public partnerships &mdash; from SDG 3 health training to SDG 7 clean-energy engineering and SDG 13 climate research.</p>
+
+<div class="sdg-grid">
+  <div class="sdg"><b>1</b> No Poverty</div>
+  <div class="sdg"><b>2</b> Zero Hunger</div>
+  <div class="sdg"><b>3</b> Good Health</div>
+  <div class="sdg"><b>4</b> Quality Education</div>
+  <div class="sdg"><b>5</b> Gender Equality</div>
+  <div class="sdg"><b>6</b> Clean Water</div>
+  <div class="sdg"><b>7</b> Clean Energy</div>
+  <div class="sdg"><b>8</b> Decent Work</div>
+  <div class="sdg"><b>9</b> Industry &amp; Innovation</div>
+  <div class="sdg"><b>10</b> Reduced Inequalities</div>
+  <div class="sdg"><b>11</b> Sustainable Cities</div>
+  <div class="sdg"><b>12</b> Responsible Consumption</div>
+  <div class="sdg"><b>13</b> Climate Action</div>
+  <div class="sdg"><b>14</b> Life Below Water</div>
+  <div class="sdg"><b>15</b> Life on Land</div>
+  <div class="sdg"><b>16</b> Peace &amp; Justice</div>
+  <div class="sdg"><b>17</b> Partnerships</div>
+</div>
+<div class="tbl-caption">The 17 Sustainable Development Goals &mdash; the shared vocabulary of Agenda 2030.</div>
+
+<p>ESD practitioners distinguish three orientations of sustainability education, often summarised as <strong>about, for and through</strong>. Education <strong>about</strong> the SDGs builds cognitive understanding: students learn the goals, targets, indicators and the evidence behind them. Education <strong>for</strong> the SDGs is transformative and values-driven: it cultivates the dispositions, competencies and agency to act, treating learners as future change agents rather than as audiences. Education <strong>through</strong> the SDGs uses the institution itself as the curriculum: greening campus operations, participatory governance and community partnerships become living lessons in how the goals actually get implemented. A mature programme blends all three &mdash; knowledge without agency is inert, while activism without understanding is fragile.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:19%;">Orientation</th><th style="width:27%;">Primary Aim</th><th style="width:27%;">Typical Methods</th><th>What Success Looks Like</th></tr></thead>
+  <tbody>
+    <tr><td><strong>About</strong> the SDGs</td><td>Conceptual knowledge of goals, targets, indicators and debates</td><td>Lectures, readings, mapping exercises, data labs</td><td>Students can explain the goal system and critique its evidence</td></tr>
+    <tr><td><strong>For</strong> the SDGs</td><td>Values, motivation and action competence for change</td><td>Problem-based projects, service learning, futures workshops</td><td>Students design and lead sustainability initiatives</td></tr>
+    <tr><td><strong>Through</strong> the SDGs</td><td>Institutional practice as lived curriculum</td><td>Campus greening, participatory governance, partnerships</td><td>Institution&rsquo;s operations model the goals it teaches</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 1.1 &mdash; Three orientations of education for the SDGs. Strong programmes combine all three.</div>
+
+<div class="box funfact">
+  <div class="box-title">Did You Know?</div>
+  <p>Target 4.7 is only 34 words long, yet UNESCO ranks it among the most ambitious in Agenda 2030: it asks every education system on Earth to teach sustainable development, human rights, gender equality, peace and global citizenship &mdash; and to report progress on it.</p>
+</div>
+
+<div class="box activity-box">
+  <div class="box-title">Try This &middot; 10 Minutes</div>
+  <p>Draw the last 24 hours of your life as a clock face and label each hour with the SDG it most affected (energy use &rarr; SDG 7; meals &rarr; SDG 2; travel &rarr; SDG 11 and 13; study &rarr; SDG 4). Which goal dominated? Which one did your routine harm most? Keep the clock &mdash; you will reuse it in Engagement Task 1.</p>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 1.2</div>
+  <ol>
+    <li>Distinguish education <em>about</em>, <em>for</em> and <em>through</em> the SDGs with one concrete example of each from a teacher-education programme.</li>
+    <li>Why is Target 4.7 described as education&rsquo;s &ldquo;licence&rdquo; for ESD work in schools and universities?</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">1.3</div><div class="topic-title">Conceptualising Sustainability in Key HE Functions</div></div>
+
+<p>A university is not one thing but a bundle of functions: it teaches, researches, builds, buys, employs, governs and reaches outward. <strong>Conceptualising sustainability function by function</strong> prevents the common failure mode in which sustainability lives in one environmental-science course and nowhere else. Each function can be asked a simple question &mdash; <em>what does it mean to do this sustainably?</em> &mdash; and each answer becomes a workstream for institutional change. The table below maps the five widely recognised functions that this course, and the international literature from Cortese (2003) to the IAU global surveys, treat as the skeleton of a sustainable university.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:20%;">HE Function</th><th style="width:40%;">Sustainability Means&hellip;</th><th>Illustrative Practice</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Teaching &amp; Curriculum</strong></td><td>Every graduate &mdash; not only environmental majors &mdash; encounters sustainability concepts, competencies and values in their programme</td><td>SDG-mapped course outcomes; interdisciplinary electives; ESD embedded in teaching practice</td></tr>
+    <tr><td><strong>Research &amp; Innovation</strong></td><td>Research agendas address sustainability problems and research itself is conducted responsibly</td><td>Interdisciplinary sustainability institutes; Responsible R&amp;I; open, ethical publication</td></tr>
+    <tr><td><strong>Campus Operations</strong></td><td>Energy, water, waste, food, procurement and mobility minimise ecological footprint</td><td>Renewable energy contracts; zero-waste canteens; green building standards; campus farms as labs</td></tr>
+    <tr><td><strong>Community Engagement</strong></td><td>Knowledge and service flow outward; local problems inform learning</td><td>Community service learning; science shops; adult and extension education on sustainability</td></tr>
+    <tr><td><strong>Governance &amp; Administration</strong></td><td>Policy, finance and quality systems institutionalise sustainability rather than leaving it to volunteers</td><td>Sustainability policy and committee; SDG reporting; staff incentives; ethical investment</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 1.2 &mdash; Sustainability reconceptualised across the five core functions of a university.</div>
+
+<p>Two insights follow from the functional view. First, the functions are <strong>interdependent</strong>: a green campus teaches through practice only if the curriculum notices it, and a sustainability-literate graduate community pushes governance further. Cortese (2003) argued that the university is uniquely able to model sustainability because all its functions are, in effect, visible to its own students every day. Second, the functional view exposes <strong>gaps quickly</strong>: an institution may publish a glossy sustainability strategy (governance) while its teacher-education curriculum remains untouched (teaching) &mdash; exactly the &ldquo;espoused versus enacted&rdquo; gap that Lee, Barker and Mouasher (2013) documented in Australian universities&rsquo; mission statements. Auditing function by function, as you will do in Engagement Task 1, turns such rhetoric-reality gaps into an improvement agenda.</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 1.3</div>
+  <ol>
+    <li>Name the five core functions and give one sustainability indicator for each.</li>
+    <li>&ldquo;The campus is a teaching instrument.&rdquo; Defend or challenge this claim using the idea of education <em>through</em> the SDGs.</li>
+  </ol>
+</div>
+<div class="topic-head"><div class="topic-num">1.4</div><div class="topic-title">Strategies for Integrating Sustainability in Higher Education</div></div>
+
+<p>Knowing <em>what</em> sustainability touches is easier than knowing <em>how</em> to embed it, so researchers have mapped the <strong>how</strong> into phased strategies. Lozano (2006), studying universities that had genuinely transformed, found a progression from <strong>initiation</strong> (an individual or small group champions the idea) through <strong>incorporation</strong> (sustainability enters courses, research and operations) to <strong>institutionalisation</strong> (policy, culture and quality systems make the change permanent). Many institutions stall between the second and third phases: a dynamic vice-chancellor launches initiatives, but when leadership changes, sustainability evaporates because it was attached to a person rather than to the institution&rsquo;s rules and routines.</p>
+
+<p>Figure 1.1 organises the strategy landscape into those three phases. Read it as a maturity model: each phase builds capabilities the next one assumes. Initiating without a baseline audit produces guessing; incorporating without committee governance produces burnout; institutionalising without earlier experimentation produces empty policy. The figure also shows why <strong>whole-institution approaches</strong> outperform isolated projects &mdash; the phases deliberately mix curriculum, campus, community and governance actions so that progress in one function reinforces the others. International frameworks such as the Talloires Declaration (1990), the SDG Accord and UNESCO&rsquo;s ESD for 2030 roadmap supply ready-made commitments that phase-one institutions can adopt to anchor their journey externally.</p>
+
+<figure>
+  <img src="assets/flow_integration.png" alt="Three-phase flowchart for integrating sustainability">
+  <figcaption>Figure 1.1 &mdash; Strategies for integrating sustainability: a three-phase pathway from first commitment to full institutionalisation (adapted from Lozano, 2006).</figcaption>
+</figure>
+
+<p>Strategy is also about <strong>sequencing under constraint</strong>. Institutions rarely enjoy spare money or consensus, so successful change agents pick visible, low-cost early wins &mdash; a campus garden, a student SDG audit, one redesigned course &mdash; whose success builds the political capital for harder structural moves. They also pair <strong>top-down</strong> levers (policy, budget lines, accreditation) with <strong>bottom-up</strong> energy (student societies, faculty champions, community partners). The dance between the two is a recurring theme you will meet again in Unit 3, when we examine why so many well-meant initiatives remain, in the language of the literature, &ldquo; islands of innovation in oceans of business-as-usual.&rdquo;</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 1.4</div>
+  <ol>
+    <li>Describe the three phases of Lozano&rsquo;s model and give one concrete institutional action for each.</li>
+    <li>Why do whole-institution strategies outperform isolated pilot projects in the long run?</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">1.5</div><div class="topic-title">SDG Skills and Competencies</div></div>
+
+<p>If education <em>for</em> the SDGs is to change what learners do, it must be explicit about the capabilities it builds. The most influential answer comes from Wiek, Withycombe and Redman (2011), whose review for academic programme development identified <strong>five key competencies in sustainability</strong>. <strong>Systems-thinking competence</strong> is the ability to see structures, connections and feedback loops across domains &mdash; understanding, say, how food, energy, water and livelihoods interlock in a district. <strong>Anticipatory competence</strong> is futures literacy: imagining alternative scenarios, from business-as-usual to sustainable, and judging their consequences. <strong>Normative competence</strong> is the capacity to reason with values &mdash; to decide what <em>ought</em> to be, not merely what is, and to negotiate sustainability and justice explicitly.</p>
+
+<p><strong>Strategic competence</strong> turns vision into feasible action: designing interventions, anticipating barriers, sequencing change &mdash; exactly the craft practised in Topic 1.4. <strong>Interpersonal competence</strong> rounds the set out: sustainability work is done with others, across disciplines, cultures and power differences, so empathetic listening, collaboration and participatory leadership are not soft extras but core machinery. Later frameworks, including UNESCO&rsquo;s (2017) eight competencies and the GreenComp European framework, rearrange and rename these abilities, but the Wiek quintet remains the reference skeleton that examination answers and programme designs alike can rely on.</p>
+
+<figure>
+  <img src="assets/chart_competencies.png" alt="Radar chart of the five sustainability competencies" style="max-height:400px;">
+  <figcaption>Figure 1.2 &mdash; A self-assessment radar for the five key competencies (0&ndash;5 scale). The example profile contrasts a typical starting point with course targets; plot your own in your field notebook.</figcaption>
+</figure>
+
+<table class="cmp">
+  <thead><tr><th style="width:22%;">Competency</th><th style="width:42%;">What It Enables</th><th>Classroom Signal</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Systems thinking</strong></td><td>Seeing interconnections, feedback loops and unintended consequences</td><td>Students draw issue maps rather than single-cause chains</td></tr>
+    <tr><td><strong>Anticipatory</strong></td><td>Imagining scenarios and long-term consequences</td><td>Students argue from 2050 futures, not only present facts</td></tr>
+    <tr><td><strong>Normative</strong></td><td>Explicit reasoning about values, justice and trade-offs</td><td>Students name whose interests a policy serves</td></tr>
+    <tr><td><strong>Strategic</strong></td><td>Designing feasible, sequenced interventions</td><td>Student plans name barriers, allies and first steps</td></tr>
+    <tr><td><strong>Interpersonal</strong></td><td>Collaborating across difference; participatory leadership</td><td>Group work shows real role rotation and listening</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 1.3 &mdash; The five key competencies (Wiek et al., 2011) translated into observable classroom behaviour.</div>
+
+<p>For future teachers there is a crucial second layer: these competencies describe <strong>you</strong> as much as your students. A teacher cannot cultivate anticipatory competence in learners without exercising it personally &mdash; which is why the engagement activities ask you to rate yourself on the radar above at the start and end of the course. Competency development is slow, iterative and best evidenced through artefacts: lesson plans, issue maps, project reports. Collect yours deliberately; they become the portfolio that Examination boards and employers increasingly value over marks alone.</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 1.5</div>
+  <ol>
+    <li>Define the five competencies and pair each with a subject-specific example from your own teaching subject.</li>
+    <li>Which competency do you find weakest in yourself, and which classroom activity would stretch it?</li>
+  </ol>
+</div>
+
+<div class="chapter-header">
+  <div class="kicker">Unit 1 &middot; Consolidation</div>
+  <h2 class="sec-title">Unit 1 in One Picture &mdash; and Six Quick Questions</h2>
+  <div class="divider"></div>
+</div>
+
+<p>Before you attempt the quiz, study the mind map on the following page. It compresses the whole unit into five branches: the definition and its probing questions, the SDG architecture, the five institutional functions, the integration strategies, and the competency framework. Take the quiz first, check your answers, and then try to redraw the mind map from memory on scrap paper &mdash; the parts you forget are the parts to revise. Remember that the map is deliberately rotated: turn that page sideways to read it comfortably, as you would a large map on a desk.</p>
+
+<div class="box quiz-box">
+  <div class="box-title">Self-Check Quiz &middot; Unit 1</div>
+  <div class="qq"><div class="qline">1. The Brundtland definition of sustainable development was published in&hellip;</div>
+    <div class="opts"><span>A. 1972, at Stockholm</span><span>B. 1987, in &ldquo;Our Common Future&rdquo;</span><span>C. 1992, at the Rio Earth Summit</span><span>D. 2015, in Agenda 2030</span></div></div>
+  <div class="qq"><div class="qline">2. &ldquo;Education through the SDGs&rdquo; is best illustrated when a university&hellip;</div>
+    <div class="opts"><span>A. offers a lecture course on the goals</span><span>B. includes SDG content in the exam</span><span>C. greens its campus so students live the goals</span><span>D. publishes an SDG research journal</span></div></div>
+  <div class="qq"><div class="qline">3. SDG Target 4.7 commits education systems to&hellip;</div>
+    <div class="opts"><span>A. free university tuition</span><span>B. ESD and global citizenship for all learners</span><span>C. building new campuses</span><span>D. teacher salary reform</span></div></div>
+  <div class="qq"><div class="qline">4. Which of the following is NOT one of the five key competencies of Wiek et al. (2011)?</div>
+    <div class="opts"><span>A. Systems thinking</span><span>B. Normative competence</span><span>C. Digital literacy</span><span>D. Interpersonal competence</span></div></div>
+  <div class="qq"><div class="qline">5. According to Lozano (2006), sustainability survives a change of vice-chancellor only after the phase of&hellip;</div>
+    <div class="opts"><span>A. initiation</span><span>B. incorporation</span><span>C. institutionalisation</span><span>D. celebration</span></div></div>
+  <div class="qq"><div class="qline">6. The triple bottom line consists of&hellip;</div>
+    <div class="opts"><span>A. people, planet, prosperity</span><span>B. reading, writing, arithmetic</span><span>C. policy, practice, proof</span><span>D. research, teaching, service</span></div></div>
+  <div class="answer-key"><b>ANSWER KEY</b> &nbsp; 1&ndash;B &nbsp; 2&ndash;C &nbsp; 3&ndash;B &nbsp; 4&ndash;C &nbsp; 5&ndash;C &nbsp; 6&ndash;A. Score 6/6? Excellent &mdash; proceed to Unit 2. Score 4&ndash;5? Revisit the missed topic&rsquo;s figure. Below 4? Redraw the mind map from memory, then re-attempt.</div>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Unit 1 Reflection Journal</div>
+  <ol>
+    <li>Which single idea in this unit most changed how you see your future classroom, and why?</li>
+    <li>Describe your institution&rsquo;s current position on the three-phase pathway (Figure 1.1). What evidence supports your judgement?</li>
+    <li>Which competency will you deliberately practise during your next teaching practice, and how will you know you have grown?</li>
+  </ol>
+</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit1_rot.png" alt="Unit 1 mind map (rotated for readability)">
+  <div class="mindmap-note">Mind Map 1 &mdash; Unit 1 at a glance. Rotate the page clockwise to read.</div>
+</div>
+<!-- ═══════════ UNIT 2 ═══════════ -->
+<div class="unit-opener">
+  <div class="uo-band">
+    <div class="uo-unit">Unit 2 &middot; Perspectives of Developing Sustainability in Higher Education</div>
+    <div class="uo-title">The University as a Living Agent of Change</div>
+    <div class="uo-meta">5 topics &middot; mind map &middot; quiz &middot; reflections</div>
+  </div>
+  <div class="uo-img"><img src="assets/unit2_opener.png" alt="Educator and students co-creating around a table while volunteers plant trees outside"></div>
+  <div class="uo-body">
+    <p class="uo-intro"><strong>IN THIS UNIT</strong> the camera turns from concepts to institutions. You will see how the global HESD community organises itself through networks and convenings, why universities matter to society beyond teaching, how institutions engage the SDGs in a structured cycle, and which learning environments and pedagogies make sustainability education genuinely transformative.</p>
+    <ul class="uo-topics">
+      <li data-n="1">Apprising, Supporting, Networking, Convening &mdash; the HESD Approach and its Research Areas</li>
+      <li data-n="2">The Role of University in Society</li>
+      <li data-n="3">University Engagement with the SDGs</li>
+      <li data-n="4">Creating an Enabling SDGs Learning &amp; Teaching Environment</li>
+      <li data-n="5">Pedagogical Innovation and the SDGs</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box keyterms">
+  <div class="box-title">Key Terms &middot; Unit 2</div>
+  <div class="kt-grid">
+    <div class="kt"><b>HESD</b> &mdash; Higher Education and Research for Sustainable Development; the global field of institutional practice and scholarship covered by the IAU portal.</div>
+    <div class="kt"><b>Apprising &amp; supporting</b> &mdash; informing the higher education community about sustainability developments and equipping it with guidance, tools and examples.</div>
+    <div class="kt"><b>Solidarity &amp; networking</b> &mdash; building communities of practice across institutions and regions so universities learn from each other rather than alone.</div>
+    <div class="kt"><b>Conversing &amp; convening</b> &mdash; creating structured dialogue platforms &mdash; conferences, symposia, portals &mdash; where HESD actors meet and align.</div>
+    <div class="kt"><b>Third mission</b> &mdash; the university&rsquo;s service to society, alongside its traditional teaching and research missions.</div>
+    <div class="kt"><b>Whole-institution approach</b> &mdash; engaging every function of the university &mdash; curriculum, campus, community, governance &mdash; simultaneously.</div>
+    <div class="kt"><b>Co-creation</b> &mdash; designing learning, research or policy jointly with students, communities or external partners as equal contributors.</div>
+    <div class="kt"><b>Living lab</b> &mdash; using the campus or city as a real-world site where learners co-design and test sustainability solutions.</div>
+  </div>
+</div>
+
+<div class="topic-head"><div class="topic-num">2.1</div><div class="topic-title">Apprising, Supporting, Networking, Convening &mdash; the HESD Approach and its Research Areas</div></div>
+
+<p>No single university can transform higher education alone; the field therefore organises itself through deliberate community-building actions. The International Association of Universities (IAU), whose global surveys and <strong>iau-hesd.net</strong> portal anchor this syllabus, describes its strategy through four verbs. <strong>Apprising and supporting</strong> means keeping the worldwide higher education community informed &mdash; surveying institutions, publishing guidance, curating good practice &mdash; so that a rector in one country can learn in an afternoon what took pioneers elsewhere a decade. <strong>Building solidarity and networking</strong> goes further: regional associations, North&ndash;South partnerships and thematic clusters connect institutions so that a small college can stand on the same evidence base as a research giant, an expression of SDG 17 (Partnerships) operating inside the sector itself.</p>
+
+<p><strong>Conversing and convening</strong> supplies the third mechanism: IAU international conferences, regional symposia and advocacy at UNESCO bring diverse voices &mdash; students, staff, leaders, funders &mdash; into one room where norms are negotiated and commitments announced. Convening matters because sustainability change is as much a political process as a technical one; a shared forum legitimises bold local action. Finally, the <strong>approach for HESD</strong> depends on research that tests and refines practice. The syllabus asks you to know the main <strong>research areas</strong>: curriculum and pedagogy for ESD; campus operations and the ecological footprint of institutions; institutional policy, governance and leadership for sustainability; community engagement and university&ndash;society partnerships; assessment, indicators and benchmarking of ESD; and student learning outcomes and competencies. Engagement Task 2 asks you to list and localise these areas for your own context &mdash; a deceptively simple exercise that reveals which areas your institution has neglected.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:24%;">IAU Action</th><th style="width:40%;">What It Looks Like in Practice</th><th>Why It Matters</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Apprising &amp; supporting</strong></td><td>Global surveys on HESD; guidance publications; the iau-hesd.net portal of curated examples</td><td>Turns scattered experiments into accessible collective knowledge</td></tr>
+    <tr><td><strong>Solidarity &amp; networking</strong></td><td>Regional networks; North&ndash;South institutional partnerships; mentoring between members</td><td>Democratises capacity; embodies SDG 17 within the sector</td></tr>
+    <tr><td><strong>Conversing &amp; convening</strong></td><td>International conferences; symposia; policy advocacy with UNESCO and governments</td><td>Negotiates shared norms; legitimises institutional action</td></tr>
+    <tr><td><strong>Researching HESD</strong></td><td>Studies of curriculum, campus, governance, indicators, competencies</td><td>Evidence base that steers practice and policy</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 2.1 &mdash; The four IAU actions that constitute the international HESD approach.</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 2.1</div>
+  <ol>
+    <li>Explain the four verbs of the HESD approach and give one concrete example of each.</li>
+    <li>List the six HESD research areas and star the two you believe are weakest in Indian higher education; justify your choice in three sentences.</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">2.2</div><div class="topic-title">The Role of University in Society</div></div>
+
+<p>Universities hold a singular position in society: they are at once <strong>creators of knowledge</strong>, <strong>transmitters of culture and expertise</strong>, and <strong>institutions with a public mandate</strong>. Chankseliani and McCowan (2021) capture this dual character in their analysis of higher education and the SDGs: universities possess unmatched <em>potential</em> to advance sustainable development &mdash; through the professionals they graduate, the research they produce, and the legitimacy they lend to public debate &mdash; yet they also carry <em>perils</em>: reproducing social inequality through selective access, chasing global rankings that distract from local needs, and producing research disconnected from community priorities. A critical student of this course should hold both sides of that ledger in view.</p>
+
+<p>Cortese (2003) pushed the argument further: because universities educate the decision-makers of every sector and model institutional behaviour for society to imitate, <strong>no institution on Earth has a greater lever for a sustainable future</strong>. The university&rsquo;s roles can be grouped in four clusters. As an <strong>educator</strong>, it forms the competencies of future professionals and teachers. As a <strong>knowledge engine</strong>, it researches the problems and solutions of sustainability transitions. As a <strong>social actor</strong> &mdash; the &ldquo;third mission&rdquo; &mdash; it serves its region through extension, service learning, cultural life and honest public advice, acting as something like the conscience of its community. And as an <strong>economic and civic anchor</strong>, it is often a city&rsquo;s largest employer and buyer, so its procurement, employment and investment choices ripple far beyond campus walls. Each role doubles as a sustainability channel &mdash; and each is auditable, which is precisely what Engagement Task 1 will ask of your institution.</p>
+
+<div class="box funfact">
+  <div class="box-title">Did You Know?</div>
+  <p>The Times Higher Education <strong>Impact Rankings</strong>, launched in 2019, was the first global league table to score universities not on prestige but on their measurable contribution to the SDGs &mdash; thousands of institutions from over a hundred countries now submit data on goals from poverty (SDG 1) to peace (SDG 16).</p>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 2.2</div>
+  <ol>
+    <li>Name the four clusters of university roles in society and match each to one concrete sustainability contribution.</li>
+    <li>What do Chankseliani and McCowan mean by the &ldquo;potential and perils&rdquo; of higher education for the SDGs? Illustrate with one example of each.</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">2.3</div><div class="topic-title">University Engagement with the SDGs</div></div>
+
+<p>When a university decides to &ldquo;engage with the SDGs,&rdquo; what should it actually do on Monday morning? International guidance converges on a five-step cycle, shown in Figure 2.1: <strong>Commit, Map, Integrate, Partner, Evaluate</strong>. Commitment is a governance act &mdash; a council resolution or signed accord &mdash; not a slogan. Mapping inventories where teaching, research and operations already touch the goals (most discover they contribute far more than expected, but incoherently). Integration then deliberately links curricula to targets, steers research calls, and aligns investments. Partnership extends the work outward to government, industry, NGOs and communities, while Evaluation closes the loop with indicators and public reporting &mdash; the step institutions most often skip, and the reason many claims of &ldquo;embedding the SDGs&rdquo; remain unverifiable.</p>
+
+<figure>
+  <img src="assets/flow_engagement.png" alt="Five-step SDG engagement cycle">
+  <figcaption>Figure 2.1 &mdash; The university&ndash;s SDG engagement cycle: evaluation feeds renewed commitment and deeper integration.</figcaption>
+</figure>
+
+<p>What does the global picture look like? The IAU&rsquo;s 2016 global survey (van&rsquo;t Land &amp; Herzog, 2017) found that a clear majority of responding institutions had adopted some sustainability declaration or policy, with teaching and research the most common arenas of action and campus operations close behind &mdash; but with external partnerships and systematic evaluation trailing. Figure 2.2 sketches that pattern in illustrative proportions: curriculum leadership dominates, student initiatives trail. Use the chart critically: where would your institution sit? Which bar would be shortest? Notably, survey respondents also identified the same Missing middle this course keeps flagging &mdash; support and recognition for the staff who must actually deliver the change.</p>
+
+<figure>
+  <img src="assets/chart_activities.png" alt="Bar chart of sustainability activities reported by institutions">
+  <figcaption>Figure 2.2 &mdash; Sustainability activities commonly reported by higher education institutions. Illustrative proportions synthesised for learning purposes from IAU (2017) survey trends; exact values vary by survey year and region.</figcaption>
+</figure>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 2.3</div>
+  <ol>
+    <li>Walk through the five-step engagement cycle for a fictional college of education, naming one concrete action per step.</li>
+    <li>Why is the Evaluate step the one most often skipped, and what does skipping it cost the institution?</li>
+  </ol>
+</div>
+<div class="topic-head"><div class="topic-num">2.4</div><div class="topic-title">Creating an Enabling SDGs Learning &amp; Teaching Environment</div></div>
+
+<p>Transformative learning does not flourish in hostile soil. Before pedagogy comes <strong>environment</strong>: the physical, social and institutional conditions under which teachers and students meet. An enabling environment for SDG learning has at least five characteristics. It is <strong>physically and psychologically safe</strong> &mdash; clean, accessible classrooms and a climate where controversial questions (climate justice, consumption, caste and gender equity) can be discussed without ridicule or reprisal. It is <strong>participatory</strong>: seating, timetables and norms invite dialogue rather than monologue, because sustainability values cannot be transmitted through purely one-way talk. It is <strong>resourced</strong> &mdash; with materials, internet access, flexible spaces and, above all, with <em>time</em> for teachers to redesign courses rather than add content to overloaded ones.</p>
+
+<p>It is also <strong>institutionally supported</strong>: leadership signals that sustainability work counts in workload models, promotions and awards, echoing the finding from the IAU surveys that lack of staff incentives is a leading brake on HESD. And it is <strong>assessment-aligned</strong>: if examinations reward recall of facts, students will ignore projects and portfolios no matter how inspiring the lectures. Environments are therefore designed, not wished into being. A practical test for any classroom you occupy: can every learner speak at least once per session? Do displays, data and greenery in the room itself model the goals? Does the assessment scheme let a student demonstrate <em>action</em>, not only memory? Where the answer is no, you have found your first change project &mdash; environments are also excellent sites for the engagement tasks, because they respond quickly to small interventions.</p>
+
+<div class="box funfact">
+  <div class="box-title">Did You Know?</div>
+  <p>Researchers who study &ldquo;green schoolyards&rdquo; report that simply adding plants, daylight and flexible seating measurably improves attention, wellbeing and pro-environmental behaviour &mdash; the environment itself teaches, which is exactly what education <em>through</em> the SDGs predicts.</p>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 2.4</div>
+  <ol>
+    <li>List five characteristics of an enabling SDG learning environment and rate your own classroom on each from 1 to 5.</li>
+    <li>Explain the sentence: &ldquo;Assessment is the hidden curriculum of sustainability.&rdquo;</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">2.5</div><div class="topic-title">Pedagogical Innovation and the SDGs</div></div>
+
+<p>Education <em>for</em> the SDGs demands more than new content; it demands <strong>new ways of learning</strong>. Transmission lecturing can deliver the &ldquo;about,&rdquo; but competencies grow through methods that put learners in the position of agents. The literature and the syllabus converge on a recognizable family of innovations. <strong>Problem- and project-oriented learning</strong> (POPBL, studied for ESD by Yasin &amp; Rahman, 2011) organises study around real, ill-structured sustainability problems &mdash; water logging in the college&rsquo;s own lane, energy waste in the hostel &mdash; letting systems thinking and strategy develop together. <strong>Case-based learning</strong> brings policy dilemmas into the room; <strong>community service learning</strong> partners students with local organisations so that service and reflection interleave; <strong>living labs</strong> treat the campus as the experiment station; and <strong>digital, blended and flipped formats</strong> free contact time for dialogue and fieldwork while connecting learners to global data and peers.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:22%;">Pedagogy</th><th style="width:26%;">Core Mechanism</th><th style="width:26%;">Competencies Stretched</th><th>Watch Out For</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Problem / project-based (POPBL)</strong></td><td>Teams investigate and act on a real local problem</td><td>Systems, strategic, interpersonal</td><td>Scope creep; uneven teamwork; assessment design</td></tr>
+    <tr><td><strong>Service learning</strong></td><td>Community service interwoven with structured reflection</td><td>Interpersonal, normative</td><td>Tokenism; extractive relationships with communities</td></tr>
+    <tr><td><strong>Case &amp; dilemma discussion</strong></td><td>Contested scenarios force value reasoning</td><td>Normative, anticipatory</td><td>Staying at opinion level without evidence</td></tr>
+    <tr><td><strong>Living lab / campus project</strong></td><td>Institution itself becomes the inquiry site</td><td>Strategic, systems</td><td>Requires operations staff buy-in and access</td></tr>
+    <tr><td><strong>Blended / flipped formats</strong></td><td>Content moves online; contact time for dialogue and fieldwork</td><td>All five, if tasks are active</td><td>Digital divide; passive video consumption</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 2.2 &mdash; Five pedagogical innovations for SDG learning, their mechanisms and their pitfalls.</div>
+
+<p>Two caveats keep this topic honest. First, <strong>method is not a guarantee</strong>: a badly run project teaches cynicism as effectively as a good one teaches agency, which is why structure, roles, milestones and reflective debriefs matter. Second, <strong>innovation must be sustainable for the teacher</strong> &mdash; a theme Unit 3 develops &mdash; or it dies at the end of one enthusiastic semester. The Engagement Task 3 asks you to hunt for pedagogical innovations already alive in your institution; most students discover more than they expect, and discovering local colleagues converts abstract &ldquo;innovation&rdquo; into a conversation you can join.</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 2.5</div>
+  <ol>
+    <li>Match each pedagogy in Table 2.2 to one topic from your own teaching subject, and justify the match.</li>
+    <li>What distinguishes genuine service learning from one-off &ldquo;volunteering days&rdquo;?</li>
+  </ol>
+</div>
+
+<div class="chapter-header">
+  <div class="kicker">Unit 2 &middot; Consolidation</div>
+  <h2 class="sec-title">Unit 2 in One Picture &mdash; and Six Quick Questions</h2>
+  <div class="divider"></div>
+</div>
+
+<p>Take the quiz below first, then study the mind map on the following page. It gathers the unit&rsquo;s five branches: the international HESD approach with its research areas, the university&rsquo;s roles in society, the SDG engagement cycle, the enabling learning environment, and the pedagogical toolbox. Notice how often &ldquo;partnership&rdquo; and &ldquo;participation&rdquo; recur across branches &mdash; that repetition is the unit&rsquo;s deepest message: sustainability is a team practice, not a private virtue. Turn the map&rsquo;s page sideways to read it, redraw it from memory, and close the unit with the reflection journal.</p>
+
+<div class="box quiz-box">
+  <div class="box-title">Self-Check Quiz &middot; Unit 2</div>
+  <div class="qq"><div class="qline">1. &ldquo;Conversing and convening&rdquo; in the HESD approach refers to&hellip;</div>
+    <div class="opts"><span>A. publishing survey data</span><span>B. creating dialogue platforms where actors meet</span><span>C. funding research projects</span><span>D. greening campus canteens</span></div></div>
+  <div class="qq"><div class="qline">2. The &ldquo;third mission&rdquo; of a university is&hellip;</div>
+    <div class="opts"><span>A. teaching</span><span>B. research</span><span>C. service to society</span><span>D. sports and culture</span></div></div>
+  <div class="qq"><div class="qline">3. Chankseliani &amp; McCowan (2021) pair higher education&rsquo;s potential for the SDGs with&hellip;</div>
+    <div class="opts"><span>A. its perils, such as reproducing inequality</span><span>B. its cost</span><span>C. its history</span><span>D. its buildings</span></div></div>
+  <div class="qq"><div class="qline">4. The first global league table scoring universities on their SDG contribution is&hellip;</div>
+    <div class="opts"><span>A. the Shanghai Ranking</span><span>B. THE Impact Rankings (2019)</span><span>C. the QS World Rankings</span><span>D. the Nobel list</span></div></div>
+  <div class="qq"><div class="qline">5. Which pedagogy explicitly pairs community service with structured reflection?</div>
+    <div class="opts"><span>A. Flipped classroom</span><span>B. Lecture demonstration</span><span>C. Service learning</span><span>D. Drill and practice</span></div></div>
+  <div class="qq"><div class="qline">6. In the engagement cycle, the step most often skipped is&hellip;</div>
+    <div class="opts"><span>A. Commit</span><span>B. Map</span><span>C. Partner</span><span>D. Evaluate</span></div></div>
+  <div class="answer-key"><b>ANSWER KEY</b> &nbsp; 1&ndash;B &nbsp; 2&ndash;C &nbsp; 3&ndash;A &nbsp; 4&ndash;B &nbsp; 5&ndash;C &nbsp; 6&ndash;D. Score 6/6? You are ready for the hard questions of Unit 3. Otherwise, revisit the topic tied to each miss and update your mind map redraw.</div>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Unit 2 Reflection Journal</div>
+  <ol>
+    <li>Which of the university&rsquo;s four societal roles does your institution perform most convincingly &mdash; and which most poorly? Give evidence.</li>
+    <li>Describe one pedagogical innovation you experienced as a learner. Did it build any of the five competencies? How?</li>
+    <li>If you led your institution&rsquo;s SDG engagement for one year, which cycle step would you invest in first, and why?</li>
+  </ol>
+</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit2_rot.png" alt="Unit 2 mind map (rotated for readability)">
+  <div class="mindmap-note">Mind Map 2 &mdash; Unit 2 at a glance. Rotate the page clockwise to read.</div>
+</div>
+<!-- ═══════════ UNIT 3 ═══════════ -->
+<div class="unit-opener">
+  <div class="uo-band">
+    <div class="uo-unit">Unit 3 &middot; Barriers, Problems and Future Challenges in Developing Sustainability in Higher Education</div>
+    <div class="uo-title">Honest Obstacles, Imaginative Futures</div>
+    <div class="uo-meta">5 topics &middot; mind map &middot; quiz &middot; reflections</div>
+  </div>
+  <div class="uo-img"><img src="assets/unit3_opener.png" alt="Teacher guiding students along a path toward a sunrise"></div>
+  <div class="uo-body">
+    <p class="uo-intro"><strong>IN THIS UNIT</strong> the course looks squarely at what stands in the way &mdash; curricula that resist change, research habits that avoid responsibility, institutions that trap good intentions &mdash; and at the frameworks that light a path through: the Three Horizons model, the RADAR qualities of responsible research, and the indicators that make progress visible and honest.</p>
+    <ul class="uo-topics">
+      <li data-n="1">Incorporating Sustainable Development in Curricula and Sustainable Futures &mdash; the Three Horizons Framework</li>
+      <li data-n="2">Responsible Research and Innovation &mdash; Responsible, Attentive, Disruptive, Authentic, Regenerative (RADAR)</li>
+      <li data-n="3">Approach of Higher Education Institutions to SDGs: Disciplinary, Structural and Dimensions</li>
+      <li data-n="4">Make Teaching Sustainable &mdash; Shifts that Teachers Want and Students Need</li>
+      <li data-n="5">ESD Indicators and Underlying Challenges</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box keyterms">
+  <div class="box-title">Key Terms &middot; Unit 3</div>
+  <div class="kt-grid">
+    <div class="kt"><b>Three Horizons</b> &mdash; a futures framework separating the dominant declining system (H1), the innovation zone (H2) and the emerging vision (H3).</div>
+    <div class="kt"><b>Curriculum mainstreaming</b> &mdash; integrating sustainability across all programmes rather than confining it to one course or department.</div>
+    <div class="kt"><b>RADAR</b> &mdash; five qualities of responsible research and innovation: Responsible, Attentive, Disruptive, Authentic, Regenerative.</div>
+    <div class="kt"><b>Institutionalisation trap</b> &mdash; the paradox where formal structures preserve earlier innovations but also freeze them, blocking further change (Trechsel et al., 2018).</div>
+    <div class="kt"><b>Disciplinary / structural approaches</b> &mdash; contrasting ways HEIs engage the SDGs: within subject silos versus through new structures that cross them.</div>
+    <div class="kt"><b>Sustainable teaching</b> &mdash; pedagogy that can endure: realistic workload, teacher wellbeing, and learning that lasts beyond the exam.</div>
+    <div class="kt"><b>ESD indicators</b> &mdash; measurable signals (policy, practice, outcomes) used to track and compare education for sustainable development.</div>
+    <div class="kt"><b>Greenwashing</b> &mdash; presenting an environmentally responsible image without substantive practice; the reputation risk ESD indicators must expose.</div>
+  </div>
+</div>
+
+<div class="topic-head"><div class="topic-num">3.1</div><div class="topic-title">Incorporating Sustainable Development in Curricula &amp; Sustainable Futures: the Three Horizons Framework</div></div>
+
+<p>Curriculum is where sustainability intentions meet timetable reality &mdash; and where they most often stall. Well-documented barriers recur worldwide: <strong>curriculum overload</strong> (every addition displaces something someone values), <strong>disciplinary silos</strong> (sustainability is everyone&rsquo;s problem and therefore no department&rsquo;s job), <strong>staff uncertainty</strong> (educators asked to teach what they were never taught), and <strong>assessment traditions</strong> that reward recall over action. Fernandez-Sanchez and colleagues (2014) catalogue these from a state-of-the-art review, while Lozano&rsquo;s earlier work showed the same barriers operating at institutional scale. Naming barriers is not defeatism; it is strategy &mdash; each named barrier implies its own counter-move, from curriculum mapping to team-teaching to assessment redesign.</p>
+
+<p>For orientation amid struggle, the <strong>Three Horizons framework</strong> (Curry &amp; Hodgson, 2008), shown in Figure 3.1, is the syllabus&rsquo;s chosen compass. <strong>H1</strong> is the dominant, declining system: business-as-usual curricula, still powerful, increasingly misaligned with the world graduates enter. <strong>H3</strong> is the vision pulling us forward: transformative, whole-institution education for sustainability. <strong>H2</strong> is the energetic, contested zone of innovation where the future is actually built &mdash; the pilot course, the elective, the living lab &mdash; whose practitioners must survive inside H1 structures. The framework&rsquo;s gift is emotional as much as analytical: it reframes failure (an H2 pilot cancelled by a timetable committee) as normal weather in transition, not proof the vision is wrong. Change agents learn to work the H1&ndash;H2 boundary deliberately: find hosts, gather evidence, tell stories, repeat.</p>
+
+<figure>
+  <img src="assets/flow_horizons.png" alt="Three Horizons framework flowchart">
+  <figcaption>Figure 3.1 &mdash; The Three Horizons framework applied to curricula for sustainable futures (adapted from Curry &amp; Hodgson, 2008).</figcaption>
+</figure>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 3.1</div>
+  <ol>
+    <li>Identify three barriers to curricular ESD in your own programme and propose one counter-move for each.</li>
+    <li>Place three innovations you know (e.g., a value-added course, a green audit, a revised B.Ed. curriculum) on the H1&ndash;H2&ndash;H3 map and defend your placement.</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">3.2</div><div class="topic-title">Responsible Research and Innovation &mdash; the RADAR Framework</div></div>
+
+<p>Universities shape sustainability not only through teaching but through what they choose to research and <em>how</em>. The <strong>RADAR</strong> framework (highlighted in Steele &amp; Rickards, 2021) compresses responsible research and innovation into five memorable qualities, traced in Figure 3.2. <strong>Responsible</strong> research anticipates consequences and involves those affected from the start &mdash; beneficiaries, communities, future users. <strong>Attentive</strong> research watches what its innovations actually do once loose in the world, listening especially to marginalised voices that formal evaluations miss. <strong>Disruptive</strong> research dares to question inherited assumptions &mdash; growth, rankings, publish-or-perish &mdash; that quietly steer whole fields away from sustainability. <strong>Authentic</strong> research keeps its methods honest and its values visible; it refuses the cosmetic &ldquo;sustainability&rdquo; label on business-as-usual work. Finally, <strong>regenerative</strong> research aims to leave people and places better than it found them &mdash; designing outputs that renew ecosystems and communities rather than merely extracting data.</p>
+
+<p>Notice how RADAR converts a vague virtue (&ldquo;be responsible&rdquo;) into five checkable habits &mdash; a research counterpart to the competency framework of Unit 1. For teacher-researchers, the framework also poses uncomfortable, productive questions about the education research we ourselves produce: Who set our research questions? Who benefits from our publications? Could a participant recognise themselves respectfully in our reporting? Would our findings regenerate the school we studied? Engagement Task 4, the critical curriculum analysis, will reuse RADAR as an analytical lens: a curriculum is itself a kind of research instrument into what a society values.</p>
+
+<figure>
+  <img src="assets/flow_radar.png" alt="RADAR framework flowchart">
+  <figcaption>Figure 3.2 &mdash; The RADAR framework: five qualities of responsible, sustainability-oriented research and innovation.</figcaption>
+</figure>
+
+<div class="box funfact">
+  <div class="box-title">Did You Know?</div>
+  <p>The word &ldquo;regenerative&rdquo; has moved from ecology into design, agriculture &mdash; and now education. A <em>regenerative campus</em> aims to give back more clean energy, water and wellbeing than it consumes: net-positive, not merely &ldquo;less bad.&rdquo; Several universities worldwide now run net-positive buildings that export power to their neighbourhoods.</p>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 3.2</div>
+  <ol>
+    <li>Expand the RADAR acronym and give a one-sentence classroom-level example of each quality.</li>
+    <li>Which RADAR quality does publish-or-perish culture most threaten, and why?</li>
+  </ol>
+</div>
+<div class="topic-head"><div class="topic-num">3.3</div><div class="topic-title">Approach of Higher Education Institutions to SDGs: Disciplinary, Structural and Dimensions</div></div>
+
+<p>Ask ten institutions how they engage the SDGs and you will find three recurring logics. The <strong>disciplinary approach</strong> treats sustainability through existing subject silos: engineering programmes add a green-technology module, commerce programmes add environmental accounting, education programmes add an ESD paper (as this one does). Its strength is depth and fit with accreditation structures; its weakness is fragmentation &mdash; students can complete whole degrees meeting sustainability only as one examinable chapter, never seeing the connections Wiek&rsquo;s systems-thinking competence demands.</p>
+
+<p>The <strong>structural approach</strong> changes the organisation rather than the syllabus: interdisciplinary centres, cross-faculty electives, living-lab offices, sustainability committees, joint degrees and community-embedded campuses. Structures create the collaboration channels that disciplines cannot &mdash; but they can also become hollow shells if content and culture do not follow, producing the &ldquo;sustainability office as alibi&rdquo; pattern that critical observers note in several national systems. The <strong>dimensions approach</strong> organises engagement around the three dimensions of sustainability &mdash; environmental, social and economic &mdash; asking of every programme: where is the ecological dimension, the equity dimension, the livelihood dimension? It is a auditing lens more than a structure, and it usefully catches blind spots: the environmental sciences course with no social-justice thread, or the entrepreneurship course that never prices ecological cost.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:18%;">Approach</th><th style="width:31%;">Core Move</th><th style="width:26%;">Strength</th><th>Characteristic Risk</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Disciplinary</strong></td><td>Embed SD content within existing subjects</td><td>Depth; fits accreditation and subjects teachers know</td><td>Siloed learning; fragmentation across a degree</td></tr>
+    <tr><td><strong>Structural</strong></td><td>Create cross-cutting centres, courses, committees</td><td>Enables interdisciplinary and institutional work</td><td>Hollow structures without cultural buy-in</td></tr>
+    <tr><td><strong>Dimensions</strong></td><td>Audit programmes for environment, society, economy</td><td>Exposes blind spots across any format</td><td>Becomes a checklist if not tied to redesign</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 3.1 &mdash; Three institutional approaches to the SDGs. Mature institutions blend all three.</div>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 3.3</div>
+  <ol>
+    <li>Classify your own teacher-education programme: which approach dominates? Support your classification with two pieces of evidence.</li>
+    <li>Design one structural change that would strengthen the disciplinary treatment of sustainability in your college.</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">3.4</div><div class="topic-title">Make Teaching Sustainable &mdash; Shifts that Teachers Want and Students Need</div></div>
+
+<p>&ldquo;Sustainable teaching&rdquo; has a double meaning that this topic honours. It means teaching <em>about</em> sustainability &mdash; and it means teaching in a way that is <strong>itself sustainable</strong>: pacing, workload and wellbeing that a teacher can maintain for decades without burning out, delivering learning that lasts in students&rsquo; lives beyond the examination. The popular discussion of &ldquo;mindset shifts&rdquo; in sustainable teaching (see, for example, the ASCD discussion listed in the references) converges on a small set of movements: from coverage to mastery, from teacher performance to student agency, from isolated classrooms to collaborative practice, from content volume to competency depth, and from compliance to purpose. Each shift simultaneously serves learning and lightens the load &mdash; mastery frameworks, for instance, replace the endless re-teaching demanded by coverage races.</p>
+
+<table class="cmp">
+  <thead><tr><th style="width:30%;">From (old default)</th><th style="width:30%;">To (sustainable shift)</th><th>What Students Gain</th></tr></thead>
+  <tbody>
+    <tr><td>Covering the syllabus at any cost</td><td>Mastery of core ideas, revisited in cycles</td><td>Durable understanding instead of exam-night cramming</td></tr>
+    <tr><td>Teacher as performer delivering content</td><td>Teacher as designer of learning experiences</td><td>Agency, voice and responsibility for learning</td></tr>
+    <tr><td>Grades as the point of schoolwork</td><td>Purpose: real problems, audiences and artefacts</td><td>Motivation that survives beyond marks</td></tr>
+    <tr><td>Classroom as private territory</td><td>Open, collaborative practice with colleagues</td><td>Consistency across subjects; teachers who model teamwork</td></tr>
+    <tr><td>Content volume as rigour</td><td>Competency depth (the five of Unit 1)</td><td>Transferable capabilities for an uncertain future</td></tr>
+  </tbody>
+</table>
+<div class="tbl-caption">Table 3.2 &mdash; Five shifts toward sustainable teaching: what teachers want to keep, and what students need to grow.</div>
+
+<p>Read the table twice: once as a student (which column did your schooling live in?) and once as a future teacher-educator (which row will be hardest for you, and who will help?). The shifts also expose a system question &mdash; teachers cannot run mastery cycles inside a pure high-stakes recall regime, which is why sustainable teaching is inseparable from assessment reform and from the enabling environment of Topic 2.4. Sustainability, once again, is a property of the whole system, not of heroic individuals.</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 3.4</div>
+  <ol>
+    <li>Explain the double meaning of &ldquo;sustainable teaching&rdquo; with one example of each meaning.</li>
+    <li>Choose one row of Table 3.2 and script the first three moves you would make as a teacher to enact that shift.</li>
+  </ol>
+</div>
+
+<div class="topic-head"><div class="topic-num">3.5</div><div class="topic-title">ESD Indicators and Underlying Challenges</div></div>
+
+<p>How would you <em>prove</em> that a university is educating for sustainable development &mdash; beyond quoting its prospectus? That is the problem <strong>ESD indicators</strong> try to solve, and it is harder than it looks. Veidemane (2022) reviews the attempt to build internationally comparable ESD indicators for higher education rankings and finds progress alongside stubborn difficulties: ESD spans teaching, research, campus and community, so single-number scores oversimplify; data are self-reported, inviting inflation; definitions vary across countries and languages; and the deepest outcomes &mdash; changed values and agency &mdash; resist measurement entirely. Institutions therefore triangulate: policy indicators (does a sustainability policy exist, with budget and targets?), practice indicators (percentage of courses with SDG-mapped outcomes; campus energy, waste and procurement data; community hours), and outcome indicators (competency self-assessments, graduate destinations, project counts). Figure 3.3 shows the barrier side of the ledger in illustrative form.</p>
+
+<figure>
+  <img src="assets/chart_barriers.png" alt="Bar chart of barriers to ESD implementation">
+  <figcaption>Figure 3.3 &mdash; Commonly reported barriers to implementing ESD in higher education. Illustrative proportions synthesised for learning purposes from Fernandez-Sanchez et al. (2014) and related reviews.</figcaption>
+</figure>
+
+<p>Two challenges deserve special attention because they corrupt measurement itself. The first is <strong>greenwashing</strong>: indicators that reward paperwork invite paperwork &mdash; a policy filed, a course renamed &mdash; while practice stays untouched; good indicator sets therefore privilege artefacts that are hard to fake (audited energy data, assessed student projects) over declarations. The second is the <strong>institutionalisation trap</strong> described by Trechsel and colleagues (2018) from a Swiss case: once ESD is formalised into offices, reports and committees, the structures that protect it can also freeze it, defending yesterday&rsquo;s achievements against tomorrow&rsquo;s ambitions. The lesson is not to abandon indicators &mdash; without them Engagement Task 6 would be impossible &mdash; but to treat them as instruments: read trends, not snapshots; ask who prepared the data; and pair every number with a site visit, a classroom, a conversation.</p>
+
+<div class="box reflect">
+  <div class="box-title">Test Your Understanding &middot; 3.5</div>
+  <ol>
+    <li>Distinguish policy, practice and outcome indicators with one example of each.</li>
+    <li>Why can formalising ESD create a trap? Use the Swiss case to structure your answer.</li>
+  </ol>
+</div>
+
+<div class="chapter-header">
+  <div class="kicker">Unit 3 &middot; Consolidation</div>
+  <h2 class="sec-title">Unit 3 in One Picture &mdash; and Six Quick Questions</h2>
+  <div class="divider"></div>
+</div>
+
+<p>Take the quiz below first, and then let the final mind map &mdash; on the following page &mdash; assemble the unit&rsquo;s five branches: curriculum change through the Three Horizons, the RADAR research qualities, the three institutional approaches, the shifts of sustainable teaching, and the world of ESD indicators with their traps. Rotate the map&rsquo;s page, study it, redraw it from memory &mdash; then let the reflection journal carry you into the engagement phase of the course.</p>
+
+<div class="box quiz-box">
+  <div class="box-title">Self-Check Quiz &middot; Unit 3</div>
+  <div class="qq"><div class="qline">1. In the Three Horizons framework, the &ldquo;zone of innovation&rdquo; is&hellip;</div>
+    <div class="opts"><span>A. H1</span><span>B. H2</span><span>C. H3</span><span>D. none of these</span></div></div>
+  <div class="qq"><div class="qline">2. In RADAR, &ldquo;A&rdquo; stands for Attentive and&hellip;</div>
+    <div class="opts"><span>A. Accountable</span><span>B. Authentic</span><span>C. Adaptive</span><span>D. Ambitious</span></div></div>
+  <div class="qq"><div class="qline">3. Creating an interdisciplinary sustainability centre is an example of which approach?</div>
+    <div class="opts"><span>A. Disciplinary</span><span>B. Structural</span><span>C. Dimensions</span><span>D. Informal</span></div></div>
+  <div class="qq"><div class="qline">4. &ldquo;From coverage to mastery&rdquo; is a shift motivated by&hellip;</div>
+    <div class="opts"><span>A. exam security</span><span>B. durable learning and manageable workload</span><span>C. textbook sales</span><span>D. timetable software</span></div></div>
+  <div class="qq"><div class="qline">5. Trechsel et al. (2018) warn that formal ESD structures can&hellip;</div>
+    <div class="opts"><span>A. attract unlimited funding</span><span>B. freeze earlier innovations and block new ones</span><span>C. replace teachers</span><span>D. guarantee rankings</span></div></div>
+  <div class="qq"><div class="qline">6. Which is hardest to measure with ESD indicators?</div>
+    <div class="opts"><span>A. Existence of a policy</span><span>B. Campus energy use</span><span>C. Changed values and agency of learners</span><span>D. Number of SDG-named courses</span></div></div>
+  <div class="answer-key"><b>ANSWER KEY</b> &nbsp; 1&ndash;B &nbsp; 2&ndash;B &nbsp; 3&ndash;B &nbsp; 4&ndash;B &nbsp; 5&ndash;B &nbsp; 6&ndash;C. Score 6/6? Outstanding &mdash; carry the field notebook to the Engagement section. Otherwise, target the linked topic before your next class discussion.</div>
+</div>
+
+<div class="box reflect">
+  <div class="box-title">Unit 3 Reflection Journal</div>
+  <ol>
+    <li>Which barrier from Figure 3.3 is strongest in your institution &mdash; and which counter-move from this unit would you try first?</li>
+    <li>Apply RADAR to one research proposal you have read (or written). Which quality is strongest, which weakest?</li>
+    <li>Write three indicator names you would propose for your college&rsquo;s first ESD report, one per indicator type.</li>
+  </ol>
+</div>
+
+<div class="mindmap-fig">
+  <img src="assets/mindmap_unit3_rot.png" alt="Unit 3 mind map (rotated for readability)">
+  <div class="mindmap-note">Mind Map 3 &mdash; Unit 3 at a glance. Rotate the page clockwise to read.</div>
+</div>
+<!-- ═══════════ ENGAGEMENT ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Fieldwork &middot; required by the syllabus</div>
+  <h2 class="sec-title">Engagement Activities &mdash; Six Guided Tasks</h2>
+  <div class="divider"></div>
+</div>
+
+<p>The syllabus prescribes six engagement activities, and this section turns each into a small guided project with steps, an expected output and a pro tip. Work through them across the semester rather than in one burst: Tasks 1 and 3 pair naturally, Tasks 4 and 6 reward a second reading of Units 1 and 3, and Task 5 is best attempted while you are actually teaching. Keep every output in your field notebook &mdash; together they form a portfolio you can cite in examinations, discuss in interviews, and act on in your first job.</p>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">1</span><span class="tc-title">Explore the Sustainable Processes of Your Institution</span></div>
+  <p>Walk your campus as a sustainability auditor, using the five functions of Table 1.2 as your checklist: teaching, research, operations, community engagement and governance.</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) Obtain or reconstruct the institution&rsquo;s sustainability policy, if any. (ii) Interview one staff member and one student about energy, waste and water practices. (iii) Photograph three practices that impress you and three that concern you.</div>
+  <div class="tc-row"><b>Output</b> &nbsp; A one-page &ldquo;campus sustainability snapshot&rdquo;: one paragraph per function, with evidence.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; Reuse your 24-hour SDG clock from Topic 1.2 &mdash; which goals does the campus itself advance or neglect?</div>
+</div>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">2</span><span class="tc-title">List the Research Areas of HESD</span></div>
+  <p>Consolidate the six research areas from Topic 2.1 and localise them: which are active in your institution, your state, and Indian higher education generally?</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) List the six areas from memory first. (ii) Search one recent Indian example for each area (use the reference list as a starting point). (iii) Star the two areas with the weakest local presence and draft one research question for each.</div>
+  <div class="tc-row"><b>Output</b> &nbsp; An annotated six-row table: area &middot; example &middot; local status &middot; my research question.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; Quality beats quantity: one well-chosen question per weak area can seed a dissertation topic.</div>
+</div>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">3</span><span class="tc-title">Find Out the Pedagogical Innovations of Your Institution</span></div>
+  <p>Hunt for the H2 innovations of Topic 3.1 already alive around you: projects, service learning, living labs, blended formats, co-created courses.</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) Ask three teachers from different departments to name their most innovative recent course activity. (ii) Classify each against Table 2.2. (iii) Sit in on one session if permitted, and record which of the five competencies you saw students exercising.</div>
+  <div class="tc-row"><b>Output</b> &nbsp; A short inventory: innovation &middot; pedagogy type &middot; competencies engaged &middot; transferability to your subject.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; frame interviews around stories (&ldquo;tell me about a session that worked&rdquo;) rather than jargon; you will get honest answers.</div>
+</div>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">4</span><span class="tc-title">Critically Analyse the Curricula for Sustainable Development</span></div>
+  <p>Take one full programme document (for example, a B.Ed. syllabus) and audit it as a critical curriculum analyst, using the about/for/through lens and RADAR.</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) Mark every course outcome that touches sustainability, and label it about, for or through. (ii) Note silences: which dimensions (environment, equity, economy) are missing? (iii) Apply RADAR: whose interests does the curriculum serve; what agency does it enable?</div>
+  <div class="tc-row"><b>Output</b> &nbsp; A two-page critique ending with three concrete, costed recommendations for curriculum committees.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; Quote exact outcomes in evidence columns; committees act on quotations, not impressions.</div>
+</div>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">5</span><span class="tc-title">Evaluate Your Classroom Teaching-Learning Environment for the SDGs</span></div>
+  <p>Use the five characteristics of Topic 2.4 &mdash; safety, participation, resources, institutional support, assessment alignment &mdash; to evaluate a classroom you teach or observe.</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) Rate each characteristic 1&ndash;5 and justify with an observation. (ii) Interview two learners about whether they feel heard and challenged on sustainability issues. (iii) Design one low-cost intervention and trial it in your next session.</div>
+  <div class="tc-row"><b>Output</b> &nbsp; A before/after evaluation sheet with ratings, learner voices and the result of your intervention.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; Change one variable only &mdash; single-variable interventions teach you something; simultaneous changes teach you nothing.</div>
+</div>
+
+<div class="task-card">
+  <div class="tc-head"><span class="tc-num">6</span><span class="tc-title">List the ESD Indicators of Your Institution</span></div>
+  <p>Build the first draft of your institution&rsquo;s ESD indicator set, organised into policy, practice and outcome indicators (Topic 3.5).</p>
+  <div class="tc-row"><b>Steps</b> &nbsp; (i) Draft two indicators per type that could be measured this year with existing data. (ii) Check each against the greenwashing test: could it be faked by paperwork alone? (iii) Present the set to a faculty member and record their feedback.</div>
+  <div class="tc-row"><b>Output</b> &nbsp; A six-row indicator table: name &middot; type &middot; data source &middot; greenwashing risk &middot; first measurement date.</div>
+  <div class="tc-row"><b>Pro tip</b> &nbsp; Pair one &ldquo;easy&rdquo; indicator with one &ldquo;hard&rdquo; one (e.g., audited energy data + a competency portfolio sample) so the set resists gaming.</div>
+</div>
+
+<!-- ═══════════ GLOSSARY ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Back matter</div>
+  <h2 class="sec-title">Glossary of Key Terms</h2>
+  <div class="divider"></div>
+</div>
+
+<p>Eighteen terms that carry the course. Cover the definitions, quiz yourself, and star the five you would explain first to a new colleague &mdash; those five are your personal summary of the whole paper.</p>
+
+<div class="gloss-grid">
+  <div class="g-item"><b>Agenda 2030</b>The 2015 UN resolution &ldquo;Transforming Our World&rdquo;; carries the 17 SDGs, 169 targets and the pledge to leave no one behind.</div>
+  <div class="g-item"><b>Brundtland definition</b>Development that meets present needs without compromising future generations&rsquo; ability to meet theirs (WCED, 1987).</div>
+  <div class="g-item"><b>Co-creation</b>Designing learning, research or policy jointly with students, communities or partners as equal contributors.</div>
+  <div class="g-item"><b>Competencies (five)</b>Systems thinking, anticipatory, normative, strategic, interpersonal &mdash; the reference skill set for sustainability (Wiek et al., 2011).</div>
+  <div class="g-item"><b>ESD</b>Education for Sustainable Development: learning that builds knowledge, values, competencies and agency for sustainable societies.</div>
+  <div class="g-item"><b>ESD indicators</b>Measurable signals &mdash; policy, practice, outcome &mdash; used to track institutional progress in ESD (Veidemane, 2022).</div>
+</div>
+
+<div class="gloss-grid">
+  <div class="g-item"><b>Greenwashing</b>Projecting environmental responsibility without substantive practice; a key risk indicator design must expose.</div>
+  <div class="g-item"><b>HESD</b>Higher Education and Research for Sustainable Development; the institutional field tracked by the IAU (iau-hesd.net).</div>
+  <div class="g-item"><b>Institutionalisation trap</b>Structures that protect earlier innovations from reversal while also blocking the next round of change (Trechsel et al., 2018).</div>
+  <div class="g-item"><b>Living lab</b>Using campus or city as a real-world site where learners co-design and test sustainability solutions.</div>
+  <div class="g-item"><b>POPBL</b>Problem- and project-oriented, project-based learning; ESD-compatible pedagogy studied by Yasin &amp; Rahman (2011).</div>
+  <div class="g-item"><b>RADAR</b>Responsible, Attentive, Disruptive, Authentic, Regenerative &mdash; five qualities of responsible research and innovation.</div>
+</div>
+
+<div class="gloss-grid">
+  <div class="g-item"><b>SDG Target 4.7</b>The Agenda 2030 target committing all education systems to ESD, human rights, gender equality and global citizenship.</div>
+  <div class="g-item"><b>Service learning</b>Community service interwoven with structured academic reflection; transforms &ldquo;helping&rdquo; into learning.</div>
+  <div class="g-item"><b>Third mission</b>The university&rsquo;s societal service role alongside teaching and research.</div>
+  <div class="g-item"><b>Three Horizons</b>Futures framework: H1 dominant-declining, H2 innovation zone, H3 sustainable vision (Curry &amp; Hodgson, 2008).</div>
+  <div class="g-item"><b>Triple bottom line</b>People, planet, prosperity &mdash; the three interlocking dimensions of sustainability performance.</div>
+  <div class="g-item"><b>Whole-institution approach</b>Engaging all functions &mdash; curriculum, campus, community, governance &mdash; simultaneously rather than piecemeal.</div>
+</div>
+</div>
+<!-- ═══════════ REFERENCES ═══════════ -->
+<div class="chapter-header">
+  <div class="kicker">Back matter</div>
+  <h2 class="sec-title">References</h2>
+  <div class="divider"></div>
+</div>
+
+<p>The reading list below follows the course syllabus. Items marked in the text by author and year are the theoretical backbone of the paper; the websites are living sources for your engagement tasks. Read at least the six starred classics in full &mdash; each is short, field-shaping and examination-friendly.</p>
+
+<div class="ref-list">
+  <div class="ref">1. Caeiro, S., Hamon, L. A. S., Martins, R., &amp; Aldaz, C. E. B. (2020). Sustainability assessment and benchmarking in higher education institutions &mdash; a critical reflection. <i>Sustainability, 12</i>, 30.</div>
+  <div class="ref">2. Chankseliani, M., &amp; McCowan, T. (2021). Higher education and the Sustainable Development Goals. <i>Higher Education, 81</i>, 1&ndash;8. https://doi.org/10.1007/s10734-020-00652-w</div>
+  <div class="ref">3. Cortese, A. D. (2003). The critical role of higher education in creating a sustainable future. <i>Planning for Higher Education, 31</i>, 15&ndash;22.</div>
+  <div class="ref">4. Environmental Association for Universities and Colleges. (2013). <i>Embedding sustainable development in the curriculum.</i> Retrieved from http://www.eauc.org.uk</div>
+  <div class="ref">5. Fernandez-Sanchez, G., Bernaldo, M. O., Castillejo, A., &amp; Manzanero, A. M. (2014). Education for sustainable development in higher education: State-of-the-art, barriers, and challenges. <i>Higher Learning Research Communications, 4</i>(3), 3&ndash;11. http://dx.doi.org/10.18870/hlrc.v4i3.157</div>
+  <div class="ref">6. Hilligje van&rsquo;t Land, &amp; Herzog, F. (2017). <i>Higher education paving the way to sustainable development: A global perspective.</i> Report of the 2016 IAU Global Survey on Higher Education and Research for Sustainable Development. IAU / UNESCO, Paris.</div>
+  <div class="ref">7. Hoque, F., Yasin, R. M., &amp; Sopian, K. (2022). Revisiting education for sustainable development: Methods to inspire secondary school students toward renewable energy. <i>Sustainability, 14</i>, 8296.</div>
+  <div class="ref">8. Lee, K., Barker, M., &amp; Mouasher, A. (2013). Is it even espoused? An exploratory study of commitment to sustainability as evidenced in vision, mission, and graduate attribute statements in Australian universities. <i>Journal of Cleaner Production, 48</i>, 20&ndash;28. http://dx.doi.org/10.1016/j.jclepro.2013.01.007</div>
+  <div class="ref">9. Lim, C. K., Haufiku, M. S., Tan, K. L., Farid Ahmed, M., &amp; Ng, T. F. (2022). Systematic review of education for sustainable development in higher education institutions. <i>Sustainability, 14</i>, 13241. https://doi.org/10.3390/su142013241</div>
+  <div class="ref">10. Lozano, R. (2006). Incorporation and institutionalization of SD into universities: Breaking through barriers to change. <i>Journal of Cleaner Production, 14</i>, 787&ndash;796.</div>
+  <div class="ref">11. Lozano, R., Lozano, F. J., Mulder, K. F., Huisingh, D., &amp; Waas, T. (2013). Advancing higher education for sustainable development: International insights and critical reflections. <i>Journal of Cleaner Production, 48</i>, 3&ndash;9. http://dx.doi.org/10.1016/j.jclepro.2013.03.034</div>
+  <div class="ref">12. Roorda, N. (2001). <i>AISHE: Auditing instrument for sustainable higher education.</i> The Netherlands: Dutch Committee for Sustainable Higher Education.</div>
+  <div class="ref">13. Trechsel, L. J., Zimmermann, A. B., Graf, D., Herweg, K., Lundsgaard-Hansen, L., Rufer, L., Tribelhorn, T., &amp; Wastl-Walter, D. (2018). Mainstreaming education for sustainable development at a Swiss university: Navigating the traps of institutionalization. <i>Higher Education Policy, 31</i>, 471&ndash;490.</div>
+  <div class="ref">14. UNESCO. (2020). <i>Education for sustainable development &mdash; A roadmap (ESD for 2030).</i> UNESCO Publishing, Paris.</div>
+  <div class="ref">15. Veidemane, A. (2022). Education for sustainable development in higher education rankings: Challenges and opportunities for developing internationally comparable indicators. <i>Sustainability, 14</i>, 5102. https://doi.org/10.3390/su14095102</div>
+  <div class="ref">16. Wiek, A., Withycombe, L., &amp; Redman, C. L. (2011). Key competencies in sustainability: A reference framework for academic program development. <i>Sustainability Science, 6</i>(2), 203&ndash;218. http://dx.doi.org/10.1007/s11625-011-0132-6</div>
+  <div class="ref">17. International Association of Universities &mdash; HESD portal. Retrieved from https://www.iau-hesd.net</div>
+  <div class="ref">18. Yasin, R. M., &amp; Rahman, S. (2011). Problem oriented project-based learning (POPBL) in promoting education for sustainable development. <i>Procedia &mdash; Social and Behavioral Sciences, 15</i>, 289&ndash;293. http://dx.doi.org/10.1016/j.sbspro.2011.03.088</div>
+  <div class="ref">19. Zaleniene, I., &amp; Pereira, P. (2021). Higher education for sustainability: A global perspective. <i>Geography and Sustainability, 2</i>(2), 99&ndash;106. https://doi.org/10.1016/j.geosus.2021.05.001</div>
+  <div class="ref">20. ASCD. <i>Six mindset shifts to make teaching sustainable.</i> Retrieved from https://www.ascd.org/blogs/six-mindset-shifts-to-make-teaching-sustainable</div>
+  <div class="ref">21. Steele, W., &amp; Rickards, L. (2021). <i>The Sustainable Development Goals in higher education: A transformative agenda.</i> Palgrave Macmillan, Switzerland. https://doi.org/10.1007/978-3-030-73575-3</div>
+</div>
+
+<div class="subhead">Using the Reading List Well</div>
+<p>Three practical notes will multiply what this list gives you. First, read <em>pairs, not papers</em>: Cortese (2003) with Chankseliani and McCowan (2021) gives you the classic and the contemporary case for universities&rsquo; role; Lozano (2006) with Trechsel and colleagues (2018) gives you the change model and its cautionary sequel. Second, use the websites as instruments, not ornaments &mdash; the IAU HESD portal and the UNESCO ESD roadmap contain ready-made surveys, case archives and reporting templates that feed directly into Engagement Tasks 1, 2 and 6. Third, whenever you cite an idea in an examination answer, name its author and year exactly as this material does; examiners reward precise attribution, and you will find every attribution here easy to trace back to its source.</p>
+
+</div><!-- /main-content -->
+
+<!-- ═══════════ ENDING ═══════════ -->
+<div class="ending">
+  <div class="ending-inner">
+    <div class="qmark">&ldquo;</div>
+    <div class="quote">Education is the most powerful weapon which you can use to change the world &mdash; and universities are where the changers are made.</div>
+    <div class="qauthor">After Nelson Mandela</div>
+    <div class="end-line"></div>
+    <div class="end-meta">
+      Sustainability in Higher Education &middot; Paper XXI (EDN-21)<br>
+      Learning material for B.Ed. / M.Ed. teacher education &middot; 2026 Edition<br>
+      Study well &mdash; then take it to your classroom.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
